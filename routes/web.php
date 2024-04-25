@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -15,6 +16,27 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+ 
+// Admin panal
+
+Route::get("/home",function(){
+    return view('admin.home');
+});
+
+Route::get("/users",function(){
+    return view('admin.users');
+});
+
+Route::get("/posts",function(){
+    return view('admin.posts');
+});
+
+Route::get("/category",function(){
+    return view('admin.category');
+});
+// Admin panal
+
 
 Route::get("/",function(){
     return view('index');

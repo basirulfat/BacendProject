@@ -75,7 +75,7 @@
 
           <!-- =============== DROPDOWN 2 ===============-->
           <li class="dropdown__item">
-            <div class="nav__link authontecation">
+            <div class="nav__link   authontecation">
              @if (Route::has('login'))
                <nav class="-mx-3 flex flex-1 justify-end">
                 @auth
