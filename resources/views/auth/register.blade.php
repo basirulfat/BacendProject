@@ -1,8 +1,17 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+                <!--=============== REMIXICONS ===============-->
+            <link
+             href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+             rel="stylesheet"
+              />
+            <!-- <x-authentication-card-logo /> -->
+            <i class="ri-open-arm-fill logo-icon"  style="font-size: 3rem ; color:red;"></i>
+            <h1 style="text-align: center; font-size:1rem; color:green;">AfghanTalent</h1>
+            
         </x-slot>
+        
 
         <x-validation-errors class="mb-4" />
 
@@ -20,12 +29,12 @@
             </div>
 
             <div class="mt-4">
-                <x-label for="phone" value="{{ __('phone') }}" />
+                <x-label for="phone" value="{{ __('Phone') }}" />
                 <x-input id="phone" class="block mt-1 w-full" type="number" name="phone" :value="old('phone')" required autocomplete="username" />
             </div>
      
             <div class="mt-4">
-                <x-label for="address" value="{{ __('address') }}" />
+                <x-label for="address" value="{{ __('Address') }}" />
                 <x-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autocomplete="username" />
             </div>
 
