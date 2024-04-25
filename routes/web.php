@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::middleware([
     'auth:sanctum',
@@ -16,7 +16,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get("/index",function(){
+Route::get("/",function(){
     return view('index');
 });
 
@@ -53,9 +53,9 @@ Route::get("/guide",function(){
 Route::get("/guideExperience",function(){
     return view('guideExperience');
 });
-Route::get("/login",function(){
-    return view('login');
-});
+// Route::get("/login",function(){
+//     return view('log in');
+// });
 Route::get("/post-job",function(){
     return view('post-job');
 });

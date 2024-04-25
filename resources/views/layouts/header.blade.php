@@ -73,13 +73,48 @@
 
           <li><a href="{{url('CreateCV')}}" class="nav__link">Create CV</a></li>
 
-          <!--=============== DROPDOWN 2 ===============-->
+          <!-- =============== DROPDOWN 2 ===============-->
           <li class="dropdown__item">
             <div class="nav__link">
-              Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                
+            
+            @if (Route::has('login'))
+                            <nav class="-mx-3 flex flex-1 justify-end">
+                                @auth
+                                    <!-- <a
+                                        href="{{ url('/dashboard') }}"
+                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                                    >
+                                        Dashboard
+                                    </a> -->
+                                    <x-app-layout>
+   
+                                    </x-app-layout>
+                                @else
+                                   <a
+                                        href="{{ route('login') }}"
+                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                                    >
+                                        Login
+                                    </a>
+
+                                    @if (Route::has('register'))
+                                    
+                                        <a
+                                            href="{{ route('register') }}"
+                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
+                                        >
+                                            Register
+                                        </a>
+                                    @endif
+                                @endauth
+                            </nav>
+                        @endif
+            
+                
             </div>
 
-            <ul class="dropdown__menu">
+            <!-- <ul class="dropdown__menu">
               <li>
                 <a href="{{url('login')}}" class="dropdown__link">
                   <i class="ri-user-line"></i> Profiles
@@ -97,11 +132,11 @@
                   <i class="ri-message-3-line"></i> Messages
                 </a>
               </li>
-            </ul>
+            </ul> -->
           </li>
-          <!-- 
-          <li><a href="#" class="nav__link">Companies Rate</a></li> -->
-
+          
+    
+          
           <!--=============== DROPDOWN 3 ===============-->
           <li class="dropdown__item">
             <div class="nav__link">
