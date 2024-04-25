@@ -229,6 +229,10 @@ a {
 
 .nav__link:hover {
   background-color: var(--danger);
+  color: var(--light-blue);
+}
+.nav__menu  .nav__link:hover {
+  color: var(--light-blue);
 }
 
 /* Show menu */
@@ -410,6 +414,15 @@ a {
     transition: top 0.3s;
   }
 }
+/* ============authontecation style============= */
+.authontecation a{
+  color: var(--light);
+  margin-right: 20px;
+}
+.authontecation a:hover{
+  color: var(--light-blue);
+}
+
 /*--=============== HEADING SECTJION ===============--*/
 #heading-container {
   width: 100%;
@@ -787,7 +800,7 @@ a {
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
-  padding: 1rem 0;
+  padding: 0rem 0;
 }
 #jobs .job__collection .jobs__links {
   display: flex;
@@ -812,7 +825,7 @@ a {
 }
 #jobs .job__collection2 {
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -833,7 +846,7 @@ a {
   color: var(--blue);
 }
 #jobs .job__btn {
-  margin: 1rem auto;
+  margin: 2rem auto;
   width: 20%;
   display: inline-block;
   text-align: center;
