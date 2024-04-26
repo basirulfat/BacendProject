@@ -7,7 +7,7 @@
         <h3 class="logo"><i class="ri-open-arm-fill logo-icon"></i></h3>
         <div class="links">
           <a href="{{url('home')}}">Dashboard</a>
-          <a href="{{url('users')}}">Users</a>
+          <a href="{{url('myusers')}}">Users</a>
           <a href="{{url('posts')}}">Posts</a>
           <a href="{{url('category')}}">Category</a><br />
           <p>Design By Samiullah</p>

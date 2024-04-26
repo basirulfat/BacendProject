@@ -1,7 +1,8 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -13,11 +14,10 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('index');
     })->name('dashboard');
 });
 
- 
 // Admin panal
 
 Route::get("/home",function(){
@@ -75,9 +75,6 @@ Route::get("/guide",function(){
 Route::get("/guideExperience",function(){
     return view('guideExperience');
 });
-// Route::get("/login",function(){
-//     return view('log in');
-// });
 Route::get("/post-job",function(){
     return view('post-job');
 });
