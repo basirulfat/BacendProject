@@ -61,20 +61,20 @@
         <form action="" id="form" class="form" autocomplete="off">
           <h2>Enter Your Full Infromation</h2>
           <div id="divide-section">
-            <div>
-              <div class="form-control">
+            <div class="divid-child">
+              <div class="form-control-2">
                 <label for="username">Full Name</label>
                 <input type="text" id="username" placeholder="Enter FullName" />
                 <small>Error message</small>
               </div>
 
-              <div class="form-control">
+              <div class="form-control-2">
                 <label for="username">Secound Name</label>
                 <input type="text" id="secondname" placeholder="Enter Secound Name" />
                 <small>Error message</small>
               </div>
             </div>
-            <div>
+            <div class="divid-child">
 
               <div class="form-control-2">
                 <label for="email">Email</label>
@@ -95,7 +95,7 @@
               </div>
             </div>
           </div>
-          <button class="btn-bt  btn" type="submit">Submit</button>
+
         </form>
       </div>
 
@@ -103,16 +103,19 @@
       <div id="image-section">
         <h4>Please Upload Your Image</h4>
         <form>
-          <div id="label-section">
-            <label for="imageUpload">Select an image:</label>
-            <input type="file" id="imageUpload" name="imageUpload" />
-          </div>
-          <div id="image-area"></div>
+          <label for="input-file" id="drop-area">
+            <input type="file" accept="image/*" id="input-file" hidden>
+            <div id="img-view" >
+                <img src="assets/images/icon.png" alt="">
+                <p>Drag and drop or click here <br> to upload image</p>
+                <span>Upload any image from desktop</span>
+            </div>
+           </label>
           <input id="Upload-btn" type="submit" value="Upload" />
         </form>
       </div>
     </div>
-    <div id="gender-section">
+    <div id="gender-section" >
       <h4>Gender</h4>
       <label for="male">Male</label>
       <input type="radio" id="male" name="gender" value="male" checked />
@@ -121,7 +124,7 @@
     </div>
 
     <div id="country-info">
-      <div class="form-control-2">
+      <div class="form-control-2" >
         <div>
           <label for="Date">Date of Birth</label>
           <input type="date" id="date" />
@@ -173,7 +176,7 @@
         <form id="form" class="form" autocomplete="off">
           <h2>Enter Your Full Education Career</h2>
           <div id="divide-section">
-            <div>
+            <div class="divid-child">
               <div class="form-control">
                 <label for="username">School Name</label>
                 <input type="text" id="username" placeholder="Enter School Name" />
@@ -211,7 +214,7 @@
               </div>
             </div>
 
-            <div>
+            <div class="divid-child">
 
               <div class="form-control">
                 <label for="username">University Name</label>
@@ -263,60 +266,25 @@
 
     <h5><i class="fa-solid fa-briefcase"></i>Enter Your Work Experience</h5>
     <h3>What jobs do you like to work in?</h5>
-      <p>Please enter at least 1 job title.</p>
+
 
 
       <form action="">
         <div id="divided-section"></div>
+        <p class="form-control">Please enter at least 1 job title.</p>
         <div class="form-1">
           <input type="text" id="username" placeholder="Job Title" />
-          <small>Error message</small>
+          <small></small>
         </div>
 
-        <div class="form-1">
+        <div class="form-control">
+        <label for="optionsInput">Seniority Level</label>
+
           <input type="text" id="optionsInput" class="options-input" placeholder="Seniority">
-          <div class="options-container">
-            <input type="checkbox" name="option1" id="option1">
-            <label for="option1">Managment</label><br>
-
-            <input type="checkbox" name="option2" id="option2">
-            <label for="option2">Top-Management</label><br>
-
-            <input type="checkbox" name="option3" id="option3">
-            <label for="option3">Experence profetinal</label><br>
-
-            <input type="checkbox" name="option4" id="option4">
-            <label for="option4">Joiner profetinal</label><br>
-          </div>
         </div>
         <div class="form-control">
           <label for="optionsInput">Location</label>
           <input type="text" id="optionsInput" class="options-input">
-          <div class="options-container">
-            <input type="checkbox" name="option1" id="option1" checked>
-            <label for="option1">Kabul</label><br>
-
-            <input type="checkbox" name="option2" id="option2">
-            <label for="option2">Herat</label><br>
-
-            <input type="checkbox" name="option3" id="option3">
-            <label for="option3">Mazar</label><br>
-
-            <input type="checkbox" name="option4" id="option4">
-            <label for="option4">Wardak</label><br>
-
-            <input type="checkbox" name="option5" id="option5">
-            <label for="option5">Khoste</label><br>
-
-            <input type="checkbox" name="option6" id="option6">
-            <label for="option6">Lagman</label><br>
-
-            <input type="checkbox" name="option7" id="option7">
-            <label for="option7">Qandos</label><br>
-
-            <input type="checkbox" name="option8" id="option8">
-            <label for="option8">Ningarhar</label><br>
-          </div>
         </div>
       </form>
 

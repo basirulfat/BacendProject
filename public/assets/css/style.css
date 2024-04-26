@@ -42,7 +42,7 @@
   --danger: #eb2f06;
   --light-red: #eaaead;
   --warning:#fbc531;
-
+  --main-bg-color: #e0e5ec;
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", sans-serif;
