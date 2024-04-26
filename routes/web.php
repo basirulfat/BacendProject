@@ -25,7 +25,7 @@ Route::get("/home",function(){
 });
 
 Route::get("/users",function(){
-    return view('admin.users');
+    return view('admin.myusers');
 });
 
 Route::get("/posts",function(){
