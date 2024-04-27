@@ -3,11 +3,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
+// Route::get('/redirects',[HomeController::class,"redirect"]);
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -29,9 +30,9 @@ Route::get('/users/{id}', [AdminController::class, 'delete_user']);
 
 // User ACtions
 
-// Route::get("/home",function(){
-//     return view('admin.home');
-// });
+Route::get("/home",function(){
+    return view('admin.home');
+});
 
 // Route::get("/users",function(){
 //     return view('admin.myusers');
