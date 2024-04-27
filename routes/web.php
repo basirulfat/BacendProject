@@ -2,7 +2,11 @@
 
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::middleware([
     'auth:sanctum',
@@ -10,7 +14,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('index');
+        return view('dashboard');
     })->name('dashboard');
 });
 
@@ -25,9 +29,9 @@ Route::get('/users/{id}', [AdminController::class, 'delete_user']);
 
 // User ACtions
 
-Route::get("/home",function(){
-    return view('admin.home');
-});
+// Route::get("/home",function(){
+//     return view('admin.home');
+// });
 
 // Route::get("/users",function(){
 //     return view('admin.myusers');
