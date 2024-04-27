@@ -8,6 +8,7 @@
         <div class="links">
           <a href="{{url('home')}}">Dashboard</a>
           <a href="{{url('users')}}">Users</a>
+          <a href="{{url('company')}}">Companies</a>
           <a href="{{url('posts')}}">Posts</a>
           <a href="{{url('category')}}">Category</a><br />
           <p>Design By Samiullah</p>

@@ -9,26 +9,33 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
 btn.onclick = function () {
-  modal.style.display = "block";
+    modal.style.display = "block";
 };
+
+/*========================== eidet btn  code ===========================*/
+var elements = document.getElementsByClassName("eidetbtn");
+for (var i = 0; i < elements.length; i++) {
+    elements[i].onclick = function () {
+        modal.style.display = "block";
+    };
+}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
-  modal.style.display = "none";
+    modal.style.display = "none";
 };
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 };
 
-// h
-// JavaScript Code
+/* =================  menue for  reponsiveness====================== */
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const menu = document.querySelector(".menu");
 
 hamburgerMenu.addEventListener("click", () => {
-  menu.classList.toggle("open");
+    menu.classList.toggle("open");
 });

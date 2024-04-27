@@ -2,11 +2,7 @@
 
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+use App\Http\Controllers\AdminController;
 
 Route::middleware([
     'auth:sanctum',
@@ -20,13 +16,22 @@ Route::middleware([
 
 // Admin panal
 
+
+// User ACtions
+
+Route::get('/users',[AdminController::class,'showUsers']);
+Route::post('/users', [AdminController::class, 'add_user']);
+Route::get('/users/{id}', [AdminController::class, 'delete_user']);
+
+// User ACtions
+
 Route::get("/home",function(){
     return view('admin.home');
 });
 
-Route::get("/users",function(){
-    return view('admin.myusers');
-});
+// Route::get("/users",function(){
+//     return view('admin.myusers');
+// });
 
 Route::get("/posts",function(){
     return view('admin.posts');
@@ -34,6 +39,9 @@ Route::get("/posts",function(){
 
 Route::get("/category",function(){
     return view('admin.category');
+});
+Route::get("/company",function(){
+    return view('admin.company');
 });
 // Admin panal
 

@@ -319,7 +319,7 @@
     </div>
     <div>
       <button id="btn-of-skill" class="btn-1" type="submit" name="Save" onclick="changeColor4() ">Add</button>
-      <a href="{{url('resume')}}"><button class="btn-1" type="button" name="Next">See Your CV</button></a>
+      <a href="{{url('resume')}}"><button class="btn-1  SeeyourCv" type="button" name="Next">See Your CV</button></a>
     </div>
   </section>
 

@@ -23,7 +23,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap"
       rel="stylesheet"
     />
-  </head>
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/css/bootstrap.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/js/bootstrap.bundle.min.js"></script>
 
   <body>
     <div class="minet">
@@ -45,38 +47,33 @@
             <span class="close">&times;</span>
             <h2>Create a New User</h2>
             <br />
-            <form id="postForm">
+            <form action="{{url('/users')}}" method="POST"enctype="multipart/form-data" id="postForm">
+              @csrf
               <div>
                 <label for="name">Name:</label>
-                <input type="text" id="title" name="title" />
+                <input type="text" id="title" name="name" />
               </div>
               <div>
                 <label for="author">Email:</label>
-                <input type="text" id="author" name="author" />
+                <input type="email" id="author" name="email" />
+              </div>
+              <div>
+                <label for="title">phone:</label>
+                <input type="tell" id="title" name="phone" />
+              </div>
+              <div>
+                <label for="author">Address:</label>
+                <input type="text" id="author" name="address" />
               </div>
               <div>
                 <label for="title">Password:</label>
-                <input type="text" id="title" name="title" />
+                <input type="password" id="title" name="password" />
               </div>
               <div>
-                <label for="author">Country:</label>
-                <input type="text" id="author" name="author" />
+                <label for="title">Comfirm Password:</label>
+                <input type="password" id="title" name="password" />
               </div>
-              <div>
-                <label for="author">Img:</label>
-                <!-- <input type="file" id="image" name="image" class="image-input"> -->
-                <div class="file-upload">
-                  <label for="image-upload" class="file-upload__label">
-                    Upload Image
-                  </label>
-                  <input
-                    id="image-upload"
-                    class="file-upload__input"
-                    type="file"
-                    name="image-upload"
-                  />
-                </div>
-              </div>
+
               <br />
               <!-- <button type="button">Submit</button> -->
               <input class="btn-modal" type="submit" value="Submit" />
@@ -88,6 +85,20 @@
         <div class="table">
           <div class="head">
             <h2>Table users</h2>
+            @if(session()->has('message'))
+              <div class="alert  alert-success">
+                <button type="button" class="close" data-dismiss="alert" 
+                aria-hidden="true">X</button>
+                {{session()->get('message')}}
+              </div>
+            @endif
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" 
+                aria-hidden="true">X</button>
+                    {{ session()->get('success') }}
+                </div>
+            @endif
             <!-- <button onclick="onclick()">&#9776;</button> -->
             <button id="openModalButton">Create New User</button>
           </div>
@@ -96,63 +107,27 @@
             <th>id</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Country</th>
+            <th>Address</th>
+            <th>Phone</th>
             <th>Action</th>
-
-            <tr>
-              <td>1</td>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-              <td>
-                <a class="actionButton editButton" href="#">Edit</a>
-                <a class="actionButton deleteButton" href="#">Delete</a>
-              </td>
+            @foreach($users as $user)
+              <tr>
+                  <td>{{$user->id}}</td>
+                  <td>{{$user->name}}</td>
+                  <td>{{$user->email}}</td>
+                  <td>{{$user->address}}</td>
+                  <td>{{$user->phone}}</td>
+                  <td>
+                      <a  class="actionButton editButto  eidetbtn" href="#">Edit</a>
+                      <a onclick="return confirm('Are You Sure To Delete This User')" class="actionButton deleteButton" href="{{ url('users', $user->id) }}">Delete</a>
+                  </td>
             </tr>
-            <tr>
-              <td>6</td>
-              <td>Berglunds snabbköp</td>
-              <td>Christina Berglund</td>
-              <td>Sweden</td>
-              <td>
-                <a class="actionButton editButton" href="#">Edit</a>
-                <a class="actionButton deleteButton" href="#">Delete</a>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-              <td>
-                <a class="actionButton editButton" href="#">Edit</a>
-                <a class="actionButton deleteButton" href="#">Delete</a>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Ernst Handel</td>
-              <td>Roland Mendel</td>
-              <td>Austria</td>
-              <td>
-                <a class="actionButton editButton" href="#">Edit</a>
-                <a class="actionButton deleteButton" href="#">Delete</a>
-              </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Island Trading</td>
-              <td>Helen Bennett</td>
-              <td>UK</td>
-              <td>
-                <a class="actionButton editButton" href="#">Edit</a>
-                <a class="actionButton deleteButton" href="#">Delete</a>
-              </td>
-            </tr>
+           @endforeach
           </table>
         </div>
       </div>
     </div>
+    
 
     <script src="Admin/js/main.js"></script>
     <script src="fontawesome-free-5.15.4-web/js/all.min.js"></script>
