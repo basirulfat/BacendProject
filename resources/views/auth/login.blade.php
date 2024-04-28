@@ -1,16 +1,9 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-             <!-- <x-authentication-card-logo /> -->
-          <!--=============== REMIXICONS ===============-->
-            <link
-             href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
-             rel="stylesheet"
-              />
-            <i class="ri-open-arm-fill logo-icon"  style="font-size: 3rem ; color:red;"></i>
-            <h1 style="text-align: center; font-size:1rem; color:green;">AfghanTalent</h1>
+            <x-authentication-card-logo />
         </x-slot>
-         
+
         <x-validation-errors class="mb-4" />
 
         @session('status')
