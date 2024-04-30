@@ -11,12 +11,12 @@ class AdminController extends Controller
 /*====================  Show User *===================== */ 
     public function showUsers()
     {
-        $users = User::all(); 
-    
-        return view('admin.myusers', ['users' => $users]);
+        $users = User::all();
+        return view('admin.myusers', compact('users'));
     }
 
 /*==================== Add a New User *===================== */ 
+
     public function add_user(Request $request)
     {
         $users = new User();
@@ -30,11 +30,35 @@ class AdminController extends Controller
         return redirect()->back()->with('Message','user added successfully');
     }
 
-/*==================== Delete User *===================== */ 
-    public function delete_user($id)
+/*==================== Search For User *===================== */
+
+    public function search(Request $request)
     {
-      $users=User::find($id);
-      $users->delete();
-      return redirect()->back()->with('success','user deleted successfully');
+        $searchText = $request->search;
+        $users = User::where('name', 'LIKE', "%$searchText%")
+        ->orWhere('id', 'LIKE', "%$searchText%")
+        ->orWhere('phone', 'LIKE', "%$searchText%")->get();
+        return view('admin.myusers', compact('users'));
     }
+
+/*==================== Delete User *===================== */ 
+
+    public function delete_user($id)
+        {
+            $user = User::find($id);
+            if (!$user) {
+                return redirect()->back()->with('error', 'User not found');
+            }
+            $user->delete();
+            return redirect()->back()->with('success', 'User deleted successfully');
+        }
+
+/*==================== Update The  User *===================== */
+
+
 }
+
+
+
+
+

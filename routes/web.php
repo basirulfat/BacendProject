@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CompanyController;
 
 Route::get('/home', [HomeController::class, 'redirect']);
 Route::middleware([
@@ -16,18 +17,17 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// Admin panal
+/*=================== Admin panal =======================*/
+          /*---Users---*/
 Route::get('/users',[AdminController::class,'showUsers']);
 Route::post('/users', [AdminController::class, 'add_user']);
-Route::get('/users/{id}', [AdminController::class, 'delete_user']);
+Route::delete('/users/{id}', [AdminController::class, 'delete_user'])->name('users.delete');
+// Route::get('/users/{id}', [AdminController::class, 'update_user']);
+Route::get('/users',[AdminController::class,'search']);
 
-// Route::get("/home",function(){
-//     return view('admin.home');
-// });
 
-Route::get("/users",function(){
-    return view('admin.myusers');
-});
+         /*--- company---*/
+
 
 Route::get("/posts",function(){
     return view('admin.posts');
@@ -36,7 +36,17 @@ Route::get("/posts",function(){
 Route::get("/category",function(){
     return view('admin.category');
 });
+
+Route::get("/company",function(){
+    return view('admin.company');
+});
 // Admin panal
+
+/*========= post job  =============*/
+
+
+/*========= post job  =============*/
+
 
 
 Route::get("/",function(){
@@ -76,11 +86,14 @@ Route::get("/guide",function(){
 Route::get("/guideExperience",function(){
     return view('guideExperience');
 });
-Route::get("/post-job",function(){
-    return view('post-job');
+Route::get("/companyRegister",function(){
+    return view('companyRegister');
 });
 Route::get("/resume",function(){
     return view('resume');
+});
+Route::get("/post-job",function(){
+    return view('post-job');
 });
 Route::get("/showJobs",function(){
     return view('showJobs');

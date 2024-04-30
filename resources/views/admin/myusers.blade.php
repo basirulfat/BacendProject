@@ -47,31 +47,32 @@
             <span class="close">&times;</span>
             <h2>Create a New User</h2>
             <br />
-            <form action="{{url('/users')}}" method="POST"enctype="multipart/form-data" id="postForm">
+            <form action="{{url('/users/' . $user->id)}}" method="POST" enctype="multipart/form-data" id="postForm">
               @csrf
+              @method('PUT')
               <div>
                 <label for="name">Name:</label>
-                <input type="text" id="title" name="name" />
+                <input type="text" id="name" name="name" value=""/>
               </div>
               <div>
-                <label for="author">Email:</label>
-                <input type="email" id="author" name="email" />
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" />
               </div>
               <div>
-                <label for="title">phone:</label>
-                <input type="tell" id="title" name="phone" />
+                <label for="phone">phone:</label>
+                <input type="number" id="phone" name="phone" />
               </div>
               <div>
-                <label for="author">Address:</label>
-                <input type="text" id="author" name="address" />
+                <label for="address">Address:</label>
+                <input type="text" id="addresss" name="address" />
               </div>
               <div>
-                <label for="title">Password:</label>
-                <input type="password" id="title" name="password" />
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" />
               </div>
               <div>
-                <label for="title">Comfirm Password:</label>
-                <input type="password" id="title" name="password" />
+                <label for="password">Comfirm Password:</label>
+                <input type="password" id="password" name="password" />
               </div>
 
               <br />
@@ -85,22 +86,22 @@
         <div class="table">
           <div class="head">
             <h2>Table users</h2>
-            @if(session()->has('message'))
-              <div class="alert  alert-success">
-                <button type="button" class="close" data-dismiss="alert" 
-                aria-hidden="true">X</button>
-                {{session()->get('message')}}
-              </div>
-            @endif
+            <!-- add -->
             @if(session()->has('success'))
-                <div class="alert alert-success">
-                <button type="button" class="close" data-dismiss="alert" 
-                aria-hidden="true">X</button>
-                    {{ session()->get('success') }}
-                </div>
+            <div class="alert alert-success" id="success-message">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true" onclick="removeSuccessMessage()">X</button>
+                {{ session()->get('success') }}
+            </div>
+             @endif
+            <!-- add -->
+            @if(session()->has('success'))
+             <div class="alert alert-success" id="success-message">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true" onclick="removeSuccessMessage()">X</button>
+                {{ session()->get('success') }}
+             </div>
             @endif
             <!-- <button onclick="onclick()">&#9776;</button> -->
-            <button id="openModalButton">Create New User</button>
+            <button type="submit" id="openModalButton">Create New User</button>
           </div>
 
           <table>
@@ -110,7 +111,7 @@
             <th>Address</th>
             <th>Phone</th>
             <th>Action</th>
-            @foreach($users as $user)
+            @forelse($users as $user)
               <tr>
                   <td>{{$user->id}}</td>
                   <td>{{$user->name}}</td>
@@ -118,11 +119,27 @@
                   <td>{{$user->address}}</td>
                   <td>{{$user->phone}}</td>
                   <td>
-                      <a  class="actionButton editButto  eidetbtn" href="#">Edit</a>
-                      <a onclick="return confirm('Are You Sure To Delete This User')" class="actionButton deleteButton" href="{{ url('users', $user->id) }}">Delete</a>
+      
+                
+                      <!-- <a onclick="return confirm('Are You Sure To Delete This User')" class="actionButton deleteButton" href="{{ url('users', $user->id) }}">Delete</a> -->
+
+                      <form action="{{ route('users.delete', ['id' => $user->id]) }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" class="actionButton deleteButton" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
+
+                          <a  class="actionButton editButto  eidetbtn" href="{{ url('update_user', $user->id) }}">Edit</a>
+
+                       </form>
                   </td>
             </tr>
-           @endforeach
+
+
+            @empty
+            <tr style="text-align: center;">
+              <td style="color:red; font-size:2rem; ">No User Found</td>
+            </tr>
+           @endforelse
           </table>
         </div>
       </div>
