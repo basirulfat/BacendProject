@@ -47,9 +47,8 @@
             <span class="close">&times;</span>
             <h2>Create a New User</h2>
             <br />
-            <form action="{{url('/users/' . $user->id)}}" method="POST" enctype="multipart/form-data" id="postForm">
+            <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data" id="postForm">
               @csrf
-              @method('PUT')
               <div>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" value=""/>
@@ -86,20 +85,21 @@
         <div class="table">
           <div class="head">
             <h2>Table users</h2>
+            <form action="{{ route('user.search') }} " method="get">
+          <div class="search-bar">
+            <input type="text" name="search" class="search-input" placeholder="Search For" />
+            <button type="submit" class="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+              </form>
             <!-- add -->
-            @if(session()->has('success'))
-            <div class="alert alert-success" id="success-message">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true" onclick="removeSuccessMessage()">X</button>
-                {{ session()->get('success') }}
-            </div>
-             @endif
-            <!-- add -->
-            @if(session()->has('success'))
+            <!-- @if(session()->has('success'))
              <div class="alert alert-success" id="success-message">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true" onclick="removeSuccessMessage()">X</button>
                 {{ session()->get('success') }}
              </div>
-            @endif
+            @endif -->
             <!-- <button onclick="onclick()">&#9776;</button> -->
             <button type="submit" id="openModalButton">Create New User</button>
           </div>
@@ -118,20 +118,17 @@
                   <td>{{$user->email}}</td>
                   <td>{{$user->address}}</td>
                   <td>{{$user->phone}}</td>
+
                   <td>
-      
-                
-                      <!-- <a onclick="return confirm('Are You Sure To Delete This User')" class="actionButton deleteButton" href="{{ url('users', $user->id) }}">Delete</a> -->
-
-                      <form action="{{ route('users.delete', ['id' => $user->id]) }}" method="POST">
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="actionButton deleteButton" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
-
-                          <a  class="actionButton editButto  eidetbtn" href="{{ url('update_user', $user->id) }}">Edit</a>
-
-                       </form>
-                  </td>
+                <!-- <a class="actionButton editButton" href="#">Edit</a> -->
+                <!-- <a class="actionButton deleteButton" href="{{ route('user.destroy', ['user' => $user->id]) }}">Delete</a> -->
+                <form action="{{ route('user.destroy', ['user' => $user->id]) }}" method="POST" onsubmit="return confirm('Are you sure delete this user?')">
+                  @csrf
+                  @method('DELETE')
+                  <!-- <button class="actionButton editButton  eidetbtn" href="#"><i class="ri-image-edit-fill"></i></button> -->
+                  <button type="submit" class="actionButton deleteButton"><i class="ri-delete-bin-5-fill"></i></button>
+                </form>
+                 </td>
             </tr>
 
 

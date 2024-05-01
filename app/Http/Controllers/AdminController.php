@@ -1,23 +1,35 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\User;
 
-
 class AdminController extends Controller
 {
-
-/*====================  Show User *===================== */ 
-    public function showUsers()
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        $users = User::all();
-        return view('admin.myusers', compact('users'));
+        $user = User::all();
+        // dd($user);
+        return view('admin.myusers', compact('user'));
+
     }
 
-/*==================== Add a New User *===================== */ 
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
 
-    public function add_user(Request $request)
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
     {
         $users = new User();
      
@@ -28,37 +40,59 @@ class AdminController extends Controller
         $users->password=$request->password;
         $users->save();
         return redirect()->back()->with('Message','user added successfully');
+
     }
 
-/*==================== Search For User *===================== */
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
 
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        $user = User::findOrFail($id); // Assuming you have a "User" model
+
+        return view('admin.myusers', compact('user'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $user = User::find($id);
+        if (!$user) {
+            return redirect()->back()->with('error', 'User not found');
+        }
+        $user->delete();
+        return redirect()->back()->with('success', 'User deleted successfully');
+
+    }
+
+    
     public function search(Request $request)
     {
         $searchText = $request->search;
         $users = User::where('name', 'LIKE', "%$searchText%")
-        ->orWhere('id', 'LIKE', "%$searchText%")
-        ->orWhere('phone', 'LIKE', "%$searchText%")->get();
+            ->orWhere('id', 'LIKE', "%$searchText%")
+            ->orWhere('phone', 'LIKE', "%$searchText%")
+            ->get();
+    
         return view('admin.myusers', compact('users'));
     }
 
-/*==================== Delete User *===================== */ 
-
-    public function delete_user($id)
-        {
-            $user = User::find($id);
-            if (!$user) {
-                return redirect()->back()->with('error', 'User not found');
-            }
-            $user->delete();
-            return redirect()->back()->with('success', 'User deleted successfully');
-        }
-
-/*==================== Update The  User *===================== */
-
-
 }
-
-
-
-
-

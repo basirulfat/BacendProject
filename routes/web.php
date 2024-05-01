@@ -4,8 +4,8 @@
 use App\Http\Controllers\LocalControler;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/home', [HomeController::class, 'redirect']);
 Route::middleware([
@@ -19,15 +19,17 @@ Route::middleware([
 });
 
 /*=================== Admin panal =======================*/
+
           /*---Users---*/
-Route::get('/users',[AdminController::class,'showUsers']);
-Route::post('/users', [AdminController::class, 'add_user']);
-Route::delete('/users/{id}', [AdminController::class, 'delete_user'])->name('users.delete');
-// Route::get('/users/{id}', [AdminController::class, 'update_user']);
-Route::get('/users',[AdminController::class,'search']);
+Route::resource('/user', AdminController::class);
+Route::get('/user', [AdminController::class, 'search'])->name('user.search');
+
 
 
          /*--- company---*/
+ Route::resource('/company', CompanyController::class);
+ Route::get('/company', [CompanyController::class, 'search'])->name('company.search');
+ 
 
 
 Route::get("/posts",function(){
@@ -38,9 +40,7 @@ Route::get("/category",function(){
     return view('admin.category');
 });
 
-Route::get("/company",function(){
-    return view('admin.company');
-});
+
 // Admin panal
 
 /*========= post job  =============*/
