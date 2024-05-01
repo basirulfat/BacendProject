@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\LocalControler;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
@@ -101,3 +102,10 @@ Route::get("/showJobs",function(){
 Route::get("/Top_company",function(){
     return view('Top_company');
 });
+
+// // Coockies Route
+// Route::get('/',[CookieController::class, 'setCookie']);
+
+
+// Localization
+Route::get('/locale/{lang}', [LocalControler::class,'setlocale']);
