@@ -9,22 +9,29 @@ const Clientbtn = document.querySelector(".client-join-btn");
 const workWithUsbtn = document.querySelector(".workwithusbtm");
 
 const openModel = function () {
-  hideform.classList.remove("hidden");
-  overlay.classList.remove("hidden");
+    hideform.classList.remove("hidden");
+    overlay.classList.remove("hidden");
 };
 
 const closeModel = function () {
-  hideform.classList.add("hidden");
-  overlay.classList.add("hidden");
+    hideform.classList.add("hidden");
+    overlay.classList.add("hidden");
 };
 for (let i = 0; i < carts.length; i++)
-  carts[i].addEventListener("click", openModel);
+    carts[i].addEventListener("click", openModel);
 registerbtn.addEventListener("click", openModel);
 Clientbtn.addEventListener("click", openModel);
 workWithUsbtn.addEventListener("click", openModel);
 btnClosModel.addEventListener("click", closeModel);
 overlay.addEventListener("click", closeModel);
 
+/*================== form submit  button when data submit  =============*/
+function removeSuccessMessage() {
+    var successMessage = document.getElementById("success-message");
+    if (successMessage) {
+        successMessage.style.display = "none";
+    }
+}
 /*================== Right Click pervention =============*/
 // document.addEventListener("contextmenu", function (event) {
 //   event.preventDefault();

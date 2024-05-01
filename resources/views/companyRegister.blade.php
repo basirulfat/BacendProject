@@ -14,6 +14,8 @@
     <script defer type="module" src="./assets/js/module/companyRegister.js"></script>
     <link rel="stylesheet" href="assets/css/companyRegister.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+     <!--=========== bootstrap ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <title>Register Company</title>
   </head>
@@ -36,11 +38,29 @@
           </div>
         </div>
       </div>
-      <form id="post-job-form" action="" onsubmit="return validateForm()">
+      <form id="post-job-form" action="/company" method="POST" onsubmit="return validateForm()">
+      @csrf
         <h2>Fill This Form To Get Free Demo:</h2>
+        <!-- @if(session()->has('success'))
+          <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
+            {{ session()->get('success') }}
+          </div>
+        @endif -->
+
+        @if(session()->has('success'))
+          <div class="alert alert-success alert-dismissible fade show" id="success-message" role="alert">
+            <div class="d-flex justify-content-between align-items-center">
+              <span>{{ session()->get('success') }}</span>
+              <button type="button" class="btn-close" aria-label="Close" onclick="removeSuccessMessage()"></button>
+            </div>
+          </div>
+        @endif
+
+        
         <div class="name_input">
           <label for="">Full Name</label>
-          <input type="text" class="btn username" placeholder="Your Name" />
+          <input type="text" class="btn username" placeholder="Your Name" name="owner" />
           <small class="error-message"></small>
         </div>
         <div class="comp_input_wrapper">
@@ -49,7 +69,8 @@
             <input
               type="text"
               class="btn selection username"
-              placeholder="Company Name"
+              placeholder="Company Name"  
+              name="company_name"
             />
             <small class="error-message"></small>
             <label for="">Mobile</label>
@@ -57,17 +78,18 @@
               type="text"
               class="btn selection phone"
               placeholder="Company Mobile"
+              name="phone"
             />
             <small class="error-message"></small>
-            <label for="">Your Company Size</label>
-            <select name="" id="" class="btn selection">
-              <option value="">select your Company size</option>
-              <option value="">500 employees</option>
-              <option value="">100 -499 employees</option>
-              <option value="">50 -99 employees</option>
-              <option value="">10 -49 employees</option>
-              <option value="">1 - 9 employees</option>
-            </select>
+            <label for="company_size">Your Company Size</label>
+          <select name="company_size" id="company_size" class="btn selection">
+          <option value="">select your Company size</option>
+          <option value="500 employees">500 employees</option>
+          <option value="100 - 499 employees">100 - 499 employees</option>
+          <option value="50 - 99 employees">50 - 99 employees</option>
+          <option value="10 - 49 employees">10 - 49 employees</option>
+          <option value="1 - 9 employees">1 - 9 employees</option>
+        </select>
             <small class="error-message"></small>
           </div>
           <div class="comp_input">
@@ -76,6 +98,7 @@
               type="text"
               class="btn selection username"
               placeholder="Company Name in Pashto"
+              name="pashto_name"
             />
             <small class="error-message"></small>
             <label for="">Email</label>
@@ -83,6 +106,8 @@
               type="text"
               class="btn selection email"
               placeholder="Company Email"
+              name="email"
+              
             />
             <small class="error-message"></small>
             <label for="">Organization position</label>
@@ -90,6 +115,7 @@
               type="text"
               class="btn selection"
               placeholder="Organization position"
+              name="position"
             />
             <small class="error-message"></small>
           </div>
@@ -171,12 +197,13 @@
       </div>
     </section>
     <!--===============HIDE FORM =======-->
-    <form class="hidden hide__form" action="">
+    <form class="hidden hide__form" action="/company" method="POST">
+      @csrf
       <button class="btn hide_close"><i class="ri-close-line"></i></button>
       <h2>Fill This Form To Get Free Demo:</h2>
       <div class="hide_name_input">
         <label for="">Full Name</label>
-        <input type="text" class="btn username" placeholder="Your Name" />
+        <input type="text" class="btn username" placeholder="Your Name" name="owner" />
       </div>
       <div class="comp_input_wrapper">
         <div class="comp_input">
@@ -185,48 +212,50 @@
             type="text"
             class="btn selection username"
             placeholder="Company Name"
+            name="company_name"
           />
           <label for="">Mobile</label>
           <input
             type="text"
             class="btn selection phone"
             placeholder="Company Mobile"
+            name="phone"
           />
-          <label for="">Your Company Size</label>
-          <select name="" id="" class="btn selection">
-            <option value="">select your Company size</option>
-            <option value="">500 employees</option>
-            <option value="">100 -499 employees</option>
-            <option value="">50 -99 employees</option>
-            <option value="">10 -49 employees</option>
-            <option value="">1 - 9 employees</option>
-          </select>
+          <label for="company_size">Your Company Size</label>
+          <select name="company_size" id="company_size" class="btn selection">
+          <option value="">select your Company size</option>
+          <option value="500 employees">500 employees</option>
+          <option value="100 - 499 employees">100 - 499 employees</option>
+          <option value="50 - 99 employees">50 - 99 employees</option>
+          <option value="10 - 49 employees">10 - 49 employees</option>
+          <option value="1 - 9 employees">1 - 9 employees</option>
+        </select>
         </div>
         <div class="comp_input">
           <label for="">Your Company Name(Pashto)</label>
           <input
             type="text"
             class="btn selection username"
-            placeholder="Company Name in Pashto"
+            placeholder="Company Name in Pashto" name="pashto_name"
           />
           <label for="">Email</label>
           <input
             type="text"
             class="btn selection email"
-            placeholder="Company Email"
+            placeholder="Company Email" name="email"
           />
           <label for="">Organization position</label>
           <input
             type="text"
             class="btn selection"
-            placeholder="Organization position"
+            placeholder="Organization position" name="position"
           />
         </div>
       </div>
       <input
         type="submit"
         value="Send Request for Free"
-        class="btn sumit-form"
+        class="btn sumit-form" 
       />
     </form>
     <div class="overlay hidden"></div>

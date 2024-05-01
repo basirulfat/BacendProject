@@ -10,7 +10,8 @@ class company extends Model
     use HasFactory;
 
 
-    
+ protected $table = 'companies';
+
 protected $fillable = [
     'owner',
     'company name',
@@ -20,6 +21,8 @@ protected $fillable = [
     'company size',
     'position',
 ];
+
+
 
 
 }
