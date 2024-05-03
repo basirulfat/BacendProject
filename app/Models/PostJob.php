@@ -40,9 +40,12 @@ class PostJob extends Model
         /**
          * Get the company associated with the job post.
          */
+        // public function company()
+        // {
+        //     return $this->belongsTo(Company::class);
+        // }
         public function company()
         {
-            return $this->belongsTo(Company::class);
+            return $this->belongsTo(Company::class, 'company_id');
         }
-    
 }

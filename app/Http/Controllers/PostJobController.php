@@ -25,39 +25,37 @@ class PostJobController extends Controller
      */
     public function create()
     {
-        return view('Post-job');
+        // return view('Post-job');
+        $companies = Company::all(); // Retrieve all companies from the database
+
+        return view('Post-job', compact('companies'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-       
-    
-      
-        $jobPost = new PostJob();
-        $jobPost->company_id = $request->input('company_id');
-        $jobPost->user_id=auth()->id();
-        $jobPost->jobTitle = $request->input('jobTitle');
-        $jobPost->jobDescription = $request->input('jobDescription');
-        $jobPost->applyLink = $request->input('applyLink');
-        $jobPost->jobType = $request->input('jobType');
-        $jobPost->location = $request->input('location');
-        $jobPost->skills = $request->input('skills');
-       
-        $jobPost->experience = $request->input('experience');
-        $jobPost->seniority = $request->input('seniority');
-        $jobPost->salary = $request->input('salary');
-        $jobPost->postingTime = $request->input('postingTime');
-        $jobPost->expairTime = $request->input('expairTime');
+ public function store(Request $request)
+{
+    $jobPost = new PostJob();
+    $jobPost->company_id = $request->input('company_id');
+    $jobPost->user_id = auth()->id();
+    $jobPost->jobTitle = $request->input('jobTitle');
+    $jobPost->jobDescription = $request->input('jobDescription');
+    $jobPost->applyLink = $request->input('applyLink');
+    $jobPost->jobType = $request->input('jobType');
+    $jobPost->location = $request->input('location');
+    $jobPost->skills = $request->input('skills');
+    $jobPost->experience = $request->input('experience');
+    $jobPost->seniority = $request->input('seniority');
+    $jobPost->salary = $request->input('salary');
+    $jobPost->postingTime = $request->input('postingTime');
+    $jobPost->expairTime = $request->input('expairTime');
 
-        $jobPost->save();
-        dd($jobPost);
-    
-        return redirect('showJobs')->with('success', 'Job added successfully');
-    }
+    $jobPost->save();
+    dd($jobPost);
 
+    return redirect('showJobs')->with('success', 'Job added successfully');
+}
     /**
      * Display the specified resource.
      */

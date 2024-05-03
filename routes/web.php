@@ -107,15 +107,11 @@ Route::get("/guide",function(){
 Route::get("/guideExperience",function(){
     return view('guideExperience');
 });
-// Route::get("/companyRegister",function(){
-//     return view('companyRegister');
-// });
+
 Route::get("/resume",function(){
     return view('resume');
 });
-// Route::get("/Post-job",function(){
-//     return view('Post-job');
-// });
+
 Route::get("/showJobs",function(){
     return view('showJobs');
 });
@@ -123,8 +119,6 @@ Route::get("/Top_company",function(){
     return view('Top_company');
 });
 
-// // Coockies Route
-// Route::get('/',[CookieController::class, 'setCookie']);
 
 
 // Localization

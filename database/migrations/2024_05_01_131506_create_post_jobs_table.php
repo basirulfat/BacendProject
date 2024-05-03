@@ -24,9 +24,9 @@ return new class extends Migration
             $table->string('location', 100)->unique(); // Ensured to be unique
             $table->string('skills', 100)->nullable();
             $table->text('logo')->nullable();
-            $table->integer('experience');
+            $table->text('experience');
             $table->string('seniority', 100);
-            $table->decimal('salary', 8, 2)->nullable();
+            $table->text('salary', 10)->nullable();
             $table->date('postingTime')->nullable();
             $table->date('expairTime')->nullable();
         
