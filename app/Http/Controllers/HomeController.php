@@ -7,8 +7,10 @@ use App\Model\User;
 
 class HomeController extends Controller
 {
-   
-    public function redirect(){
+    public function index()
+    {
+        // Add your logic for the index method here
+        // For example, you can return a view or perform some other actions
         if(Auth::id()){
             if(Auth::user()->usertype == '0'){
                 
@@ -22,6 +24,8 @@ class HomeController extends Controller
         else{
             return redirect()->back();
         }
+
     }
+   
 }
 

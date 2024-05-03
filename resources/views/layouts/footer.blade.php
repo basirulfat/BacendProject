@@ -22,7 +22,7 @@
 
         <div class="link-des">
           <a href="{{url('post-job')}}" class="footer-links">Post Job</a>
-          <a href="{{url('CreateCV')}}" class="footer-links">Create CV</a>
+          <a href="{{route('personalInformation.create')}}" class="footer-links">Create CV</a>
           <a href="{{url('Top_company')}}" class="footer-links">Companies Rate</a>
         </div>
       </div>
@@ -32,8 +32,13 @@
           <h3>AfghanTalent</h3>
         </div>
         <div class="link-des">
+<<<<<<< HEAD
+          <a href="{{route('home')}}" class="footer-links">Home</a>
+          <a href="{{url('About')}}" class="footer-links">About</a>
+=======
           <a href="{{url('index')}}" class="footer-links">Home</a>
           <a href="{{url('About')}}" class="footer-links">@lang('msg.about')</a>
+>>>>>>> 94f8f749174a7b4b8d94ecfec00db6a00ee62247
           <a href="{{url('Contact_Us')}}" class="footer-links">Contact Us</a>
           <a href="{{url('FAQ')}}" class="footer-links">FAQ</a>
           <a href="{{url('blog')}}" class="footer-links">blog</a>

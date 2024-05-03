@@ -2,8 +2,8 @@
   <!--=============== HEADER ===============-->
   <header class="header">
     <nav class="nav container">
-      <div class="nav__data">
-        <a href="{{url('index')}}" class="nav__logo">
+      <div class="nav__data" style="margin-left:5em;">
+        <a href="{{route('home')}}" class="nav__logo">
           <i class="ri-open-arm-fill logo-icon"></i> AfghanTalent
         </a>
 
@@ -16,7 +16,11 @@
       <!--=============== NAV MENU ===============-->
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
+<<<<<<< HEAD
+          <li><a href="{{route('home')}}" class="nav__link">Home</a></li>
+=======
           <li><a href="{{url('index')}}" class="nav__link">@lang('msg.home')</a></li>
+>>>>>>> 94f8f749174a7b4b8d94ecfec00db6a00ee62247
 
           <li><a href="{{url('find-job')}}" class="nav__link">@lang('msg.Find job')</a></li>
           <li><a href="{{url('Dashboarded')}}" class="nav__link">Dashboard</a></li>
@@ -72,7 +76,7 @@
             </ul>
           </li>
 
-          <li><a href="{{url('CreateCV')}}" class="nav__link">Create CV</a></li>
+          <li><a href="{{route('personalInformation.create')}}" class="nav__link">Create CV</a></li>
 
           <!-- =============== DROPDOWN 2 ===============-->
           <li class="dropdown__item">
@@ -111,7 +115,7 @@
           
           <!--=============== DROPDOWN 3 ===============-->
           <li class="dropdown__item">
-            <div class="nav__link">
+            <div class="nav__link" style="margin-right:5em;">
               Lang <i class="ri-arrow-down-s-line dropdown__arrow"></i>
             </div>
 

@@ -6,6 +6,11 @@
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+
+  <!--=============== REMIXICONS ===============-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Responsive CV</title>
     <link
@@ -33,15 +38,19 @@
    @include('layouts.header')
     <!--=============== your cv ===============-->
 
+    @foreach($users as $user)
     <div id="General-container">
       <div class="resume__container">
         <div class="left_Side">
           <div class="profileText">
             <div class="imgBx">
-              <img class="photo" src="./assets/images/greeting.jpg" />
+              <img class="photo" src="{{ asset($user->image) }}" />
             </div>
             <br />
-            <h2>Basir Ahmad Ulfat <br /><span>Web Developer</span></h2>
+           
+              <h2>{{ $user->full_name }} <br />{{$user->second_name}} <br> <span>{{$user->military_service_status}}</span></h2>
+              <h2><span>Birth Day::{{$user->date_of_birth}}</span></h2>
+           
           </div>
 
           <div class="contactInfo">
@@ -51,13 +60,13 @@
                 <span class="icon"
                   ><i class="fa fa-phone" aria-hidden="true"></i
                 ></span>
-                <span class="text">+93 731682669</span>
+                <span class="text">{{$user->phone}}</span>
               </li>
               <li>
                 <span class="icon"
                   ><i class="fa fa-envelope-o" aria-hidden="true"></i
                 ></span>
-                <span class="text">basir.ullfat66@gmail.com</span>
+                <span class="text">{{$user->email}}</span>
               </li>
               <li>
                 <span class="icon"
@@ -69,28 +78,45 @@
                 <span class="icon"
                   ><i class="fa fa-linkedin" aria-hidden="true"></i
                 ></span>
-                <span class="text">www.linkedin/me</span>
+                <span class="text">Gender:{{$user->gender}}</</span>
               </li>
               <li>
                 <span class="icon"
                   ><i class="fa fa-map-marker" aria-hidden="true"></i
                 ></span>
-                <span class="text">Kabul, Afghanistan</span>
+                <span class="text">{{$user->country}};</span>
+                <span class="text"> {{$user->city}};</span>
+                <span class="text">{{$user->address}};</span>
               </li>
+               
             </ul>
           </div>
+         
+          @foreach($education as $e)
           <div class="contactInfo education">
-            <h3 class="title">Education</h3>
+          <h3 class="title">Education</h3>
             <ul>
               <li>
-                <h5>2010 - 2013</h5>
-                <h4>Bachelor Degree in Computer Science</h4>
-                <h4>Kandahar University</h4>
+                <h4>School Name: {{$e->school_name}}</h4>
+                <br>
               </li>
               <li>
-                <h5>2007 - 2013</h5>
-                <h4>Bachelor Degree Computer Science</h4>
-                <h4>Kardan University</h4>
+                <h4>University Name:{{$e->university_name}}</h4>
+                <br>
+                <h4>Unversity Type: {{$e->university_type}}</h4>
+               <br>
+                <h4>Field:{{$e->field_of_study}}</h4>
+                <br>
+                <h4>Degree:{{$e->degree_level}}</h4>
+                <br>
+                <h4>Start Year:{{$e->start_year}}</h4>
+                <br>
+                <h4>End Year:{{$e->end_year}}</h4>
+                <br>
+                <h4>Country:{{$e->country}}</h4>
+                <br>
+                <h4>City:{{$e->city}}</h4>
+
               </li>
               <li>
                 <h5>1997 - 2007</h5>
@@ -99,6 +125,7 @@
               </li>
             </ul>
           </div>
+          @endforeach
           <div class="contactInfo language">
             <h3 class="title">Languages</h3>
             <ul>
@@ -131,99 +158,44 @@
           <div class="about">
             <h2 class="title2">Profile</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. <br />
-              <br />Duis aute irure dolor in reprehenderit in voluptate velit
-              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum.
+             {{$e->description}}
             </p>
           </div>
+          @endforeach
+
+          @foreach($Experience as $ex)
           <div class="about">
             <h2 class="title2">Experience</h2>
             <div class="box">
               <div class="year_company">
-                <h5>2020 - Present</h5>
-                <h5>Company Name</h5>
+                <h5>{{$e->start_year}}</h5>
+                <h5>MRC</h5>
               </div>
               <div class="text">
-                <h4>Senior UX Developer</h4>
+                <h4>{{$ex->job_title}}</h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {{$ex->seniority}}
                 </p>
               </div>
             </div>
+          </div> 
+          @endforeach
 
-            <div class="box">
-              <div class="year_company">
-                <h5>2018 - 2020</h5>
-                <h5>Company Name</h5>
-              </div>
-              <div class="text">
-                <h4>UX Developer</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-
-            <div class="box">
-              <div class="year_company">
-                <h5>2016 - 2018</h5>
-                <h5>Company Name</h5>
-              </div>
-              <div class="text">
-                <h4>Junior UX Developer</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-          </div>
+          @foreach($skill as $s)
           <div class="about skills">
             <h2 class="title2">Professionals skills</h2>
             <div class="box">
-              <h4>HTML</h4>
+              <h4>{{$s->skill}}</h4>
+              <div class="percent">
+                <div class="htmlws30"></div>
+              </div>
+              <h4>{{$s->Skill_level}}</h4>
               <div class="percent">
                 <div class="htmlws30"></div>
               </div>
             </div>
-            <div class="box">
-              <h4>CSS</h4>
-              <div class="percent">
-                <div class="cssws45"></div>
-              </div>
-            </div>
-            <div class="box">
-              <h4>JavaScript</h4>
-              <div class="percent">
-                <div class="jsws70"></div>
-              </div>
-            </div>
-            <div class="box">
-              <h4>Photoshop</h4>
-              <div class="percent">
-                <div class="phws40"></div>
-              </div>
-            </div>
-            <div class="box">
-              <h4>Illustrator</h4>
-              <div class="percent">
-                <div class="ilws60"></div>
-              </div>
-            </div>
-            <div class="box">
-              <h4>Adobe XD</h4>
-              <div class="percent">
-                <div class="adw70"></div>
-              </div>
-            </div>
           </div>
+          @endforeach
           <div class="about interest">
             <h2 class="title2">Interests</h2>
             <ul>
@@ -234,10 +206,16 @@
             </ul>
           </div>
         </div>
+       
       </div>
-
+     
+      <a class="btn btn-sm btn-primary" href="{{ route('personalInformation.index') }}" role="button" style="background-color:blue; color:white;position: relative; left: 250px; width:200px;">Edit Your CV</a>
+      <a class="btn btn-sm btn-primary" href="#" role="button" style="background-color:blue; color:white;position: relative; left: 250px; width:200px;">Download CV</a>
       <!--=============== FOOTER ===============-->
       @include('layouts.footer')
+
+
+      
     </div>
 
     <!--=============== MAIN JS ===============-->
