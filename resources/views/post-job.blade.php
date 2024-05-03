@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="{{asset('/')}}">
     <title>Post a Job</title>
     <!--=============== Css links ===============-->
     <link rel="stylesheet" href="assets/css/companyRegister.css" />
@@ -23,7 +24,8 @@
     <h1 class="post_title">Here Is The Place For Your Announcement</h1>
     <div class="container-post-job">
       <h1>Post a Job</h1>
-      <form id="jobPostForm">
+      <form action="{{ route('postjob.store') }}" method="POST" enctype="multipart/form-data">
+         @csrf 
         <div class="form-group">
           <label for="jobTitle">Job Title:</label>
           <input type="text" id="jobTitle" name="jobTitle" required />
@@ -86,7 +88,7 @@
         </div>
 
         <div class="form-group">
-          <label for="postingTime">Expaires Time:</label>
+          <label for="expaireTime">Expaires Time:</label>
           <input
             type="datetime-local"
             id="expaireTime"
@@ -94,7 +96,8 @@
             required
           />
         </div>
-        <button type="submit">Submit Job</button>
+        <!-- <button type="submit">Submit Job</button> -->
+        <input type="submit" value="submit">
       </form>
     </div>
     <!--=============== FOOTER ===============-->

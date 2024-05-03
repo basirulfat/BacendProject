@@ -44,7 +44,7 @@
               <!--=============== DROPDOWN SUBMENU ===============-->
               <li class="dropdown__subitem">
                 <div class="dropdown__link">
-                  <a href="{{url('post-job')}}"><i class="ri-megaphone-fill"></i> post a Job</a>
+                  <a href="{{url('Post-job')}}"><i class="ri-megaphone-fill"></i> post a Job</a>
                   <!-- <input class="btn" type="search" placeholder="Search" /> -->
                   <i class="ri-add-line dropdown__add"></i>
                 </div>

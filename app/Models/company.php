@@ -14,13 +14,24 @@ class company extends Model
 
 protected $fillable = [
     'owner',
-    'company name',
-    'pashto name',
+    'company_name',
     'phone',
     'email',
-    'company size',
+    'image',
+    'company_size',
     'position',
 ];
+    /**
+     * Get the job posts associated with the company.
+     */
+    public function jobPosts()
+    {
+        return $this->hasMany(PostJob::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 
 

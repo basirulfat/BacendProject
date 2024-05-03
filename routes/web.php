@@ -1,10 +1,11 @@
 <?php
 
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PostJobController;
 
 Route::get('/home', [HomeController::class, 'redirect']);
 Route::middleware([
@@ -43,6 +44,25 @@ Route::get("/category",function(){
 // Admin panal
 
 /*========= post job  =============*/
+// Route::resource('postjob', PostJobController::class);
+// Route::resource('postjob',PostJobController::class)->middleware('auth');
+Route::resource('/postjob', PostJobController::class);
+
+
+
+ Route::get('/companyRegister', function () {
+    return view('companyRegister');
+});
+
+Route::get('/Post-job', function () {
+    if (!Auth::check()) {
+        return redirect('companyRegister');
+    }
+     else
+      {
+        return view('Post-job');
+    }
+    });
 
 
 /*========= post job  =============*/
@@ -86,15 +106,15 @@ Route::get("/guide",function(){
 Route::get("/guideExperience",function(){
     return view('guideExperience');
 });
-Route::get("/companyRegister",function(){
-    return view('companyRegister');
-});
+// Route::get("/companyRegister",function(){
+//     return view('companyRegister');
+// });
 Route::get("/resume",function(){
     return view('resume');
 });
-Route::get("/post-job",function(){
-    return view('post-job');
-});
+// Route::get("/Post-job",function(){
+//     return view('Post-job');
+// });
 Route::get("/showJobs",function(){
     return view('showJobs');
 });

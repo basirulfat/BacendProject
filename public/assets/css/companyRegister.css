@@ -69,12 +69,14 @@ body {
 #post-job #post-job-form {
     width: 40%;
     height: 80vh;
-    background-color: var(--light);
+    background-color: var(--low-gray);
     border-radius: 10px;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 #post-job #post-job-form h2 {
     font-size: var(--h2-font-size);
@@ -85,6 +87,43 @@ body {
     font-family: var(--body-font);
     font-size: 0.8rem;
 }
+/* upload image */
+.file-upload {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.file-upload__label {
+    font-size: 1rem;
+    transition: all 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 7vh;
+    background-color: var(--low-gray);
+    text-align: center;
+    line-height: 7vh;
+    cursor: pointer;
+}
+
+.file-upload__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+/* upload image */
 #post-job #post-job-form .name_input {
     display: flex;
     flex-direction: column;
@@ -99,6 +138,8 @@ body {
 #post-job #post-job-form .name_input input {
     background: var(--low-gray);
     border-radius: 5px;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 #post-job #post-job-form .name_input input:focus {
     border: 1px solid var(--blue);
@@ -123,6 +164,8 @@ body {
 .selection {
     background: var(--low-gray);
     border-radius: 5px;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 #post-job #post-job-form .comp_input_wrapper .comp_input .selection {
     background: var(--low-gray);
@@ -139,6 +182,8 @@ body {
     cursor: pointer;
     width: 40%;
     margin: 0 auto;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 /* Media Queries */
 
@@ -233,7 +278,10 @@ body {
     cursor: pointer;
 }
 #job-post-contianer .first_carts_wrapper .first_cart:hover {
-    box-shadow: 0 0 10px rgba(42, 120, 228, 0.6);
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+    background-color: var(--low-gray);
+    border-radius: 5px;
 }
 #job-post-contianer .first_carts_wrapper .first_cart .icon-and-title {
     display: flex;
@@ -297,6 +345,8 @@ body {
     padding: 1rem;
     font-family: var(--body-font);
     cursor: pointer;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 
 /* Media Queries */
@@ -399,6 +449,8 @@ body {
 .hide__form .hide_name_input input {
     background: var(--low-gray);
     border-radius: 5px;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 .hide__form .hide_name_input input:focus {
     border: 1px solid var(--blue);
@@ -438,6 +490,8 @@ body {
     width: 30%;
     margin: 0 auto;
     display: inline-block;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 .hidden {
     display: none;
@@ -535,7 +589,8 @@ body {
     width: 70%;
     border-radius: 50px;
     padding: 0.8rem;
-    border: 1px solid var(--gray);
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 ::placeholder {
     color: var(--gray);
@@ -564,7 +619,10 @@ body {
 }
 #clients .client_cart_wrapper .client_cart:hover {
     color: var(--blue);
-    box-shadow: 0 0 10px rgba(42, 120, 228, 0.6);
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -10px -10px 5px rgba(255, 255, 255, 0.5);
+    background-color: var(--low-gray);
+    border-radius: 5px;
 }
 #clients .client_cart_wrapper .client_cart span i {
     font-size: 3rem;
@@ -608,6 +666,8 @@ body {
     border-radius: 50px;
     cursor: pointer;
     font-size: 1rem;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 /* Media Queries */
 
@@ -753,6 +813,8 @@ body {
     color: var(--light);
     display: inline-block;
     cursor: pointer;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 
 /* Media Queries */
@@ -823,8 +885,10 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
     border-radius: 10px;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 #Agent .agent_pro i {
     font-size: 1.5rem;

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/companyRegister.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
      <!--=========== bootstrap ==========-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
 
     <title>Register Company</title>
   </head>
@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-      <form id="post-job-form" action="/company" method="POST" onsubmit="return validateForm()">
+      <form id="post-job-form" action="/company" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
       @csrf
         <h2>Fill This Form To Get Free Demo:</h2>
         <!-- @if(session()->has('success'))
@@ -93,13 +93,22 @@
             <small class="error-message"></small>
           </div>
           <div class="comp_input">
-            <label for="">Your Company Name(Pashto)</label>
-            <input
-              type="text"
-              class="btn selection username"
-              placeholder="Company Name in Pashto"
-              name="pashto_name"
-            />
+            <!-- img -->
+            <div>
+                  <label for="image-upload">Logo</label>
+                  <div class="file-upload">
+                      <label for="image-upload" class="file-upload__label">
+                          Upload Logo🏰
+                      </label>
+                      <input
+                          id="image-upload"
+                          class="file-upload__input"
+                          type="file"
+                          name="image"
+                      />
+                  </div>
+              </div>
+            <!-- img -->
             <small class="error-message"></small>
             <label for="">Email</label>
             <input
@@ -197,7 +206,7 @@
       </div>
     </section>
     <!--===============HIDE FORM =======-->
-    <form class="hidden hide__form" action="/company" method="POST">
+    <form class="hidden hide__form" action="/company" method="POST" enctype="multipart/form-data">
       @csrf
       <button class="btn hide_close"><i class="ri-close-line"></i></button>
       <h2>Fill This Form To Get Free Demo:</h2>
@@ -232,12 +241,22 @@
         </select>
         </div>
         <div class="comp_input">
-          <label for="">Your Company Name(Pashto)</label>
-          <input
-            type="text"
-            class="btn selection username"
-            placeholder="Company Name in Pashto" name="pashto_name"
-          />
+            <!-- img -->
+            <div>
+                  <label for="image-upload">Logo</label>
+                  <div class="file-upload">
+                      <label for="image-upload" class="file-upload__label">
+                          Upload Logo🏰
+                      </label>
+                      <input
+                          id="image-upload"
+                          class="file-upload__input"
+                          type="file"
+                          name="image"
+                      />
+                  </div>
+              </div>
+            <!-- img -->
           <label for="">Email</label>
           <input
             type="text"

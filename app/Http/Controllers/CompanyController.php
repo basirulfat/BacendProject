@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\company;
+use App\Models\User;
+use App\Models\PostJob;
+
 
 class CompanyController extends Controller
 {
@@ -27,32 +30,40 @@ class CompanyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'owner' => 'required|max:100',
-            'company_name' => 'nullable|max:5000',
-            'pashto_name' => 'nullable|max:150',
-            'phone' => 'required|max:100',
-            'email' => 'required|email|unique:companies,email|max:100',
-            'company_size' => 'nullable|max:100',
-            'position' => 'nullable',
-        ]);
-    
-        // Create a new company record
-        $company = new Company;
-        $company->owner = $request->input('owner');
-        $company->company_name = $request->input('company_name');
-        $company->pashto_name = $request->input('pashto_name');
-        $company->phone = $request->input('phone');
-        $company->email = $request->input('email');
-        $company->company_size = $request->input('company_size');
-        $company->position = $request->input('position');
-        // Set other attributes as needed
-    
-        $company->save();
-        return redirect()->back()->with('success', 'Company added successfully');
+public function store(Request $request)
+{
+    $request->validate([
+        'owner' => 'required|max:100',
+        'company_name' => 'nullable|max:5000',
+        'phone' => 'required|max:100',
+        'email' => 'required|email|unique:companies,email|max:100',
+        'company_size' => 'nullable|max:100',
+        'position' => 'nullable',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Add image validation rules
+    ]);
+
+    // Create a new company record
+    $company = new Company;
+    $company->owner = $request->input('owner');
+    $company->company_name = $request->input('company_name');
+    $company->phone = $request->input('phone');
+    $company->email = $request->input('email');
+    $company->company_size = $request->input('company_size');
+    $company->position = $request->input('position');
+
+    // Handle image upload if a file is provided
+    if ($request->hasFile('image')) {
+        $image = $request->file('image');
+        $imagePath = $image->store('images', 'public'); // Store the image file in the "public/images" directory
+        $company->image = $imagePath;
     }
+
+    // Save the company record
+    $company->save();
+    
+
+    return redirect('Post-job');
+}
 
     /**
      * Display the specified resource.

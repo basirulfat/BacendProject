@@ -60,13 +60,6 @@
                 />
               </div>
               <div>
-              <label for="">Your Company Name(Pashto)</label>
-                <input
-                  type="text"
-                  class="btn selection username" name="pashto_name"
-                />
-              </div>
-              <div>
               <label for="">Phone</label>
                 <input
                   type="text"
@@ -99,20 +92,20 @@
                   class="btn selection" name="position"
                 />
               </div>
-              <!-- <div>
-                <label for="author">Img:</label>
-                <div class="file-upload">
-                  <label for="image-upload" class="file-upload__label">
-                    Upload Image
-                  </label>
-                  <input
-                    id="image-upload"
-                    class="file-upload__input"
-                    type="file"
-                    name="image-upload"
-                  />
-                </div>
-              </div> -->
+              <div>
+                  <label for="image-upload">Img:</label>
+                  <div class="file-upload">
+                      <label for="image-upload" class="file-upload__label">
+                          Upload Image
+                      </label>
+                      <input
+                          id="image-upload"
+                          class="file-upload__input"
+                          type="file"
+                          name="image"
+                      />
+                  </div>
+              </div>
               <br />
               <!-- <button type="button">Submit</button> -->
               <input class="btn-modal" type="submit" value="Submit" />
@@ -124,7 +117,7 @@
         <div class="table">
           <div class="head">
             <h2>Table users</h2>
-            <form action="{{ route('company.search') }} " method="get">
+            <form action="{{ route('company.search') }} " method="get" enctype="multipart/form-data">
           <div class="search-bar">
             <input type="text" name="search" class="search-input" placeholder="Search For" />
             <button type="submit" class="search-button">
@@ -143,6 +136,7 @@
             <th>Email</th>
             <th>Address</th>
             <th>Phone</th>
+            <th>Logo</th>
             <th>Action</th>
             @forelse($company as $company)
               <tr>
@@ -152,6 +146,7 @@
                   <td>{{$company->email}}</td>
                   <td>{{$company->position}}</td>
                   <td>{{$company->phone}}</td>
+                  <td><img src="{{ asset('storage/' . $company->image) }}" alt=""></td>
                   <td>
                     <!-- <a class="actionButton editButton" href="#"><i class="ri-image-edit-fill"></i></a> -->
                     <!-- <a class="actionButton deleteButton" href="#"><i class="ri-delete-bin-5-fill"></i></a> -->

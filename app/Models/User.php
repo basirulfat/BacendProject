@@ -64,4 +64,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+        /**
+     * Get the job posts created by the user.
+     */
+    public function jobPosts()
+    {
+        return $this->hasMany(PostJob::class);
+    }
+    public function company()
+    {
+        return $this->hasMany(Company::class);
+    }
 }
