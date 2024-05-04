@@ -16,9 +16,13 @@
       <!--=============== NAV MENU ===============-->
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
+<<<<<<< HEAD
           <li><a href="{{route('home')}}" class="nav__link">Home</a></li>
+=======
+          <li><a href="{{url('index')}}" class="nav__link">@lang('msg.home')</a></li>
+>>>>>>> 94f8f749174a7b4b8d94ecfec00db6a00ee62247
 
-          <li><a href="{{url('find-job')}}" class="nav__link">Find job</a></li>
+          <li><a href="{{url('find-job')}}" class="nav__link">@lang('msg.Find job')</a></li>
           <li><a href="{{url('Dashboarded')}}" class="nav__link">Dashboard</a></li>
 
           <!--=============== DROPDOWN 1 ===============-->
@@ -35,16 +39,17 @@
               </li>
 
               <li>
-                <a href="{{url('post-job')}}" class="dropdown__link">
-                  <i class="ri-megaphone-fill"></i> Post aJob
+                <a href="{{url('companyRegister')}}" class="dropdown__link">
+
+                  <i class="ri-registered-line"></i> RegisterCompany
                 </a>
               </li>
 
               <!--=============== DROPDOWN SUBMENU ===============-->
               <li class="dropdown__subitem">
                 <div class="dropdown__link">
-                  <a href="#"><i class="ri-search-line"></i></a>
-                  <input class="btn" type="search" placeholder="Search" />
+                  <a href="{{url('post-job')}}"><i class="ri-megaphone-fill"></i> post a Job</a>
+                  <!-- <input class="btn" type="search" placeholder="Search" /> -->
                   <i class="ri-add-line dropdown__add"></i>
                 </div>
 
@@ -116,19 +121,19 @@
 
             <ul class="dropdown__menu">
               <li>
-                <a href="#" class="dropdown__link">
+                <a href="locale/en" class="dropdown__link">
                   <i class="ri-global-line"></i> English
                 </a>
               </li>
 
               <li>
-                <a href="#" class="dropdown__link">
+                <a href="locale/ps" class="dropdown__link">
                   <i class="ri-exchange-funds-line"></i> Pashto
                 </a>
               </li>
 
               <li>
-                <a href="#" class="dropdown__link">
+                <a href="locale/fa" class="dropdown__link">
                   <i class="ri-exchange-funds-line"></i>Dari
                 </a>
               </li>

@@ -19,6 +19,11 @@ for (var i = 0; i < elements.length; i++) {
         modal.style.display = "block";
     };
 }
+/*========================== remove  alert message ===========================*/
+function removeSuccessMessage() {
+    var successMessage = document.getElementById("success-message");
+    successMessage.remove();
+}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {

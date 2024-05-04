@@ -1,8 +1,10 @@
 <?php
 
 
+use App\Http\Controllers\LocalControler;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PersonalInformationController;
@@ -35,10 +37,42 @@ Route::middleware([
     })->name('dashboard');
 });
 
+<<<<<<< HEAD
 
 
 
+=======
+/*=================== Admin panal =======================*/
+
+          /*---Users---*/
+Route::resource('/user', AdminController::class);
+Route::get('/user', [AdminController::class, 'search'])->name('user.search');
+
+
+
+         /*--- company---*/
+ Route::resource('/company', CompanyController::class);
+ Route::get('/company', [CompanyController::class, 'search'])->name('company.search');
+ 
+
+
+Route::get("/posts",function(){
+    return view('admin.posts');
+});
+
+Route::get("/category",function(){
+    return view('admin.category');
+});
+
+
+>>>>>>> 94f8f749174a7b4b8d94ecfec00db6a00ee62247
 // Admin panal
+
+/*========= post job  =============*/
+
+
+/*========= post job  =============*/
+
 
 
 
@@ -74,16 +108,35 @@ Route::get("/guide",function(){
 Route::get("/guideExperience",function(){
     return view('guideExperience');
 });
+Route::get("/companyRegister",function(){
+    return view('companyRegister');
+});
+<<<<<<< HEAD
+
+=======
+Route::get("/resume",function(){
+    return view('resume');
+});
 Route::get("/post-job",function(){
     return view('post-job');
 });
-
+>>>>>>> 94f8f749174a7b4b8d94ecfec00db6a00ee62247
 Route::get("/showJobs",function(){
     return view('showJobs');
 });
 Route::get("/Top_company",function(){
     return view('Top_company');
 });
+<<<<<<< HEAD
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+=======
+
+// // Coockies Route
+// Route::get('/',[CookieController::class, 'setCookie']);
+
+
+// Localization
+Route::get('/locale/{lang}', [LocalControler::class,'setlocale']);
+>>>>>>> 94f8f749174a7b4b8d94ecfec00db6a00ee62247
