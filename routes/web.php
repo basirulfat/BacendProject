@@ -4,8 +4,27 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PersonalInformationController;
+use App\Http\Controllers\EducationController;
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\SkillController;
+use App\Http\Controllers\ResumeController;
 
+
+
+
+
+
+Auth::routes();
+// Route::get('/home', [RegisterController::class, 'redirect']);
+Route::get('/home', [LoginController::class, 'redirect']);
 Route::get('/home', [HomeController::class, 'redirect']);
+Route::resource('personalInformation',PersonalInformationController::class)->middleware('auth');
+Route::resource('education',EducationController::class)->middleware('auth');
+Route::resource('experience',ExperienceController::class)->middleware('auth');
+Route::resource('skill',SkillController::class)->middleware('auth');
+Route::get('resume',[ResumeController::class,'index'])->name('resume.index')->middleware('auth');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -16,32 +35,13 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// Admin panal
-Route::get('/users',[AdminController::class,'showUsers']);
-Route::post('/users', [AdminController::class, 'add_user']);
-Route::get('/users/{id}', [AdminController::class, 'delete_user']);
 
-// Route::get("/home",function(){
-//     return view('admin.home');
-// });
 
-Route::get("/users",function(){
-    return view('admin.myusers');
-});
 
-Route::get("/posts",function(){
-    return view('admin.posts');
-});
-
-Route::get("/category",function(){
-    return view('admin.category');
-});
 // Admin panal
 
 
-Route::get("/",function(){
-    return view('index');
-});
+
 
 Route::get("/About",function(){
     return view('About');
@@ -55,9 +55,7 @@ Route::get("/Companeis_Rate",function(){
 Route::get("/Contact_Us",function(){
     return view('Contact_Us');
 });
-Route::get("/CreateCV",function(){
-    return view('CreateCV');
-});
+
 Route::get("/Dashboarded",function(){
     return view('Dashboarded');
 });
@@ -79,12 +77,13 @@ Route::get("/guideExperience",function(){
 Route::get("/post-job",function(){
     return view('post-job');
 });
-Route::get("/resume",function(){
-    return view('resume');
-});
+
 Route::get("/showJobs",function(){
     return view('showJobs');
 });
 Route::get("/Top_company",function(){
     return view('Top_company');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

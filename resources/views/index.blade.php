@@ -26,7 +26,7 @@
         <h2>We provid the best oppertunities for you</h2>
         <div class="registration__btn">
           <a class="btn head__btn" href="{{url('find-job')}}">Apply for job</a>
-          <a class="btn head__btn" href="{{url('CreateCV')}}">Create Your CV</a>
+          <a class="btn head__btn" href="{{route('personalInformation.create')}}">Create Your CV</a>
         </div>
       </div>
       <div class="second__img img"></div>

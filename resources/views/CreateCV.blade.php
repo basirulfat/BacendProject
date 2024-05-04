@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <base href="{{ asset('/') }}">
   <!--=============== REMIXICONS ===============-->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
   <!-- <script defer type="module" src="./assets/js/main.js"></script> -->
@@ -53,24 +54,40 @@
 
 
   <!-- Personal information section started -->
-  <section id="personal-information-section">
+  
+  <form action="/personalInformation" enctype="multipart/form-data" method="POST">
+   @csrf
+   @if(session()->has('success'))
+       <p>{{ session('success') }}</p>
+   @endif
+
+   @if($errors->any())
+           <ul>
+               @foreach ($errors->all() as $error)
+                     <li style="color:red;">{{ $error }}</li>
+               @endforeach
+           </ul>
+   @endif
+   <section id="personal-information-section">
     <h5><i class="fa-solid fa-user"></i>Enter your Personal Information</h5>
 
     <div id="sub-info">
       <div class="sub-infor-section">
-        <form action="" id="form" class="form" autocomplete="off">
-          <h2>Enter Your Full Infromation</h2>
+          <h2>Enter Your Full Information</h2>
           <div id="divide-section">
             <div class="divid-child">
               <div class="form-control-2">
                 <label for="username">Full Name</label>
-                <input type="text" id="username" placeholder="Enter FullName" />
-                <small>Error message</small>
+                <input type="text" id="username" name="full_name" placeholder="Enter FullName" />
+                @error('full_name')
+                 <small class="text-danger" style="color:red;">{{ $message }}</small>
+                @enderror
+                <!-- <small>Error message</small> -->
               </div>
 
               <div class="form-control-2">
-                <label for="username">Secound Name</label>
-                <input type="text" id="secondname" placeholder="Enter Secound Name" />
+                <label for="username">Second Name</label>
+                <input type="text" id="secondname" name="second_name" placeholder="Enter Second Name" />
                 <small>Error message</small>
               </div>
             </div>
@@ -78,43 +95,39 @@
 
               <div class="form-control-2">
                 <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Enter email" />
+                <input type="text" id="email" name="email" placeholder="Enter email" />
                 <small>Error message</small>
               </div>
 
               <div class="form-control-2">
                 <label for="number">Phone</label>
-                <input type="number" id="number" placeholder="Enter Phone" />
+                <input type="number" id="number" name="phone" placeholder="Enter Phone" />
                 <small>Error message</small>
               </div>
 
               <div class="form-control-2">
                 <label for="Address">Address</label>
-                <input type="text" id="address" placeholder="Enter Address" />
+                <input type="text" id="address" name="address" placeholder="Enter Address" />
                 <small>Error message</small>
               </div>
             </div>
           </div>
-
-        </form>
       </div>
-
 
       <div id="image-section">
         <h4>Please Upload Your Image</h4>
-        <form>
-          <label for="input-file" id="drop-area">
-            <input type="file" accept="image/*" id="input-file" hidden>
-            <div id="img-view" >
-                <img src="assets/images/icon.png" alt="">
-                <p>Drag and drop or click here <br> to upload image</p>
-                <span>Upload any image from desktop</span>
-            </div>
-           </label>
-          <input id="Upload-btn" type="submit" value="Upload" />
-        </form>
+        <label for="input-file" id="drop-area">
+          <input type="file" accept="image/*" name="image" id="input-file" hidden>
+          <div id="img-view" >
+              <img src="assets/images/icon.png" alt="">
+              <p>Drag and drop or click here <br> to upload image</p>
+              <span>Upload any image from desktop</span>
+          </div>
+        </label>
+        <input id="Upload-btn" type="submit" value="Upload" />
       </div>
     </div>
+    
     <div id="gender-section" >
       <h4>Gender</h4>
       <label for="male">Male</label>
@@ -127,18 +140,17 @@
       <div class="form-control-2" >
         <div>
           <label for="Date">Date of Birth</label>
-          <input type="date" id="date" />
+          <input type="date" id="date" name="date_of_birth" />
           <small>Error message</small>
         </div>
 
         <div>
-          <label for="">Militry Service Status</label>
-          <select id="status_prfile" name="country">
-            <option></option>
-            <option value="usa">Desiging</option>
-            <option value="canada">Develpment</option>
-            <option value="uk">Anaylisig</option>
-            <option value="australia">Managment</option>
+          <label for="">Military Service Status</label>
+          <select id="status_prfile" name="military_service_status">
+            <option value="Designing">Designing</option>
+            <option value="Development">Development</option>
+            <option value="Analyzing">Analyzing</option>
+            <option value="Management">Management</option>
           </select>
           <small>Error message</small>
         </div>
@@ -147,24 +159,26 @@
       <div class="form-control-2">
         <div>
           <label for="country">Country</label>
-          <input type="text" id="country" />
+          <input type="text" id="country" name="country"/>
           <small>Error message</small>
         </div>
 
         <div>
           <label for="City">City</label>
-          <input type="text" id="text" />
+          <input type="text" id="text" name="city"/>
           <small>Error message</small>
         </div>
 
         <div>
+          <input class="btn-bt" type="submit" value="Submit">
           <button class="btn-bt" type="button" name="Next" onclick="changeColor()">Next</button>
         </div>
       </div>
     </div>
-
   </section>
-
+</form>
+<!-- Educaiton -->
+<form action="/education" enctype="multipart/form-data" method="POST" id="form" class="form" autocomplete="off">
   <section id="education-section">
     <h5>
       <i class="fa-solid fa-graduation-cap"></i>Enter Your Education
@@ -173,30 +187,30 @@
 
     <div id="sub-info">
       <div class="sub-infor-section">
-        <form id="form" class="form" autocomplete="off">
+          @csrf
           <h2>Enter Your Full Education Career</h2>
           <div id="divide-section">
             <div class="divid-child">
               <div class="form-control">
-                <label for="username">School Name</label>
-                <input type="text" id="username" placeholder="Enter School Name" />
+                <label for="school_name">School Name</label>
+                <input type="text" id="username" name="school_name" placeholder="Enter School Name" />
                 <small>Error message</small>
               </div>
 
               <div class="form-control">
                 <label for="">Field of Study</label>
-                <select id="status_prfile" name="field of Study">
+                <select id="status_prfile" name="field_of_study">
                   <option value="engeenring">engeenring</option>
                   <option value="development">Develpment</option>
                   <option value="Anaylising">Anaylisig</option>
-                  <option value="australia">Managment</option>
+                  <option value="Managment">Managment</option>
                 </select>
                 <small>Error message</small>
               </div>
 
               <div class="form-control">
                 <label for="">Degree Level</label>
-                <select id="status_prfile" name="degree level">
+                <select id="status_prfile" name="degree_level">
                   <option value="jonier">jonier</option>
                   <option value="senior">Senior</option>
                   <option value="expert">expert</option>
@@ -206,10 +220,10 @@
               </div>
               <div class="form-control-2">
                 <label for="s-year">Start-Year</label>
-                <input type="date" id="start-year" />
+                <input type="date" id="start-year" name="start_year" />
                 <small>Error message</small>
                 <label for="year">End-Year</label>
-                <input type="date" id="end-year" />
+                <input type="date" id="end-year" name="end_year"/>
                 <small>Error message</small>
               </div>
             </div>
@@ -217,14 +231,14 @@
             <div class="divid-child">
 
               <div class="form-control">
-                <label for="username">University Name</label>
-                <input type="text" id="username" placeholder="Enter university" />
+                <label for="university_name">University Name</label>
+                <input type="text" id="username" name="university_name" placeholder="Enter university" />
                 <small>Error message</small>
               </div>
 
               <div class="form-control">
-                <label for="">University Type</label>
-                <select id="status_prfile" name="university Type">
+                <label for="university_type">University Type</label>
+                <select id="status_prfile" name="university_type">
                   <option value="public">Public</option>
                   <option value="privite">Privite</option>
                   <option value="none-gevernomental">none-gevernomental</option>
@@ -234,83 +248,92 @@
 
               <div class="form-control-2">
                 <label for="country">Country</label>
-                <input type="text" id="country" />
+                <input type="text" id="country" name="country"/>
                 <small>Error message</small>
                 <label for="City">City</label>
-                <input type="text" id="text" />
+                <input type="text" id="text" name="city"/>
                 <small>Error message</small>
 
               </div>
 
               <div class="form-control-2">
-                <label for="Desciption">Desciption (Optional)</label>
-                <textarea id="textarea-section" name="" id="" cols="30" rows="10"></textarea>
+                <label for="description">Desciption (Optional)</label>
+                <textarea id="textarea-section" id="description" cols="30" rows="10" name="description"></textarea>
               </div>
 
               <div id="buttion-1">
-                <button class="btn-1" type="submit" name="Back">Back</button>
+                
+       
+                  
+           
+              
+             
+                <a class="btn-bt" style="width:200px" href="{{route('education.create')}}">Add Another Education</a>
                 <div>
-                  <button class="btn-1" type="submit" name="Save" onclick="validateForm()">Save</button>
+                  <!-- <button class="btn-1" type="submit" name="Save" onclick="validateForm()">Save</button> -->
+                  <input class="btn-bt" type="submit" value="Submit">
                   <button class="btn-1" type="button" name="Next" onclick="changeColor2()">Next</button>
                 </div>
               </div>
             </div>
-        </form>
-  </section>
+     
+      </section>
+   </form>
 
   <!-- Education section ended -->
 
 
   <!-- Experence section started -->
+<form action="/experience" enctype="multipart/form-data" method="POST">
+  @csrf
   <section id="expereince">
 
     <h5><i class="fa-solid fa-briefcase"></i>Enter Your Work Experience</h5>
     <h3>What jobs do you like to work in?</h5>
-
-
-
-      <form action="">
         <div id="divided-section"></div>
         <p class="form-control">Please enter at least 1 job title.</p>
         <div class="form-1">
-          <input type="text" id="username" placeholder="Job Title" />
+          <input type="text" id="username" placeholder="Job Title" name="job_title" />
           <small></small>
         </div>
 
         <div class="form-control">
         <label for="optionsInput">Seniority Level</label>
-
-          <input type="text" id="optionsInput" class="options-input" placeholder="Seniority">
+          <input type="text" name="seniority" id="optionsInput" class="options-input" placeholder="Seniority">
         </div>
         <div class="form-control">
           <label for="optionsInput">Location</label>
-          <input type="text" id="optionsInput" class="options-input">
+          <input type="text" id="optionsInput" name="location" class="options-input">
         </div>
-      </form>
+    
 
       <div id="buttion-1">
 
         <div>
-          <button class="btn-1" type="submit" name="back">Back</button>
-          <button class="btn-1" type="submit" name="add">Add</button>
+                 
+        
         </div>
         <div>
-          <button class="btn-1" type="button" name="Save">Save</button>
+       
+          <input class="btn-bt" type="submit" value="Submit">
           <button class="btn-1" type="button" name="Next" onclick="changeColor3()">Next</button>
         </div>
       </div>
   </section>
+  </form>
 
-  <section id="skill-section">
+ <form action="/skill" enctype="multipart/form-data" method="POST">
+  @csrf
+ <section id="skill-section">
     <div class="form-control">
       <label for="username">Skill</label>
-      <input type="text" id="username" placeholder="Enter Skill" />
+      <input type="text" id="username" placeholder="Enter Skill" name="skill"/>
     </div>
 
     <div class="form-control">
       <label for="">Skill Level</label>
-      <select id="status_prfile" name="Skill-level" placeholder="Skill Level">
-        <option value="bisic">Basic</option>
+      <select id="status_prfile" name="Skill_level" placeholder="Skill Level">
+        <option value="Basic">Basic</option>
         <option value="intermidate">Intermidite</option>
         <option value="advance">Advance</option>
         <option value="expert">Expert</option>
@@ -318,10 +341,16 @@
 
     </div>
     <div>
-      <button id="btn-of-skill" class="btn-1" type="submit" name="Save" onclick="changeColor4() ">Add</button>
+      <!-- <button id="btn-of-skill" class="btn-1" type="submit" name="Save" onclick="changeColor4() ">Add</button> -->
+      <!-- <a class="btn-bt" style="width:200px" href="#">Add</a> -->
+
+                  <!-- <button class="btn-bt" type="button" name="Next">Edit</button> -->
+                  <!-- <button class="btn-bt" type="button" name="Next" style="background-color:red">Delete</button> -->
+      <input class="btn-bt" type="submit" value="Submit" onclick="changeColor4()">
       <a href="{{url('resume')}}"><button class="btn-1  SeeyourCv" type="button" name="Next">See Your CV</button></a>
     </div>
   </section>
+ </form>
 
   <!--=============== FOOTER ===============-->
  @include('layouts.footer')

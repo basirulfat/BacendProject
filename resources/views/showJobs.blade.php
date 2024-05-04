@@ -21,13 +21,13 @@
     <div class="job">
       <div class="header">
         <div class="logo">
-          <a href="{{url('index')}}">
+          <a href="{{route('home')}}">
             <i class="ri-open-arm-fill logo-icon"></i>
             AfghanTalent
           </a>
         </div>
         <div class="header-menu">
-          <a href="{{url('index')}}" class="active">Home</a>
+          <a href="{{route('home')}}" class="active">Home</a>
           <a href="{{url('find-job')}}">find job</a>
           <a href="{{url('post-job')}}">post job</a>
         </div>
