@@ -1,3 +1,10 @@
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
@@ -42,6 +49,10 @@
                 <x-button class="ms-4">
                     {{ __('Log in') }}
                 </x-button>
+                
+            </div>
+            <div>
+                <a style="border:1px solid black;border-radius: 5px;color:black;padding:0.5rem; position:relative;left:80px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);" href="{{route('google-auth')}}"><i class="fa-brands fa-google" style="color:red;padding:1rem"></i>Login With Google Account</a>
             </div>
         </form>
     </x-authentication-card>
