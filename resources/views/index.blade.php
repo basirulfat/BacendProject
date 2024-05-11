@@ -25,13 +25,10 @@
         <h1>Find your job here</h1>
         <h2>We provid the best oppertunities for you</h2>
         <div class="registration__btn">
-<<<<<<< HEAD
+
           <a class="btn head__btn" href="{{url('find-job')}}">Apply for job</a>
           <a class="btn head__btn" href="{{route('personalInformation.create')}}">Create Your CV</a>
-=======
-          <a class="btn head__btn" href="{{url('find-job')}}">@lang('msg.Apply for job')</a>
-          <a class="btn head__btn" href="{{url('CreateCV')}}">Create Your CV</a>
->>>>>>> 94f8f749174a7b4b8d94ecfec00db6a00ee62247
+
         </div>
       </div>
       <div class="second__img img"></div>

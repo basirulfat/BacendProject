@@ -15,7 +15,7 @@ class AdminController extends Controller
         $user = User::all();
         // dd($user);
         return view('admin.myusers', compact('user'));
-
+        
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactFormController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LocalControler;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,7 @@ use App\Http\Controllers\ResumeController;
 Auth::routes();
 // Route::get('/home', [RegisterController::class, 'redirect']);
 // Route::get('/home', [LoginController::class, 'redirect']);
-Route::get('/home', [HomeController::class, 'redirect']);
+Route::get('/home', [HomeController::class, 'redirect'])->name('home.redirect');
 Route::resource('personalInformation',PersonalInformationController::class)->middleware('auth');
 Route::resource('education',EducationController::class)->middleware('auth');
 Route::resource('experience',ExperienceController::class)->middleware('auth');
@@ -64,8 +65,6 @@ Route::get("/category",function(){
 // Admin panal
 
 /*========= post job  =============*/
-// Route::resource('postjob', PostJobController::class);
-// Route::resource('postjob',PostJobController::class)->middleware('auth');
 Route::resource('/postjob', PostJobController::class);
 
 
@@ -96,12 +95,6 @@ Route::get("/About",function(){
 });
 Route::get("/blog",function(){
     return view('blog');
-});
-Route::get("/Companeis_Rate",function(){
-    return view('Companeis_Rate');
-});
-Route::get("/Contact_Us",function(){
-    return view('Contact_Us');
 });
 
 Route::get("/Dashboarded",function(){
@@ -140,3 +133,15 @@ Route::get("/Top_company",function(){
 
 // Localization
 Route::get('/locale/{lang}', [LocalControler::class,'setlocale']);
+
+
+
+/*========= Contact form  =============*/
+Route::resource('/contact', ContactFormController::class);
+
+
+Route::get('/cotact', [ContactFormController::class, 'search'])->name('contact.search');
+
+
+
+/*========= Contact form  =============*/
