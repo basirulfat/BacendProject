@@ -6,38 +6,21 @@
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
-
-    <base href="{{asset('/')}}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-
-  <!--=============== REMIXICONS ===============-->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
-
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Responsive CV</title>
-   
-    <!--=============== REMIXICONS ===============-->
-    
-
-    <!--=============== CSS ===============-->
-
     <link rel="stylesheet" type="text/css" href="./assets/css/resume.css" />
 
-    <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
   <body>
-    <!--=============== HEADER ===============-->
-   @include('layouts.header')
-    <!--=============== your cv ===============-->
-
+  @foreach($users as $user)
     <div id="General-container">
-      <div class="resume__container">
+      <div class="resume__container" style="border:3px solid red;">
         <div class="left_Side">
           <div class="profileText">
             <div class="imgBx">
-              <img class="photo" src="./assets/images/greeting.jpg" />
+                <img class="photo" src=$user->image />
+            
             </div>
             <br />
            
@@ -51,9 +34,8 @@
             <ul>
               <li>
                 <span class="icon"
-                  ><i class="fa fa-phone" aria-hidden="true"></i
-                ></span>
-                <span class="text">+93 731682669</span>
+                  ><i class="fa fa-phone" aria-hidden="true"></i></span>
+                <span class="text">{{$user->phone}}</span>
               </li>
               <li>
                 <span class="icon"
@@ -118,6 +100,7 @@
               </li>
             </ul>
           </div>
+          @endforeach
           <div class="contactInfo language">
             <h3 class="title">Languages</h3>
             <ul>
@@ -146,7 +129,6 @@
             </ul>
           </div>
         </div>
-       
         <div class="right_Side">
           <div class="about">
             <h2 class="title2">Profile</h2>
@@ -161,8 +143,8 @@
             <h2 class="title2">Experience</h2>
             <div class="box">
               <div class="year_company">
-                <h5>2020 - Present</h5>
-                <h5>Company Name</h5>
+                <h5>{{$ex->start_year}}</h5>
+                <h5>MRC</h5>
               </div>
               <div class="text">
                 <h4>{{$ex->job_title}}</h4>
@@ -199,17 +181,11 @@
             </ul>
           </div>
         </div>
+       
       </div>
-
-      <!--=============== FOOTER ===============-->
-      @include('layouts.footer')
-    </div>
-
-    <!--=============== MAIN JS ===============-->
-
-    <script defer type="module" src="./assets/js/main.js"></script>
+      </div>
+  
     
 
-    <!-- <script defer src="./assets/js/main.js"></script> -->
   </body>
 </html>

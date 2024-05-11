@@ -12,6 +12,17 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <title>AfghanTalent</title>
+  <style>  
+            .text-center {
+                text-align: center;
+                color:light;
+                font-size:40px;
+            }
+            #map {
+                width: 100%;
+                height: 400px;
+            }
+        </style>
 </head>
 
 <body>
@@ -23,11 +34,20 @@
       <div class="first__img img"></div>
       <div class="FT__catchword">
         <h1>Find your job here</h1>
-        <h2>We provid the best oppertunities for you</h2>
+        <h2>We provide the best oppertunities for you</h2>
         <div class="registration__btn">
 
-          <a class="btn head__btn" href="{{url('find-job')}}">Apply for job</a>
+
+
+          <a class="btn head__btn" href="{{url('find-job')}}">@lang('msg.Apply for job')</a>
+       
+
+
+
           <a class="btn head__btn" href="{{route('personalInformation.create')}}">Create Your CV</a>
+
+          <a class="btn head__btn" href="{{url('find-job')}}">@lang('msg.Apply for job')</a>
+
 
         </div>
       </div>
@@ -73,15 +93,24 @@
         <i class="ri-arrow-left-s-line"></i>
       </button>
       <div class="slider__wrapper">
+        @section('N')
+        @foreach ($results as $result)
+              {{ $result->count }}
+              @endforeach
+             @endsection
+            
+             
+            
+      @foreach( $post as $posts)
         <div class="company__info">
           <div class="company__logo">
-            <img src="./assets/images/company logo/alokozay (2).jpg" alt="" />
-            <h3>Alokozay</h3>
-            <span>N</span>
+          <img src="{{ asset(str_replace('public/', 'storage/', $posts->logo)) }}" alt="Company Logo">
+            <h3>{{$posts->company->company_name}}</h3>
+          <span>@yield('N')</span>
             <h4>job oppertunities</h4>
           </div>
         </div>
-
+         @endforeach
         <div class="company__info">
           <div class="company__logo">
             <img src="./assets/images/company logo/unicif.png" alt="" />
@@ -307,52 +336,222 @@
       <a href="#">W . H . O</a>
     </div>
   </section>
+      <!--=======================map============================== -->
+  <section>
+  <h1 class="text-center">Find Job Location in Maps and See</h1>
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsvEv3lrJ4A8_M4HofeymlNoqz48NqoQc&callback=initMap" async></script>
+        <script>
+            let map, activeInfoWindow, markers = [];
+
+            /* ----------------------------- Initialize Map ----------------------------- */
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: {
+                        lat: 28.626137,
+                        lng: 79.821603,
+                    },
+                    zoom: 15
+                });
+
+                map.addListener("click", function(event) {
+                    mapClicked(event);
+                });
+
+                initMarkers();
+            }
+
+            /* --------------------------- Initialize Markers --------------------------- */
+            function initMarkers() {
+                const initialMarkers = <?php echo json_encode($initialMarkers); ?>;
+
+                for (let index = 0; index < initialMarkers.length; index++) {
+
+                    const markerData = initialMarkers[index];
+                    const marker = new google.maps.Marker({
+                        position: markerData.position,
+                        label: markerData.label,
+                        draggable: markerData.draggable,
+                        map
+                    });
+                    markers.push(marker);
+
+                    const infowindow = new google.maps.InfoWindow({
+                        content: `<b>${markerData.position.lat}, ${markerData.position.lng}</b>`,
+                    });
+                    marker.addListener("click", (event) => {
+                        if(activeInfoWindow) {
+                            activeInfoWindow.close();
+                        }
+                        infowindow.open({
+                            anchor: marker,
+                            shouldFocus: false,
+                            map
+                        });
+                        activeInfoWindow = infowindow;
+                        markerClicked(marker, index);
+                    });
+
+                    marker.addListener("dragend", (event) => {
+                        markerDragEnd(event, index);
+                    });
+                }
+            }
+
+            /* ------------------------- Handle Map Click Event ------------------------- */
+            function mapClicked(event) {
+                console.log(map);
+                console.log(event.latLng.lat(), event.latLng.lng());
+            }
+
+            /* ------------------------ Handle Marker Click Event ----------------------- */
+            function markerClicked(marker, index) {
+                console.log(map);
+                console.log(marker.position.lat());
+                console.log(marker.position.lng());
+            }
+
+            /* ----------------------- Handle Marker DragEnd Event ---------------------- */
+            function markerDragEnd(event, index) {
+                console.log(map);
+                console.log(event.latLng.lat());
+                console.log(event.latLng.lng());
+            }
+        </script>
+  </section>
   <!-- ===============  LAST JOB OPPERTUNITEIES =============== -->
   <section id="last-job">
     <h1>Last Job oppertunities</h1>
     <div class="last__job__input">
+    <form action="{{ route('postSearch') }} " method="get" enctype="multipart/form-data">
       <input type="text" id="fruits" list="fruit-list" placeholder="Select job category" />
-      <datalist id="fruit-list">
-        <option value="Select job category"></option>
-        <option value="Project Management"></option>
-        <option value="IT Network"></option>
-        <option value="Accounting"></option>
-        <option value="Software Development"></option>
-        <option value="Human Resources"></option>
-        <option value="Pharmaceutical"></option>
-        <option value="Marketing"></option>
+
+      <datalist id="fruit-list" name="category">
+               <option value="">...</option>
+               <option value="Admin-Clerical">Admin-Clerical</option>
+               <option value="Agriculture">Agriculture</option>
+               <option value="Automotive">Automotive</option>
+               <option value="Accounting">Accounting</option>
+               <option value="Banking">Banking</option>
+               <option value="Biotech">Biotech</option>
+               <option value="Business Development">Business Development</option>
+               <option value="Construction">Construction</option>
+               <option value="Consultant">Consultant</option>
+               <option value="Customer Service">Customer Service</option>
+			         <option value="Capacity Building">Capacity Building</option>			  
+               <option value="Communication">Communication</option>
+               <option value="Design">Design</option>
+               <option value="Distribution-Shipping">Distribution-Shipping</option>
+               <option value="Education">Education</option>
+               <option value="Engineering">Engineering</option>
+               <option value="Entry Level">Entry Level</option>
+               <option value="Executive">Executive</option>
+               <option value="Facilities">Facilities</option>
+               <option value="Finance">Finance</option>
+               <option value="Franchise">Franchise</option>
+               <option value="General">General</option>
+               <option value="General Business">General Business</option>
+               <option value="General Labor">General Labor</option>
+               <option value="Government">Government</option>
+               <option value="Grocery">Grocery</option>
+               <option value="Health Care">Health Care</option>
+               <option value="Hospitality-Hotel">Hospitality-Hotel</option>
+               <option value="Human Resources">Human Resources</option>
+				       <option value="IT">IT</option>
+               <option value="Information Technology">Information Technology</option>
+               <option value="Installation-Maint-Repair">Installation-Maint-Repair</option>
+               <option value="Insurance">Insurance</option>
+               <option value="Inventory">Inventory</option>
+               <option value="Legal">Legal</option>
+               <option value="Management">Management</option>
+               <option value="Marketing">Marketing</option>
+               <option value="Media-Journalism">Media-Journalism</option>
+               <option value="Monitoring and Evaluation">Monitoring and Evaluation</option>
+               <option value="Nonprofit-Social Services">Nonprofit-Social Services</option>
+               <option value="Nurse">Nurse</option>
+               <option value="Natural Resources Management">Natural Resources Management</option>
+               <option value="Other">Other</option>
+               <option value="Pharmaceutical">Pharmaceutical</option>
+               <option value="Professional Services">Professional Services</option>
+               <option value="Program">Program</option>
+               <option value="Purchasing-Procurement">Purchasing-Procurement</option>
+               <option value="QA-Quality Control">QA-Quality Control</option>
+               <option value="Real Estate">Real Estate</option>
+               <option value="Research">Research</option>
+               <option value="Restaurant-Food Service">Restaurant-Food Service</option>
+               <option value="Retail">Retail</option>
+               <option value="Support">Support</option>
+               <option value="Sales">Sales</option>
+               <option value="Science">Science</option>
+               <option value="Security">Security</option>
+               <option value="Skilled Labor">Skilled Labor</option>
+               <option value="Strategy-Planning">Strategy-Planning</option>
+               <option value="Supply Chain">Supply Chain</option>
+               <option value="Telecommunications">Telecommunications</option>
+               <option value="Training">Training</option>
+				       <option value="Telecom">Telecom</option>
+               <option value="Translator">Translator</option>
+               <option value="Transportation">Transportation</option>
+               <option value="Veterinary Services">Veterinary Services</option>
+               <option value="Warehouse">Warehouse</option>  
       </datalist>
+    </form>
     </div>
+     <!--============================== new========================================== -->
+
     <div class="jobcart__wrapper">
+
       <!--============================== new========================================== -->
+      @foreach( $post as $posts)
+
       <div class="job-card">
         <div class="job-card-header">
-          <img src="assets/images/company logo/brishna.png" alt="">
-          <div class="job-card-title">UI / UX Designer</div>
+         
+        <img src="{{ asset(str_replace('public/', 'storage/', $posts->logo)) }}" alt="Company Logo">
+          <div class="job-card-title">{{$posts->jobTitle}}
+             <p>{{$posts->company->company_name}}</p>
+            
+          </div>
+                           
           <div class="menu-dot"></div>
         </div>
         <div class="job-card-subtitle">
-          The User Experience Designer position exists to create
-          compelling and digital user experience through excellent
-          design...
+          <!-- jobDescription show less -->
+        <?php
+                $description = $posts->jobDescription;
+                $truncated = substr($description, 0, 150);
+                $remaining = strlen($description) > 150;
+
+                echo nl2br($truncated);
+                if ($remaining) {
+                    echo '...';
+                }
+                ?>
+           <!-- jobDescription show less -->
         </div>
         <div class="job-detail-buttons">
           <button class="search-buttons detail-button btn">
-            Full Time
+            {{$posts->jobType}}
           </button>
           <button class="search-buttons detail-button btn">
-            Min. 1 Year
+          {{$posts->experience}}
           </button>
           <button class="search-buttons detail-button btn">
-            Senior level
+          {{$posts->seniority}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$posts->category}}
           </button>
         </div>
         <div class="job-detail-buttons">
           <button class="search-buttons detail-button btn">
-            3000 $
+            {{$posts->salary}}
           </button>
           <button class="search-buttons detail-button btn">
-            3 hour ago
+          {{$posts->location}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$posts->created_at}}
           </button>
         </div>
         <div class="job-card-buttons">
@@ -363,9 +562,11 @@
         </div>
       </div>
 
+      @endforeach
+  <!-- cartssssssssssssssssssssssssssssss is comemted -->
       <div class="job-card">
         <div class="job-card-header">
-          <img src="assets/images/company logo/alokozay (2).jpg" alt="">
+        <img src="assets/images/company logo/khan.jpg" alt="">
           <div class="job-card-title">Project Manager</div>
           <div class="menu-dot"></div>
         </div>
@@ -403,8 +604,8 @@
 
       <div class="job-card">
         <div class="job-card-header">
-          <img src="assets/images/company logo/cola.png" alt="">
-          <div class="job-card-title">Cleaner</div>
+        <img src="assets/images/company logo/khan.jpg" alt="">
+       <div class="job-card-title">Cleaner</div>
           <div class="menu-dot"></div>
         </div>
         <div class="job-card-subtitle">
@@ -610,7 +811,7 @@
       <div class="registrition">
         <i class="ri-file-upload-line"></i>
         <a href="#">
-          <h3>Upload Your CV</h3>
+          <h3>Create Your CV</h3>
         </a>
         <p>
           The First step to get hired in your <br />

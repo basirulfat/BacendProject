@@ -33,9 +33,13 @@
         </div>
         <div class="link-des">
 
+
           
 
           <a href="{{route('home.redirect')}}" class="footer-links">@lang('msg.home')</a>
+
+          
+
           <a href="{{url('About')}}" class="footer-links">@lang('msg.about')</a>
 
           <a href="{{url('Contact_Us')}}" class="footer-links">Contact Us</a>

@@ -6,56 +6,89 @@ use App\Models\User;
 use App\Models\company;
 use App\Models\PostJob;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Jobs\DeletePostJob;
+use Carbon\Carbon;
 
 class PostJobController extends Controller
 {
-  
-
-
-    /**
-     * Display a listing of the resource.
-     */
+/* ============show data in index page ============ */
     public function index()
     {
-        //
+        $post = PostJob::all();
+        $posts = new PostJob();
+        $results = $posts->getProductsByCategory();
+        return view('index', compact('post','results'));
     }
+ /*-============show data in find-job page ==========*/
+    public function findJob()
+    {
+        $post = PostJob::all();
+        return view('find-job',compact('post'));
+    }
+/*-============show data in showjob page ==========*/
+     public function showjobs()
+     {
+         $post = PostJob::all();
+         return view('showJobs',compact('post'));
+     }
+/*-============ post job from dashboard ==========*/
+     public function adminPost(){
+        $post = PostJob::all();
+        return view('admin.posts',compact('post'));
+     }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        // return view('Post-job');
-        $companies = Company::all(); // Retrieve all companies from the database
+         return view('Post-job');
 
-        return view('Post-job', compact('companies'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
- public function store(Request $request)
-{
-    $jobPost = new PostJob();
-    $jobPost->company_id = $request->input('company_id');
-    $jobPost->user_id = auth()->id();
-    $jobPost->jobTitle = $request->input('jobTitle');
-    $jobPost->jobDescription = $request->input('jobDescription');
-    $jobPost->applyLink = $request->input('applyLink');
-    $jobPost->jobType = $request->input('jobType');
-    $jobPost->location = $request->input('location');
-    $jobPost->skills = $request->input('skills');
-    $jobPost->experience = $request->input('experience');
-    $jobPost->seniority = $request->input('seniority');
-    $jobPost->salary = $request->input('salary');
-    $jobPost->postingTime = $request->input('postingTime');
-    $jobPost->expairTime = $request->input('expairTime');
+    public function store(Request $request)
+    {
+        $company=Company::where('company_name',$request->company)->first();
+        
+        // return $company;
+        
+        $jobPost = new PostJob();
+        $jobPost->user_id = auth()->id();
+        $jobPost->company_id = $company->id;
+        $jobPost->jobTitle = $request->input('jobTitle');
+        $jobPost->jobDescription = $request->input('jobDescription');
+        $jobPost->applyLink = $request->input('applyLink');
+        $jobPost->category = $request->input('category');
+        $jobPost->jobType = $request->input('jobType');
+        $jobPost->location = $request->input('location');
+        $jobPost->skills = $request->input('skills');
+        $jobPost->experience = $request->input('experience');
+        $jobPost->seniority = $request->input('seniority');
+        $jobPost->salary = $request->input('salary');
+        $jobPost->postingTime = $request->input('postingTime');
+        $jobPost->expairTime = $request->input('expaireTime');
+    
+        if ($request->hasFile('logo')) {
+            $logo = $request->file('logo');
+            $logoPath = $logo->store('public/logos'); // Store the image and get the file path
+            $jobPost->logo = $logoPath;
+        }
+    
+        $jobPost->save();
 
-    $jobPost->save();
-    dd($jobPost);
+        $expirationTime = Carbon::parse($jobPost->expairTime);
 
-    return redirect('showJobs')->with('success', 'Job added successfully');
-}
+        // Schedule the post deletion using Laravel's task scheduler
+        $expirationTime = Carbon::parse($jobPost->expairTime);
+        $deleteJob = (new DeletePostJob($jobPost))->delay($expirationTime);
+        dispatch($deleteJob);
+
+        return redirect('showJobs')->with('success', 'Job added successfully');
+    }
     /**
      * Display the specified resource.
      */
@@ -83,8 +116,36 @@ class PostJobController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PostJob $postJob)
+    public function destroy($id)
     {
-        //
+        $post = PostJob::find($id);
+        if (!$post) {
+            return redirect()->back()->with('error', 'User not found');
+        }
+        $post->delete();
+        return redirect()->back()->with('success', 'User deleted successfully');
+    }
+  /*-============ search jobs in admin panall ==========*/
+    public function search(Request $request)
+    {
+        $searchText = $request->search;
+    
+        $post = PostJob::query()
+            ->where('id', 'LIKE', "%{$searchText}%")
+            ->orWhere('category', 'LIKE', "%{$searchText}%")
+            ->orWhere('location', 'LIKE', "%{$searchText}%")
+            ->orWhere('jobTitle', 'LIKE', "%{$searchText}%")
+            ->orWhereHas('company', function($query) use ($searchText) {
+                $query->where('company_name', 'LIKE', "%{$searchText}%");
+            })
+            ->get();
+    
+        return view('admin.posts', compact('post'));
+    }
+    
+    
+    public function postscount(){
+      
+        //  return $results;
     }
 }

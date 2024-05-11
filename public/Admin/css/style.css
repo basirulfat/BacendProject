@@ -304,6 +304,7 @@ body {
     box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
         -9px -9px 16px rgba(255, 255, 255, 0.5);
 }
+
 @media (max-width: 768px) {
     .card {
         width: 90%;
@@ -324,9 +325,15 @@ body {
 }
 
 .card h1 {
-    font-weight: bold;
-    margin: 10px 0px;
-    color: var(--min-font-color);
+    font-size: 2rem;
+    font-weight: 900;
+    /* margin: 10px 0px; */
+    color: red;
+}
+.card h2 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: green;
 }
 
 /* Modal */
@@ -447,11 +454,27 @@ select {
     margin: 40px 0px;
     padding: 20px;
     width: 100%;
+    height: 100%;
     border-radius: 15px;
     background-color: #e0e5ec;
-    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
-        -9px -9px 16px rgba(255, 255, 255, 0.5);
     color: #6a7786;
+    /* border: 1px solid red; */
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+
+    /* position: fixed; 
+    z-index: 1; 
+    top: 500px; */
+}
+.table .tablescroll {
+    overflow: auto;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .table .head {
@@ -509,7 +532,9 @@ select {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    height: 20%;
     border-collapse: collapse !important;
+    overflow: auto;
 }
 
 .table th {
@@ -716,11 +741,122 @@ select {
     }
 }
 
-.new-table {
+/* ======================job Registeration ============================== */
+#postModal {
+    /* display: none;  */
+    /* position: fixed; */
+    z-index: 1;
+    left: 0;
+    top: 0;
     width: 100%;
-    height: 100vh;
-    border: 1px solid red;
+    height: 80%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+}
+
+.modal-content {
     position: relative;
-    top: 20rem;
-    margin-top: 2rem;
+}
+
+.postclose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    color: #000;
+    font-size: 2rem;
+}
+.postformcontainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+}
+.postform-child {
+    width: 50%;
+    height: auto;
+    padding: 20px;
+}
+
+.postform-child label {
+    color: #868b98;
+    display: block;
+    text-align: start;
+    padding: 10px 35px;
+}
+.postform-child input,
+textarea,
+select {
+    background-color: var(--back-color);
+    border-radius: 5px;
+    border: none;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+    padding: 10px 15px;
+    outline: none !important;
+    width: 80%;
+    justify-content: center;
+}
+
+.postform-child .btn-modal {
+    margin-top: 60px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 25px;
+    color: red;
+    background-color: #ffff;
+    width: 30%;
+    box-shadow: 7px 7px 16px rgb(163, 177, 198, 0.6),
+        -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+.postform-child .btn-modal:hover {
+    /* background-color: var(--main-bg-color); */
+    background-color: var(--back-color);
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+    padding: 10px 15px;
+}
+@media only screen and (max-width: 768px) {
+    .modal-content {
+        width: 100%;
+    }
+    .postformcontainer {
+        width: 100%;
+    }
+    .postform-child input,
+    textarea,
+    select {
+        background-color: var(--back-color);
+        border-radius: 5px;
+        border: none;
+        box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+            inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+        padding: 10px 15px;
+        outline: none !important;
+        width: 100%;
+        justify-content: center;
+    }
+    .postform-child .btn-modal {
+        margin-top: 60px;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 10px 25px;
+        color: #868b98;
+        background-color: #ffff;
+        width: 100%;
+        box-shadow: 7px 7px 16px rgb(163, 177, 198, 0.6),
+            -9px -9px 16px rgba(255, 255, 255, 0.5);
+    }
+}
+/* ======================job Registeration TABle ============================== */
+#newTable {
+    width: 100%;
+    margin-top: 5rem;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }

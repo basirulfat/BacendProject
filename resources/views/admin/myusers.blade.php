@@ -83,6 +83,7 @@
 
         <!-- table -->
         <div class="table">
+         <div class="tablescroll">
           <div class="head">
             <h2>Table users</h2>
             <form action="{{ route('user.search') }} " method="get">
@@ -138,6 +139,7 @@
             </tr>
            @endforelse
           </table>
+        </div>
         </div>
       </div>
     </div>

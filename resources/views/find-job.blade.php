@@ -40,7 +40,7 @@
       <div class="search-container">
         <input
           type="search"
-          placeholder="Search Job Title, Position, Company Name..."
+          placeholder="Search For Job Title , Company Name..."
         />
         <button type="submit"><i class="ri-search-line"></i></button>
       </div>
@@ -88,50 +88,12 @@
 
       <div id="all-job-section">
         <div class="A">
-          <a href="#"><span>20</span>Sales&Customer Service</a>
-          <a href="#"><span>30</span>Markiting,Advetising</a>
-          <a href="#"><span>40</span>IT-Software</a>
-          <a href="#"><span>60</span>Web Development </a>
-          <a href="#"><span>50</span>Accounting,Auditing</a>
-          <a href="#"><span>80</span>Prodiction</a>
-          <a href="#"><span>250</span>IT Networking</a>
-          <a href="#"><span>27</span>Engineering</a>
-          <a href="#"><span>29</span>Managment </a>
-          <a href="#"><span>90</span>Project Planning</a>
-          <a href="#"><span>49</span>Adminstrition</a>
-          <a href="#"><span>4</span>Big Data,Data Visulization</a>
-          <a href="#"><span>330</span>Project Controlling</a>
+        @foreach( $post as $posts)
+          <a href="#" class="category-links"><span><i class="ri-megaphone-fill"></i></span>{{$posts->category}}</a>
+ 
+          @endforeach
         </div>
-        <div class="A">
-          <a href="#"><span>20</span>Sales&Customer Service</a>
-          <a href="#"><span>30</span>Markiting,Advetising</a>
-          <a href="#"><span>40</span>IT-Software</a>
-          <a href="#"><span>60</span>Web Development </a>
-          <a href="#"><span>50</span>Accounting,Auditing</a>
-          <a href="#"><span>80</span>Prodiction</a>
-          <a href="#"><span>250</span>IT Networking</a>
-          <a href="#"><span>27</span>Engineering</a>
-          <a href="#"><span>29</span>Managment </a>
-          <a href="#"><span>90</span>Project Planning</a>
-          <a href="#"><span>49</span>Adminstrition</a>
-          <a href="#"><span>4</span>Big Data,Data Visulization</a>
-          <a href="#"><span>330</span>Project Controlling</a>
-        </div>
-        <div class="A">
-          <a href="#"><span>20</span>Sales&Customer Service</a>
-          <a href="#"><span>30</span>Markiting,Advetising</a>
-          <a href="#"><span>40</span>IT-Software</a>
-          <a href="#"><span>60</span>Web Development </a>
-          <a href="#"><span>50</span>Accounting,Auditing</a>
-          <a href="#"><span>80</span>Prodiction</a>
-          <a href="#"><span>250</span>IT Networking</a>
-          <a href="#"><span>27</span>Engineering</a>
-          <a href="#"><span>29</span>Managment </a>
-          <a href="#"><span>90</span>Project Planning</a>
-          <a href="#"><span>49</span>Adminstrition</a>
-          <a href="#"><span>4</span>Big Data,Data Visulization</a>
-          <a href="#"><span>330</span>Project Controlling</a>
-        </div>
+
       </div>
     </section>
 
@@ -146,38 +108,67 @@
         </ul>
       </div>
       <div class="jobcart__wrapper">
-        <div class="job-card">
-          <div class="job-card-header">
-            <img src="assets/images/company logo/brishna.png" alt="" />
-            <div class="job-card-title">UI / UX Designer</div>
-            <div class="menu-dot"></div>
+        
+      @foreach( $post as $posts)
+      <div class="job-card">
+        <div class="job-card-header">
+         
+        <img src="{{ asset(str_replace('public/', 'storage/', $posts->logo)) }}" alt="Company Logo">
+          <div class="job-card-title">{{$posts->jobTitle}} 
+          <p>{{$posts->company->company_name}}</p>
+
           </div>
-          <div class="job-card-subtitle">
-            The User Experience Designer position exists to create compelling
-            and digital user experience through excellent design...
-          </div>
-          <div class="job-detail-buttons">
-            <button class="search-buttons detail-button btn">Full Time</button>
-            <button class="search-buttons detail-button btn">
-              Min. 1 Year
-            </button>
-            <button class="search-buttons detail-button btn">
-              Senior level
-            </button>
-          </div>
-          <div class="job-detail-buttons">
-            <button class="search-buttons detail-button btn">3000 $</button>
-            <button class="search-buttons detail-button btn">3 hour ago</button>
-          </div>
-          <div class="job-card-buttons">
-            <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn"
-              >Apply Now</a
-            >
-            <button class="search-buttons card-buttons-msg btn">
-              Messages
-            </button>
-          </div>
+                           
+          <div class="menu-dot"></div>
         </div>
+        <div class="job-card-subtitle">
+          <!-- jobDescription show less -->
+        <?php
+                $description = $posts->jobDescription;
+                $truncated = substr($description, 0, 150);
+                $remaining = strlen($description) > 150;
+
+                echo nl2br($truncated);
+                if ($remaining) {
+                    echo '...';
+                }
+                ?>
+           <!-- jobDescription show less -->
+        </div>
+        <div class="job-detail-buttons">
+          <button class="search-buttons detail-button btn">
+            {{$posts->jobType}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$posts->experience}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$posts->seniority}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$posts->category}}
+          </button>
+        </div>
+        <div class="job-detail-buttons">
+          <button class="search-buttons detail-button btn">
+            {{$posts->salary}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$posts->location}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$posts->created_at}}
+          </button>
+        </div>
+        <div class="job-card-buttons">
+          <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
+          <button class="search-buttons card-buttons-msg  btn">
+            Messages
+          </button>
+        </div>
+      </div>
+      @endforeach
+
 
         <div class="job-card">
           <div class="job-card-header">

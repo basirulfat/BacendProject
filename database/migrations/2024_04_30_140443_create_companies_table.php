@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void{
     Schema::create('companies', function (Blueprint $table) {
         $table->id();
+        $table->bigIncrements('id');
         $table->string('owner', 100);
         $table->string('company_name', 5000)->nullable();
         $table->string('phone', 100);
@@ -19,6 +20,7 @@ return new class extends Migration
         $table->string('company_size', 100)->nullable();
         $table->string('position')->nullable();
         $table->string('image')->nullable();
+        
         $table->timestamps();
     });
 }

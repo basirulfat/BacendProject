@@ -26,5 +26,15 @@ class ResumeController extends Controller
         
         return view('createCV');
     }
+    public function download(){
+         $user = auth()->user();
+         $users = PersonalInformation::all();
+         $education=Education::all();
+         $Experience=experience::all();
+         $skill=Skill::all();
+        //   $pdf =\PDF::loadView('resumePDF',compact('users', 'user','education','Experience','skill'));
+        //   return $pdf->download('resume.pdf');
+    }
+
    
 }

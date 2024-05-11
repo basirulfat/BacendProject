@@ -65,6 +65,7 @@
 
         <!-- table -->
         <div class="table">
+         <div class="tablescroll">
           <div class="head">
             <h2>Table category</h2>
             <!-- <button onclick="onclick()">&#9776;</button> -->
@@ -129,6 +130,7 @@
               </td>
             </tr>
           </table>
+        </div>
         </div>
       </div>
     </div>

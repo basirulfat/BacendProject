@@ -2,8 +2,10 @@
   <!--=============== HEADER ===============-->
   <header class="header">
     <nav class="nav container">
-      <div class="nav__data" >
-        <a href="{{route('home.redirect')}}" class="nav__logo">
+
+      <div class="nav__data">
+        <a href="{{url('index')}}" class="nav__logo">
+
           <i class="ri-open-arm-fill logo-icon"></i> AfghanTalent
         </a>
 
@@ -17,10 +19,11 @@
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
 
-          <li><a href="{{route('home.redirect')}}" class="nav__link">@lang('msg.home')</a></li>
+          <li><a href="{{url('index')}}" class="nav__link">@lang('msg.home')</a></li>
 
-         
 
+
+          <li><a href="{{url('index')}}" class="nav__link">@lang('msg.home')</a></li>
           <li><a href="{{url('find-job')}}" class="nav__link">@lang('msg.Find job')</a></li>
           <li><a href="{{url('Dashboarded')}}" class="nav__link">Dashboard</a></li>
 
