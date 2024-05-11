@@ -11,6 +11,7 @@ var span = document.getElementsByClassName("close")[0];
 btn.onclick = function () {
     modal.style.display = "block";
 };
+/*========================== post model  code ===========================*/
 
 /*========================== eidet btn  code ===========================*/
 var elements = document.getElementsByClassName("eidetbtn");
@@ -19,6 +20,7 @@ for (var i = 0; i < elements.length; i++) {
         modal.style.display = "block";
     };
 }
+
 /*========================== remove  alert message ===========================*/
 function removeSuccessMessage() {
     var successMessage = document.getElementById("success-message");

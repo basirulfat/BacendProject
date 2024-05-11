@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    background-color: var(--low-gray);
     /* padding-top: 6rem; */
 
     background: #ada996; /* fallback for old browsers */
@@ -29,13 +29,14 @@ body {
 .container-post-job {
     max-width: 800px;
     margin: 3rem auto;
-    padding: 20px;
-    background-color: #fff;
+    padding: 20px 40px;
+    background-color: var(--light);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background: #efefbb;
     background: -webkit-linear-gradient(to top, #d4d3dd, #efefbb);
     background: linear-gradient(to top, #d4d3dd, #efefbb);
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 
 h1 {
@@ -61,7 +62,7 @@ input[type="file"],
 input[type="datetime-local"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--low-gray);
     border-radius: 5px;
     box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
@@ -70,15 +71,17 @@ input[type="checkbox"] {
     margin-right: 5px;
 }
 
-button[type="submit"] {
+.postSubmit {
     padding: 10px 20px;
     background-color: #007bff;
-    color: #fff;
+    color: var(--light);
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
+.postSubmit:hover {
+    background-color: var(--blue);
 }

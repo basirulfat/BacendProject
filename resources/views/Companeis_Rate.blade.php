@@ -29,7 +29,7 @@
 
     <section id="small-navebar">
       <ul>
-        <li><a href="{{url('Companeis_Rate')}}">Search Company Name</a></li>
+        <li><a href="{{url('Companeis_Rate.CompanyRate')}}">Search Company Name</a></li>
         <li><a href="{{url('Top_company')}}">50 Top Actives Companies</a></li>
       </ul>
     </section>
@@ -80,14 +80,16 @@
           <li>More<i class="ri-arrow-down-s-line dropdown__arrow"></i></li>
         </ul>
       </div>
-
+   <!-- ===============carts part is started here =========================-->
       <div id="companies-cards-wrapper">
         <div class="companies-cards">
+
+        @foreach($company as $company)
           <div class="cards-wrap">
-            <h3>super cola</h3>
+            <h3>{{$company->company_name}}</h3>
             <div id="logo-wrapper">
               <div class="img com-logo">
-                <img src="./assets/images/company logo/brishna.png" alt="" />
+              <img src="{{ asset('storage/' . $company->image) }}" alt="Company Logo">
               </div>
               <div class="com-job-deatils">
                 <span>3.7</span>
@@ -105,10 +107,12 @@
               </div>
             </div>
             <div class="card-icon">
-              <p><i class="fa-solid fa-bag-shopping"></i>ICT and Telegram</p>
-              <p><i class="fa-solid fa-user-group"></i>500 Employers or more</p>
+             
+              <p><i class="fa-solid fa-bag-shopping">job title</i></p>
+              <p><i class="fa-solid fa-user-group"></i>{{$company->company_size}}</p>
             </div>
           </div>
+          @endforeach
 
           <!-- second card -->
           <div class="cards-wrap">
@@ -165,175 +169,8 @@
             </div>
           </div>
         </div>
-        <div class="companies-cards">
-          <div class="cards-wrap">
-            <h3>Baran</h3>
-            <div id="logo-wrapper">
-              <div class="img com-logo">
-                <img src="./assets/images/company logo/cola.png" alt="" />
-              </div>
-              <div class="com-job-deatils">
-                <span>3.7</span>
-                <div class="card-stars">
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </div>
-                <div class="card-lin">
-                  <a href="#">12 Jobs</a>
-                  <a href="#" class="a-border">See Reviews</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-icon">
-              <p><i class="fa-solid fa-bag-shopping"></i>ICT and Telegram</p>
-              <p><i class="fa-solid fa-user-group"></i>500 Employers or more</p>
-            </div>
-          </div>
 
-          <!-- second card -->
-          <div class="cards-wrap">
-            <h3>MRC</h3>
-            <div id="logo-wrapper">
-              <div class="img com-logo">
-                <img
-                  src="./assets/images/company logo/6418026-200.png"
-                  alt=""
-                />
-              </div>
-              <div class="com-job-deatils">
-                <span>3.7</span>
-                <div class="card-stars">
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </div>
-                <div class="card-lin">
-                  <a href="#">12 Jobs</a>
-                  <a href="#" class="a-border">See Reviews</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-icon">
-              <p><i class="fa-solid fa-bag-shopping"></i>ICT and Telegram</p>
-              <p><i class="fa-solid fa-user-group"></i>500 Employers or more</p>
-            </div>
-          </div>
-          <!-- third card -->
-          <div class="cards-wrap">
-            <h3>UN</h3>
-            <div id="logo-wrapper">
-              <div class="img com-logo">
-                <img src="./assets/images/company logo/f1.png" alt="" />
-              </div>
-              <div class="com-job-deatils">
-                <span>3.7</span>
-                <div class="card-stars">
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </div>
-                <div class="card-lin">
-                  <a href="#">12 Jobs</a>
-                  <a href="#" class="a-border">See Reviews</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-icon">
-              <p><i class="fa-solid fa-bag-shopping"></i>ICT and Telegram</p>
-              <p><i class="fa-solid fa-user-group"></i>500 Employers or more</p>
-            </div>
-          </div>
-        </div>
-        <div class="companies-cards">
-          <div class="cards-wrap">
-            <h3>Akber site</h3>
-            <div id="logo-wrapper">
-              <div class="img com-logo">
-                <img src="./assets/images/company logo/f2.png" alt="" />
-              </div>
-              <div class="com-job-deatils">
-                <span>3.7</span>
-                <div class="card-stars">
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </div>
-                <div class="card-lin">
-                  <a href="#">12 Jobs</a>
-                  <a href="#" class="a-border">See Reviews</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-icon">
-              <p><i class="fa-solid fa-bag-shopping"></i>ICT and Telegram</p>
-              <p><i class="fa-solid fa-user-group"></i>500 Employers or more</p>
-            </div>
-          </div>
 
-          <!-- second card -->
-          <div class="cards-wrap">
-            <h3>Mobin Net</h3>
-            <div id="logo-wrapper">
-              <div class="img com-logo">
-                <img src="./assets/images/company logo/f3.png" alt="" />
-              </div>
-              <div class="com-job-deatils">
-                <span>3.7</span>
-                <div class="card-stars">
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </div>
-                <div class="card-lin">
-                  <a href="#">12 Jobs</a>
-                  <a href="#" class="a-border">See Reviews</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-icon">
-              <p><i class="fa-solid fa-bag-shopping"></i>ICT and Telegram</p>
-              <p><i class="fa-solid fa-user-group"></i>500 Employers or more</p>
-            </div>
-          </div>
-          <!-- third card -->
-          <div class="cards-wrap">
-            <h3>Shams Landan</h3>
-            <div id="logo-wrapper">
-              <div class="img com-logo">
-                <img src="./assets/images/company logo/f4.png" alt="" />
-              </div>
-              <div class="com-job-deatils">
-                <span>3.7</span>
-                <div class="card-stars">
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </div>
-                <div class="card-lin">
-                  <a href="#">12 Jobs</a>
-                  <a href="#" class="a-border">See Reviews</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-icon">
-              <p><i class="fa-solid fa-bag-shopping"></i>ICT and Telegram</p>
-              <p><i class="fa-solid fa-user-group"></i>500 Employers or more</p>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- Rate your employer -->

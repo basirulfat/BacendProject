@@ -47,8 +47,8 @@
               <i class="fas fa-users fa-3x"></i>
             </div>
             <div>
-              <span>Users</span>
-              <h1>950</h1>
+              <h2>Users</h2>
+              <h1>{{ $users }}</h1>
               <p>Out ot 10</p>
             </div>
           </div>
@@ -59,8 +59,8 @@
               <i class="fab fa-usps fa-3x"></i>
             </div>
             <div>
-              <span>Posts</span>
-              <h1>550</h1>
+              <h2>Posts</h2>
+              <h1>{{ $posts }}</h1>
               <p>Out ot 10</p>
             </div>
           </div>
@@ -71,8 +71,8 @@
               <i class="fas fa-bookmark fa-3x"></i>
             </div>
             <div>
-              <span>Saves</span>
-              <h1>350</h1>
+              <h2>companies</h2>
+              <h1>{{ $companies }}</h1>
               <p>Out ot 10</p>
             </div>
           </div>
@@ -83,8 +83,8 @@
               <i class="fas fa-cart-arrow-down fa-3x"></i>
             </div>
             <div>
-              <span>Down</span>
-              <h1>950</h1>
+              <h2>Down</h2>
+              <h1>1950</h1>
               <p>Out ot 10</p>
             </div>
           </div>
@@ -125,6 +125,7 @@
 
         <!-- table -->
         <div class="table">
+         <div class="tablescroll">
           <div class="head">
             <h2>Table Posts</h2>
             <!-- <button onclick="onclick()">&#9776;</button> -->
@@ -196,6 +197,7 @@
               <td>Mexico</td>
             </tr>
           </table>
+        </div>
         </div>
       </div>
     </div>

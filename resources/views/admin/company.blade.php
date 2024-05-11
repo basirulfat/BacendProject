@@ -115,15 +115,16 @@
 
         <!-- table -->
         <div class="table">
+         <div class="tablescroll">
           <div class="head">
             <h2>Table users</h2>
             <form action="{{ route('company.search') }} " method="get" enctype="multipart/form-data">
-          <div class="search-bar">
-            <input type="text" name="search" class="search-input" placeholder="Search For" />
-            <button type="submit" class="search-button">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
+                <div class="search-bar">
+                  <input type="text" name="search" class="search-input" placeholder="Search For" />
+                  <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
               </form>
             <!-- <button onclick="onclick()">&#9776;</button> -->
             <button id="openModalButton">Create a New Company</button>
@@ -167,6 +168,7 @@
            @endforelse
 
           </table>
+        </div>
         </div>
       </div>
  

@@ -4,16 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\company;
+use App\Models\PostJob;
+use Carbon\Carbon;
 
 class AdminController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     */
+{   
+
+
+
+/*=============== Count Data in  Dashboark ===============*/
+
+    public function countData(){
+        $users = User::where('usertype','0')->count();
+        $admins = User::where('usertype','1')->count();
+        $companies =Company::count();
+        $posts = PostJob::count();
+        return view("admin.home",compact("users", "admins","companies","posts"));
+    }
+    /*--===============  show Users in the Dashboard company  page  =============*/
     public function index()
     {
         $user = User::all();
-        // dd($user);
         return view('admin.myusers', compact('user'));
 
     }

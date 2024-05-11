@@ -107,11 +107,11 @@
           </div>
 
           <!-- applied for -->
-          <div class="applied">
+          <div class="applied" >
             <div class="job-info-card">
-              <div class="card-wrapper">
-                <div class="company-job-info">
-                  <div class="company-card-img">
+              <div class="card-wrapper" >
+                <div class="company-job-info" >
+                  <div class="company-card-img"  >
                     <img
                       src="./assets/images/company logo/images (1).png"
                       alt=""
