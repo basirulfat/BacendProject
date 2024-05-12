@@ -153,3 +153,7 @@ Route::get("/Top_company",function(){
 // Localization
 Route::get('/locale/{lang}', [LocalControler::class,'setlocale']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
