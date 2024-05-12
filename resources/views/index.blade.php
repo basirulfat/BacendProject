@@ -12,6 +12,17 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <title>AfghanTalent</title>
+  <style>  
+            .text-center {
+                text-align: center;
+                color:light;
+                font-size:40px;
+            }
+            #map {
+                width: 100%;
+                height: 400px;
+            }
+        </style>
 </head>
 
 <body>
@@ -26,7 +37,7 @@
         <h2>We provid the best oppertunities for you</h2>
         <div class="registration__btn">
           <a class="btn head__btn" href="{{url('find-job')}}">Apply for job</a>
-          <a class="btn head__btn" href="{{url('CreateCV')}}">Create Your CV</a>
+          <a class="btn head__btn" href="{{route('personalInformation.create')}}">Create Your CV</a>
         </div>
       </div>
       <div class="second__img img"></div>
@@ -305,6 +316,89 @@
       <a href="#">W . H . O</a>
     </div>
   </section>
+      <!--=======================map============================== -->
+  <section>
+  <h1 class="text-center">Find Job Location in Maps and See</h1>
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsvEv3lrJ4A8_M4HofeymlNoqz48NqoQc&callback=initMap" async></script>
+        <script>
+            let map, activeInfoWindow, markers = [];
+
+            /* ----------------------------- Initialize Map ----------------------------- */
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: {
+                        lat: 28.626137,
+                        lng: 79.821603,
+                    },
+                    zoom: 15
+                });
+
+                map.addListener("click", function(event) {
+                    mapClicked(event);
+                });
+
+                initMarkers();
+            }
+
+            /* --------------------------- Initialize Markers --------------------------- */
+            function initMarkers() {
+                const initialMarkers = <?php echo json_encode($initialMarkers); ?>;
+
+                for (let index = 0; index < initialMarkers.length; index++) {
+
+                    const markerData = initialMarkers[index];
+                    const marker = new google.maps.Marker({
+                        position: markerData.position,
+                        label: markerData.label,
+                        draggable: markerData.draggable,
+                        map
+                    });
+                    markers.push(marker);
+
+                    const infowindow = new google.maps.InfoWindow({
+                        content: `<b>${markerData.position.lat}, ${markerData.position.lng}</b>`,
+                    });
+                    marker.addListener("click", (event) => {
+                        if(activeInfoWindow) {
+                            activeInfoWindow.close();
+                        }
+                        infowindow.open({
+                            anchor: marker,
+                            shouldFocus: false,
+                            map
+                        });
+                        activeInfoWindow = infowindow;
+                        markerClicked(marker, index);
+                    });
+
+                    marker.addListener("dragend", (event) => {
+                        markerDragEnd(event, index);
+                    });
+                }
+            }
+
+            /* ------------------------- Handle Map Click Event ------------------------- */
+            function mapClicked(event) {
+                console.log(map);
+                console.log(event.latLng.lat(), event.latLng.lng());
+            }
+
+            /* ------------------------ Handle Marker Click Event ----------------------- */
+            function markerClicked(marker, index) {
+                console.log(map);
+                console.log(marker.position.lat());
+                console.log(marker.position.lng());
+            }
+
+            /* ----------------------- Handle Marker DragEnd Event ---------------------- */
+            function markerDragEnd(event, index) {
+                console.log(map);
+                console.log(event.latLng.lat());
+                console.log(event.latLng.lng());
+            }
+        </script>
+  </section>
   <!-- ===============  LAST JOB OPPERTUNITEIES =============== -->
   <section id="last-job">
     <h1>Last Job oppertunities</h1>
@@ -321,8 +415,9 @@
         <option value="Marketing"></option>
       </datalist>
     </div>
+     <!--============================== new========================================== -->
+
     <div class="jobcart__wrapper">
-      <!--============================== new========================================== -->
       <div class="job-card">
         <div class="job-card-header">
           <img src="assets/images/company logo/brishna.png" alt="">

@@ -22,7 +22,7 @@
 
         <div class="link-des">
           <a href="{{url('post-job')}}" class="footer-links">Post Job</a>
-          <a href="{{url('CreateCV')}}" class="footer-links">Create CV</a>
+          <a href="{{route('personalInformation.create')}}" class="footer-links">Create CV</a>
           <a href="{{url('Top_company')}}" class="footer-links">Companies Rate</a>
         </div>
       </div>

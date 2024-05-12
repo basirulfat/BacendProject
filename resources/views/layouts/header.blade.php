@@ -16,7 +16,7 @@
       <!--=============== NAV MENU ===============-->
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-          <li><a href='{{URL("index")}}' class="nav__link">Home</a></li>
+          <li><a href="{{url('index')}}" class="nav__link">Home</a></li>
 
           <li><a href="{{url('find-job')}}" class="nav__link">Find job</a></li>
           <li><a href="{{url('Dashboarded')}}" class="nav__link">Dashboard</a></li>
@@ -71,7 +71,7 @@
             </ul>
           </li>
 
-          <li><a href="{{url('CreateCV')}}" class="nav__link">Create CV</a></li>
+          <li><a href="{{route('personalInformation.create')}}" class="nav__link">Create CV</a></li>
 
           <!-- =============== DROPDOWN 2 ===============-->
           <li class="dropdown__item">

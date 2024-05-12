@@ -26,7 +26,6 @@
     font-weight: bold;
     margin: 0;
 }
-
 #header-section .section-1 ol li:hover {
     background-color: var(--first-color--lighten);
     border: 1px solid var(--first-color-light-gray);
