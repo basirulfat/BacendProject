@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactFormController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LocalControler;
 use Illuminate\Support\Facades\Route;
@@ -28,7 +29,7 @@ Auth::routes();
 Route::get('/', [mapController::class, 'index']);
 Route::get('/showjob', [showjobmapController::class, 'index']);
 
-Route::get('/index', [HomeController::class, 'redirect']);
+Route::get('/index', [HomeController::class, 'redirect'])->name('home.redirect')->middleware('auth');;
 Route::get('auth/google',[GoogelAuthController::class,'redirects'])->name('google-auth');
 Route::get('auth/google/call-back',[GoogelAuthController::class,'callbackGoogle']);
 
@@ -36,6 +37,8 @@ Route::get('auth/google/call-back',[GoogelAuthController::class,'callbackGoogle'
 
 // Route::get('/home', [RegisterController::class, 'redirect']);
 
+// Route::get('/home', [LoginController::class, 'redirect']);
+Route::get('/home', [HomeController::class, 'redirect'])->name('home.redirect');
 
 Route::resource('personalInformation',PersonalInformationController::class)->middleware('auth');
 Route::resource('education',EducationController::class)->middleware('auth');
@@ -94,7 +97,11 @@ Route::get("/category",function(){
 
 // Admin panal
 
+
+/*========= post job  =============*/
+
 /*======================= post job  ====================*/
+
 Route::resource('/postjob', PostJobController::class);
 Route::get('/find-job', [PostJobController::class, 'findJob']);
 Route::get('/showJobs', [PostJobController::class, 'showjobs']);
@@ -154,6 +161,20 @@ Route::get("/Top_company",function(){
 Route::get('/locale/{lang}', [LocalControler::class,'setlocale']);
 
 
-Auth::routes();
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+/*========= Contact form  =============*/
+Route::resource('/contact', ContactFormController::class);
+
+
+Route::get('/cotact', [ContactFormController::class, 'search'])->name('contact.search');
+
+
+
+/*========= Contact form  =============*/
+

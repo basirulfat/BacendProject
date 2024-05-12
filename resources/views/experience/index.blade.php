@@ -69,12 +69,10 @@
 @endforeach
 
 <div class="container">
-<<<<<<< HEAD
+
  <a class="btn btn-primary mt-2" href="{{route('experience.create')}}" style="background-color:blue"> Add Another Experience</a>
-=======
- <a class="btn btn-primary mt-2" href="{{route('experience.create')}}" style="background-color:blue"> Add Another Education</a>
->>>>>>> 30c9c561c35c0306406f604976116db8ae36deab
- <a class="btn btn-primary mt-2" href="{{route('skill.index')}}"> Skills</a>
+
+ <a class="btn btn-primary mt-2" href="{{route('skill.index')}}" style="background-color:blue"> Skills</a>
 </div>
 @include('layouts.footer')
 </body>

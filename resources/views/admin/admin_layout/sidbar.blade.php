@@ -10,7 +10,8 @@
           <a href="{{url('user')}}">Users</a>
           <a href="{{url('company')}}">Companies</a>
           <a href="{{url('posts')}}">Posts</a>
-          <a href="{{url('category')}}">Category</a><br />
+          <a href="{{url('category')}}">Category</a>
+          <a href="{{url('contact')}}">Contacts</a><br />
           <p>Design By Samiullah</p>
         </div>
       </div>

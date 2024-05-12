@@ -38,14 +38,12 @@
         <div class="registration__btn">
 
 
+
           <a class="btn head__btn" href="{{url('find-job')}}">@lang('msg.Apply for job')</a>
-       
-
-
-
           <a class="btn head__btn" href="{{route('personalInformation.create')}}">Create Your CV</a>
 
-          <a class="btn head__btn" href="{{url('find-job')}}">@lang('msg.Apply for job')</a>
+         
+
 
         </div>
       </div>
@@ -91,24 +89,9 @@
         <i class="ri-arrow-left-s-line"></i>
       </button>
       <div class="slider__wrapper">
-        @section('N')
-        @foreach ($results as $result)
-              {{ $result->count }}
-              @endforeach
-             @endsection
+       
             
-             
-            
-      @foreach( $post as $posts)
-        <div class="company__info">
-          <div class="company__logo">
-          <img src="{{ asset(str_replace('public/', 'storage/', $posts->logo)) }}" alt="Company Logo">
-            <h3>{{$posts->company->company_name}}</h3>
-          <span>@yield('N')</span>
-            <h4>job oppertunities</h4>
-          </div>
-        </div>
-         @endforeach
+     
         <div class="company__info">
           <div class="company__logo">
             <img src="./assets/images/company logo/unicif.png" alt="" />
@@ -500,67 +483,7 @@
     <div class="jobcart__wrapper">
 
       <!--============================== new========================================== -->
-      @foreach( $post as $posts)
-
-      <div class="job-card">
-        <div class="job-card-header">
-         
-        <img src="{{ asset(str_replace('public/', 'storage/', $posts->logo)) }}" alt="Company Logo">
-          <div class="job-card-title">{{$posts->jobTitle}}
-             <p>{{$posts->company->company_name}}</p>
-            
-          </div>
-                           
-          <div class="menu-dot"></div>
-        </div>
-        <div class="job-card-subtitle">
-          <!-- jobDescription show less -->
-        <?php
-                $description = $posts->jobDescription;
-                $truncated = substr($description, 0, 150);
-                $remaining = strlen($description) > 150;
-
-                echo nl2br($truncated);
-                if ($remaining) {
-                    echo '...';
-                }
-                ?>
-           <!-- jobDescription show less -->
-        </div>
-        <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            {{$posts->jobType}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$posts->experience}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$posts->seniority}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$posts->category}}
-          </button>
-        </div>
-        <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            {{$posts->salary}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$posts->location}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$posts->created_at}}
-          </button>
-        </div>
-        <div class="job-card-buttons">
-          <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
-          <button class="search-buttons card-buttons-msg  btn">
-            Messages
-          </button>
-        </div>
-      </div>
-
-      @endforeach
+    
   <!-- cartssssssssssssssssssssssssssssss is comemted -->
       <div class="job-card">
         <div class="job-card-header">
