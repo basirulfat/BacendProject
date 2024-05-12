@@ -21,6 +21,7 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
    
+
         public function redirect(){
             if(Auth::id()){
                 if(Auth::user()->usertype == '0'){
@@ -36,6 +37,8 @@ class LoginController extends Controller
                 return redirect()->back();
             }
         }
+
+       
     
     /**
      * Where to redirect users after login.
@@ -49,8 +52,12 @@ class LoginController extends Controller
      *
      * @return void
      */
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
+
+   
+
 }

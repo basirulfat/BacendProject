@@ -32,8 +32,10 @@
           <h3>AfghanTalent</h3>
         </div>
         <div class="link-des">
+
           <a href="{{url('index')}}" class="footer-links">Home</a>
-          <a href="{{url('About')}}" class="footer-links">About</a>
+          <a href="{{url('About')}}" class="footer-links">@lang('msg.about')</a>
+
           <a href="{{url('Contact_Us')}}" class="footer-links">Contact Us</a>
           <a href="{{url('FAQ')}}" class="footer-links">FAQ</a>
           <a href="{{url('blog')}}" class="footer-links">blog</a>

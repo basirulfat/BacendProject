@@ -6,10 +6,6 @@
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
-  
-
-  <!--=============== REMIXICONS ===============-->
-
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Responsive CV</title>
    
@@ -27,14 +23,13 @@
     <!--=============== HEADER ===============-->
    @include('layouts.header')
     <!--=============== your cv ===============-->
-    @foreach($users as $user)
+
     <div id="General-container">
       <div class="resume__container">
         <div class="left_Side">
           <div class="profileText">
             <div class="imgBx">
-            <img class="photo" src="{{asset('storage/'.$user->image)}}" />
-            
+              <img class="photo" src="./assets/images/greeting.jpg" />
             </div>
             <br />
            
@@ -48,8 +43,9 @@
             <ul>
               <li>
                 <span class="icon"
-                  ><i class="fa fa-phone" aria-hidden="true"></i></span>
-                <span class="text">{{$user->phone}}</span>
+                  ><i class="fa fa-phone" aria-hidden="true"></i
+                ></span>
+                <span class="text">+93 731682669</span>
               </li>
               <li>
                 <span class="icon"
@@ -114,7 +110,6 @@
               </li>
             </ul>
           </div>
-        
           <div class="contactInfo language">
             <h3 class="title">Languages</h3>
             <ul>
@@ -158,8 +153,8 @@
             <h2 class="title2">Experience</h2>
             <div class="box">
               <div class="year_company">
-                <h5>{{$ex->start_year}}</h5>
-                <h5>MRC</h5>
+                <h5>2020 - Present</h5>
+                <h5>Company Name</h5>
               </div>
               <div class="text">
                 <h4>{{$ex->job_title}}</h4>
@@ -196,14 +191,12 @@
             </ul>
           </div>
         </div>
-       
       </div>
-      </div>
-      @endforeach
-      <a class="btn btn-sm btn-primary" href="{{ route('personalInformation.index') }}" role="button" style="background-color:#0b60b0;; color:white;position: relative; left: 250px; bottom:100px; border-radius:5px; width:200px;">Edit Your CV</a>
-      <a class="btn btn-sm btn-primary" href="{{ route('resume.download') }}" role="button" style="background-color:#0b60b0;; color:white;position: relative; left: 250px; bottom:100px;border-radius:5px; width:200px;">Download CV</a>
 
+      <!--=============== FOOTER ===============-->
       @include('layouts.footer')
+    </div>
+
     <!--=============== MAIN JS ===============-->
 
     <script defer type="module" src="./assets/js/main.js"></script>

@@ -45,37 +45,66 @@
             <span class="close">&times;</span>
             <h2>Create a New Company</h2>
             <br />
-            <form id="postForm">
+            <form action="/company" method="POST" enctype="multipart/form-data" id="postForm">
+              @csrf
               <div>
-                <label for="name">Name:</label>
-                <input type="text" id="title" name="title" />
+              <label for="">Owner Name</label>
+               <input type="text" class="btn username"  name="owner" />
               </div>
               <div>
-                <label for="author">Email:</label>
-                <input type="text" id="author" name="author" />
+              <label for="">Your Company Name(English)</label>
+                <input
+                  type="text"
+                  class="btn selection username"
+                  name="company_name"
+                />
               </div>
               <div>
-                <label for="title">Password:</label>
-                <input type="text" id="title" name="title" />
+              <label for="">Phone</label>
+                <input
+                  type="text"
+                  class="btn selection phone"
+                  name="phone"
+                />
               </div>
               <div>
-                <label for="author">Country:</label>
-                <input type="text" id="author" name="author" />
+              <label for="">Email</label>
+              <input
+                type="text"
+                class="btn selection email" name="email"
+              />
               </div>
               <div>
-                <label for="author">Img:</label>
-                <!-- <input type="file" id="image" name="image" class="image-input"> -->
-                <div class="file-upload">
-                  <label for="image-upload" class="file-upload__label">
-                    Upload Image
-                  </label>
-                  <input
-                    id="image-upload"
-                    class="file-upload__input"
-                    type="file"
-                    name="image-upload"
-                  />
-                </div>
+               <label for="company_size">Your Company Size</label>
+                  <select name="company_size" id="company_size" class="btn selection">
+                  <option value="">select your Company size</option>
+                  <option value="500 employees">500 employees</option>
+                  <option value="100 - 499 employees">100 - 499 employees</option>
+                  <option value="50 - 99 employees">50 - 99 employees</option>
+                  <option value="10 - 49 employees">10 - 49 employees</option>
+                  <option value="1 - 9 employees">1 - 9 employees</option>
+                </select>
+              </div>
+              <div>
+              <label for="">Address</label>
+                <input
+                  type="text"
+                  class="btn selection" name="position"
+                />
+              </div>
+              <div>
+                  <label for="image-upload">Img:</label>
+                  <div class="file-upload">
+                      <label for="image-upload" class="file-upload__label">
+                          Upload Image
+                      </label>
+                      <input
+                          id="image-upload"
+                          class="file-upload__input"
+                          type="file"
+                          name="image"
+                      />
+                  </div>
               </div>
               <br />
               <!-- <button type="button">Submit</button> -->
@@ -88,77 +117,62 @@
         <div class="table">
           <div class="head">
             <h2>Table users</h2>
+            <form action="{{ route('company.search') }} " method="get" enctype="multipart/form-data">
+          <div class="search-bar">
+            <input type="text" name="search" class="search-input" placeholder="Search For" />
+            <button type="submit" class="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+              </form>
             <!-- <button onclick="onclick()">&#9776;</button> -->
             <button id="openModalButton">Create a New Company</button>
           </div>
 
           <table>
             <th>id</th>
+            <th>Owner</th>
             <th>Name</th>
             <th>Email</th>
             <th>Address</th>
             <th>Phone</th>
+            <th>Logo</th>
             <th>Action</th>
+            @forelse($company as $company)
+              <tr>
+                  <td>{{$company->id}}</td>
+                  <td>{{$company->owner}}</td>
+                  <td>{{$company->company_name}}</td>
+                  <td>{{$company->email}}</td>
+                  <td>{{$company->position}}</td>
+                  <td>{{$company->phone}}</td>
+                  <td><img src="{{ asset('storage/' . $company->image) }}" alt=""></td>
+                  <td>
+                    <!-- <a class="actionButton editButton" href="#"><i class="ri-image-edit-fill"></i></a> -->
+                    <!-- <a class="actionButton deleteButton" href="#"><i class="ri-delete-bin-5-fill"></i></a> -->
+                    <form action="{{ route('company.destroy', ['company' => $company->id]) }}" method="POST" onsubmit="return confirm('Are you sure delete this user?')">
+                      @csrf
+                      @method('DELETE')
+                      <!-- <button class="actionButton editButton  eidetbtn" href="#"><i class="ri-image-edit-fill"></i></button> -->
+                      <button type="submit" class="actionButton deleteButton"><i class="ri-delete-bin-5-fill"></i></button>
+                    </form>
+                 </td>
+            </tr>
 
-            <tr>
-              <td>1</td>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-              <td>0798425895</td>
-              <td>
-                <a class="actionButton editButton" href="#">Edit</a>
-                <a class="actionButton deleteButton" href="#">Delete</a>
-              </td>
+
+            @empty
+            <tr style="text-align: center;">
+              <td style="color:red; font-size:2rem; ">No company Found</td>
             </tr>
-            <tr>
-              <td>6</td>
-              <td>Berglunds snabbköp</td>
-              <td>Christina Berglund</td>
-              <td>Sweden</td>
-              <td>0798425895</td>
-              <td>
-                <a class="actionButton editButton" href="#">Edit</a>
-                <a class="actionButton deleteButton" href="#">Delete</a>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-              <td>0798425895</td>
-              <td>
-                <a class="actionButton editButton" href="#">Edit</a>
-                <a class="actionButton deleteButton" href="#">Delete</a>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Ernst Handel</td>
-              <td>Roland Mendel</td>
-              <td>Austria</td>
-              <td>0798425895</td>
-              <td>
-                <a class="actionButton editButton" href="#">Edit</a>
-                <a class="actionButton deleteButton" href="#">Delete</a>
-              </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Island Trading</td>
-              <td>Helen Bennett</td>
-              <td>UK</td>
-              <td>0798425895</td>
-              <td>
-                <a class="actionButton editButton" href="#">Edit</a>
-                <a class="actionButton deleteButton" href="#">Delete</a>
-              </td>
-            </tr>
+           @endforelse
+
           </table>
         </div>
       </div>
+ 
     </div>
+        <!-- =============== table ======================== -->
+
 
 
     <!-- ====================for companay================================= -->

@@ -2,8 +2,8 @@
   <!--=============== HEADER ===============-->
   <header class="header">
     <nav class="nav container">
-      <div class="nav__data">
-        <a href="{{url('index')}}" class="nav__logo">
+      <div class="nav__data" style="margin-left:5em;">
+        <a href="{{route('home')}}" class="nav__logo">
           <i class="ri-open-arm-fill logo-icon"></i> AfghanTalent
         </a>
 
@@ -16,9 +16,11 @@
       <!--=============== NAV MENU ===============-->
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-          <li><a href="{{url('index')}}" class="nav__link">Home</a></li>
 
-          <li><a href="{{url('find-job')}}" class="nav__link">Find job</a></li>
+          <li><a href="{{url('index')}}" class="nav__link">@lang('msg.home')</a></li>
+
+
+          <li><a href="{{url('find-job')}}" class="nav__link">@lang('msg.Find job')</a></li>
           <li><a href="{{url('Dashboarded')}}" class="nav__link">Dashboard</a></li>
 
           <!--=============== DROPDOWN 1 ===============-->
@@ -35,16 +37,17 @@
               </li>
 
               <li>
-                <a href="{{url('post-job')}}" class="dropdown__link">
-                  <i class="ri-megaphone-fill"></i> Post aJob
+                <a href="{{url('companyRegister')}}" class="dropdown__link">
+
+                  <i class="ri-registered-line"></i> RegisterCompany
                 </a>
               </li>
 
               <!--=============== DROPDOWN SUBMENU ===============-->
               <li class="dropdown__subitem">
                 <div class="dropdown__link">
-                  <a href="#"><i class="ri-search-line"></i></a>
-                  <input class="btn" type="search" placeholder="Search" />
+                  <a href="{{url('Post-job')}}"><i class="ri-megaphone-fill"></i> post a Job</a>
+                  <!-- <input class="btn" type="search" placeholder="Search" /> -->
                   <i class="ri-add-line dropdown__add"></i>
                 </div>
 
@@ -110,25 +113,25 @@
           
           <!--=============== DROPDOWN 3 ===============-->
           <li class="dropdown__item">
-            <div class="nav__link">
+            <div class="nav__link" style="margin-right:5em;">
               Lang <i class="ri-arrow-down-s-line dropdown__arrow"></i>
             </div>
 
             <ul class="dropdown__menu">
               <li>
-                <a href="#" class="dropdown__link">
+                <a href="locale/en" class="dropdown__link">
                   <i class="ri-global-line"></i> English
                 </a>
               </li>
 
               <li>
-                <a href="#" class="dropdown__link">
+                <a href="locale/ps" class="dropdown__link">
                   <i class="ri-exchange-funds-line"></i> Pashto
                 </a>
               </li>
 
               <li>
-                <a href="#" class="dropdown__link">
+                <a href="locale/fa" class="dropdown__link">
                   <i class="ri-exchange-funds-line"></i>Dari
                 </a>
               </li>

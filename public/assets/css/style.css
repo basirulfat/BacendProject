@@ -1528,7 +1528,7 @@ input[type="mail"] {
   margin-left: 0;
 }
 ::placeholder{
-  color: var(--light);
+  color: var(--gray);
   padding: 1rem;
 }
 
