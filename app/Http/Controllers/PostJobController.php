@@ -18,7 +18,7 @@ class PostJobController extends Controller
         $post = PostJob::all();
         $posts = new PostJob();
         $results = $posts->getProductsByCategory();
-        return view('index', compact('post','results'));
+        return view('index', compact('post'));
     }
  /*-============show data in find-job page ==========*/
     public function findJob()
@@ -28,9 +28,9 @@ class PostJobController extends Controller
     }
 /*-============show data in showjob page ==========*/
      public function showjobs()
-     {
+     {   $initialMarkers = [];
          $post = PostJob::all();
-         return view('showJobs',compact('post'));
+         return view('showJobs',compact('post','initialMarkers'));
      }
 /*-============ post job from dashboard ==========*/
      public function adminPost(){
@@ -146,6 +146,6 @@ class PostJobController extends Controller
     
     public function postscount(){
       
-        //  return $results;
+         return $results;
     }
 }

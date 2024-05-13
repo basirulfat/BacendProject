@@ -17,9 +17,6 @@
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
           <li><a href="{{url('index')}}" class="nav__link">@lang('msg.home')</a></li>
-
-
-          <li><a href="{{url('index')}}" class="nav__link">@lang('msg.home')</a></li>
           <li><a href="{{url('find-job')}}" class="nav__link">@lang('msg.Find job')</a></li>
           <li><a href="{{url('Dashboarded')}}" class="nav__link">Dashboard</a></li>
 

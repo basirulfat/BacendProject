@@ -28,7 +28,7 @@ Auth::routes();
 Route::get('/', [mapController::class, 'index']);
 Route::get('/showjob', [showjobmapController::class, 'index']);
 
-Route::get('/index', [HomeController::class, 'redirect']);
+Route::get('/index', [HomeController::class, 'redirect'])->name('home.redirect')->middleware('auth');;
 Route::get('auth/google',[GoogelAuthController::class,'redirects'])->name('google-auth');
 Route::get('auth/google/call-back',[GoogelAuthController::class,'callbackGoogle']);
 

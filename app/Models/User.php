@@ -64,8 +64,7 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-<<<<<<< HEAD
-=======
+
 
         /**
      * Get the job posts created by the user.
@@ -78,7 +77,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Company::class);
     }
->>>>>>> 30c9c561c35c0306406f604976116db8ae36deab
     public function education(){
         return $this->hasMany(Education::class);
     }
@@ -93,9 +91,5 @@ class User extends Authenticatable
 
     public function Personal(){
         return $this->hasOne(PersonalInformation::class);
-<<<<<<< HEAD
-=======
-
->>>>>>> 30c9c561c35c0306406f604976116db8ae36deab
     }
 }

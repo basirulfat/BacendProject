@@ -19,45 +19,38 @@ class LoginController extends Controller
     |
     */
 
-    // use AuthenticatesUsers;
+    use AuthenticatesUsers;
    
-
-    //     public function redirect(){
-    //         if(Auth::id()){
-    //             if(Auth::user()->usertype == '0'){
+        public function redirect(){
+            if(Auth::id()){
+                if(Auth::user()->usertype == '0'){
                     
-    //                 return view('index');
-    //             }
-    //             else{
+                    return view('index');
+                }
+                else{
     
-    //                 return view('admin.home');
-    //             }
-    //         }
-    //         else{
-    //             return redirect()->back();
-    //         }
-    //     }
-
-       
+                    return view('admin.home');
+                }
+            }
+            else{
+                return redirect()->back();
+            }
+        }
     
-    // /**
-    //  * Where to redirect users after login.
-    //  *
-    //  * @var string
-    //  */
-    // protected $redirectTo = '/home';
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/home';
 
-    // /**
-    //  * Create a new controller instance.
-    //  *
-    //  * @return void
-    //  */
-
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     // public function __construct()
     // {
     //     $this->middleware('guest')->except('logout');
     // }
-
-   
-
 }
