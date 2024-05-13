@@ -32,7 +32,14 @@
           <h3>AfghanTalent</h3>
         </div>
         <div class="link-des">
-          <a href="{{url('index')}}" class="footer-links">Home</a>
+
+
+          
+
+          <a href="{{route('home.redirect')}}" class="footer-links">@lang('msg.home')</a>
+
+          
+
           <a href="{{url('About')}}" class="footer-links">@lang('msg.about')</a>
 
           <a href="{{url('Contact_Us')}}" class="footer-links">Contact Us</a>

@@ -31,49 +31,64 @@
     <section id="contact-container">
       <section id="left-container">
         <h2>Contact Form</h2>
-        <div id="contact-form">
+        <section id="contact-form">
           <p>
             To answer questions you may have, please review our frequently asked
             questions( <a href="{{url('FAQ')}}">FAQ</a> )
           </p>
-          <form action="" autocomplete="off" id="form">
+          <form action="{{ route('contact.store') }}" method="POST" autocomplete="off">
+              @csrf
             <div id="general-container">
               <div class="field-container">
-                <label for="">Name & LastName</label>
-                <input type="text" name="username" id="username" /><br />
-                <small></small>
-                <label for="">Email Address</label>
+
+                <label for="username">Name & LastName</label>
+                <input type="text" name="name" id="username" /><br />
+                @error('name')
+                <small style="color:red;">{{$message}}</small>
+                @enderror
+                
+                <label for="email">Email Address</label>
                 <input type="email" name="email" id="email" /> <br />
-                <small></small>
+                @error('email')
+                <small style="color:red;">{{$message}}</small>
+                @enderror
               </div>
 
               <div class="field-container">
-                <label for="">Telephone</label>
+                <label for="telephone">Telephone</label>
                 <input type="tel" name="telephone" id="telephone" /> <br />
-                <small></small>
-                <label for="">Type</label>
+                @error('telephone')
+                <small style="color:red;">{{$message}}</small>
+                @enderror
 
-                <select>
-                  <option value="">Problem with site</option>
-                  <option value="">Feedback & Suggestion</option>
-                  <option value="">Request to Call</option>
+                <label for="">Type</label>
+                <select name="type">
+                  <option value="Problem with site">Problem with site</option>
+                  <option value="Feedback & Suggestion">Feedback & Suggestion</option>
+                  <option value="Request to Call">Request to Call</option>
                 </select>
-                <small></small>
+                
               </div>
             </div>
             <div id="general-container1">
               <div class="field-container1">
                 <label for="">Subject</label>
-                <input type="text" name="" />
+                <input type="text" name="subject" />
+                @error('subject')
+                <small style="color:red;">{{$message}}</small>
+                @enderror
               </div>
               <div class="field-container1">
-                <label for="">Description</label>
-                <textarea name="" id="" cols="30" rows="1"></textarea>
+                <label for="description">Description</label>
+                <textarea name="description" id="description" cols="30" rows="1"></textarea>
+                @error('description')
+                  <small style="color:red;">{{$message}}</small>
+                @enderror
               </div>
             </div>
-            <button type="submit" id="submit-btn">Submit</button>
+            <input type="submit" id="submit-btn" value="submit"></input>
           </form>
-        </div>
+        </section>
         <div id="contact-company">
           <div class="contact-image">
             <h1>Companies</h1>

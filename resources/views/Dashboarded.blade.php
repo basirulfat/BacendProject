@@ -108,10 +108,12 @@
 
           <!-- applied for -->
           <div class="applied" >
-            <div class="job-info-card">
+
+            <div class="dashboar-cards">
               <div class="card-wrapper" >
-                <div class="company-job-info" >
-                  <div class="company-card-img"  >
+                <div class="company-job-info">
+                  <div class="company-card-img" >
+
                     <img
                       src="./assets/images/company logo/images (1).png"
                       alt=""
@@ -119,168 +121,78 @@
                   </div>
 
                   <div class="company-card-details">
-                    <h2>Project Maneger</h2>
+                    <h3>Project Maneger</h3>
                     <p>Khan steale mill</p>
                     <span>Lacation</span>
                   </div>
                 </div>
                 <div class="card-status">
-                  <p>2 Month ago</p>
+                  <h4>2 Month ago</h4>
                   <a href="#"><i class="ri-share-box-fill"></i>Show Status</a>
                 </div>
               </div>
-              <div class="card-wrapper">
+              <div class="card-wrapper" >
                 <div class="company-job-info">
                   <div class="company-card-img">
                     <img
-                      src="./assets/images/company logo/images (3).jpg"
+                    src="./assets/images/company logo/images (3).jpg"
                       alt=""
                     />
                   </div>
 
                   <div class="company-card-details">
-                    <h2>project Maneger</h2>
+                    <h3>Project Maneger</h3>
                     <p>Khan steale mill</p>
                     <span>Lacation</span>
                   </div>
                 </div>
                 <div class="card-status">
-                  <p>2 Month ago</p>
+                  <h4>2 Month ago</h4>
                   <a href="#"><i class="ri-share-box-fill"></i>Show Status</a>
                 </div>
               </div>
-            </div>
-            <div class="job-info-card">
-              <div class="card-wrapper">
+              <div class="card-wrapper" >
                 <div class="company-job-info">
                   <div class="company-card-img">
                     <img
-                      src="./assets/images/company logo/images (1).png"
+                    src="./assets/images/company logo/images (3).jpg"
                       alt=""
                     />
                   </div>
 
                   <div class="company-card-details">
-                    <h2>Project Maneger</h2>
+                    <h3>Project Maneger</h3>
                     <p>Khan steale mill</p>
                     <span>Lacation</span>
                   </div>
                 </div>
                 <div class="card-status">
-                  <p>2 Month ago</p>
+                  <h4>2 Month ago</h4>
                   <a href="#"><i class="ri-share-box-fill"></i>Show Status</a>
                 </div>
               </div>
-              <div class="card-wrapper">
+              <div class="card-wrapper" >
                 <div class="company-job-info">
-                  <div class="company-card-img">
+                  <div class="company-card-img" >
                     <img
-                      src="./assets/images/company logo/images (3).jpg"
+                    src="./assets/images/company logo/images (3).jpg"
                       alt=""
                     />
                   </div>
 
                   <div class="company-card-details">
-                    <h2>project Maneger</h2>
+                    <h3>Project Maneger</h3>
                     <p>Khan steale mill</p>
                     <span>Lacation</span>
                   </div>
                 </div>
                 <div class="card-status">
-                  <p>2 Month ago</p>
+                  <h4>2 Month ago</h4>
                   <a href="#"><i class="ri-share-box-fill"></i>Show Status</a>
                 </div>
               </div>
+              
             </div>
-
-            <!--  show More  -->
-            <div class="show-more">
-              <div class="job-info-card">
-                <div class="card-wrapper">
-                  <div class="company-job-info">
-                    <div class="company-card-img">
-                      <img
-                        src="./assets/images/company logo/images (1).png"
-                        alt=""
-                      />
-                    </div>
-
-                    <div class="company-card-details">
-                      <h2>Project Maneger</h2>
-                      <p>Khan steale mill</p>
-                      <span>Lacation</span>
-                    </div>
-                  </div>
-                  <div class="card-status">
-                    <p>2 Month ago</p>
-                    <a href="#"><i class="ri-share-box-fill"></i>Show Status</a>
-                  </div>
-                </div>
-                <div class="card-wrapper">
-                  <div class="company-job-info">
-                    <div class="company-card-img">
-                      <img
-                        src="./assets/images/company logo/images (3).jpg"
-                        alt=""
-                      />
-                    </div>
-
-                    <div class="company-card-details">
-                      <h2>project Maneger</h2>
-                      <p>Khan steale mill</p>
-                      <span>Lacation</span>
-                    </div>
-                  </div>
-                  <div class="card-status">
-                    <p>2 Month ago</p>
-                    <a href="#"><i class="ri-share-box-fill"></i>Show Status</a>
-                  </div>
-                </div>
-              </div>
-              <div class="job-info-card">
-                <div class="card-wrapper">
-                  <div class="company-job-info">
-                    <div class="company-card-img">
-                      <img
-                        src="./assets/images/company logo/images (1).png"
-                        alt=""
-                      />
-                    </div>
-
-                    <div class="company-card-details">
-                      <h2>Project Maneger</h2>
-                      <p>Khan steale mill</p>
-                      <span>Lacation</span>
-                    </div>
-                  </div>
-                  <div class="card-status">
-                    <p>2 Month ago</p>
-                    <a href="#"><i class="ri-share-box-fill"></i>Show Status</a>
-                  </div>
-                </div>
-                <div class="card-wrapper">
-                  <div class="company-job-info">
-                    <div class="company-card-img">
-                      <img
-                        src="./assets/images/company logo/images (3).jpg"
-                        alt=""
-                      />
-                    </div>
-
-                    <div class="company-card-details">
-                      <h2>project Maneger</h2>
-                      <p>Khan steale mill</p>
-                      <span>Lacation</span>
-                    </div>
-                  </div>
-                  <div class="card-status">
-                    <p>2 Month ago</p>
-                    <a href="#"><i class="ri-share-box-fill"></i>Show Status</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="show-job-btn">See All Jobs Status</button>
           </div>
         </div>
       </div>

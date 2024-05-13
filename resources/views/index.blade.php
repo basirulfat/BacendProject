@@ -38,10 +38,12 @@
         <div class="registration__btn">
 
 
+
           <a class="btn head__btn" href="{{url('find-job')}}">@lang('msg.Apply for job')</a>
           <a class="btn head__btn" href="{{route('personalInformation.create')}}">Create Your CV</a>
 
          
+
 
         </div>
       </div>

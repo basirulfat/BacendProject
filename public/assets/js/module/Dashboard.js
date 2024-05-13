@@ -17,27 +17,27 @@ showSearch.addEventListener('click',function(){
 
 });
 
-//  Show more jobs ==================================
+// //  Show more jobs ==================================
 
-const showMore = document.querySelector(".show-more");
-const showMoreBtn = document.querySelector(".show-job-btn");
-let clickCount = 0;
+// const showMore = document.querySelector(".show-more");
+// const showMoreBtn = document.querySelector(".show-job-btn");
+// let clickCount = 0;
 
-showMoreBtn.addEventListener('click', function() {
-  clickCount++;
+// showMoreBtn.addEventListener('click', function() {
+//   clickCount++;
 
-  if (clickCount % 2 === 0) {
-    showMore.style.display = 'block';
-    showMoreBtn.innerHTML="See Less Job Status";
-  } else {
+//   if (clickCount % 2 === 0) {
+//     showMore.style.display = 'block';
+//     showMoreBtn.innerHTML="See Less Job Status";
+//   } else {
 
     
-    showMore.style.display = 'none';
-    showMoreBtn.innerHTML="See All Jobs Status";
+//     showMore.style.display = 'none';
+//     showMoreBtn.innerHTML="See All Jobs Status";
     
 
-  }
-});
+//   }
+// });
 
 // Right click=================================
 
