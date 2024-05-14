@@ -107,7 +107,8 @@
         </script>
   </section>
     <div class="job">
-      <div class="header">
+
+      <!-- <div class="header" style="border: 1px solid red;">
         <div class="logo">
 
           <a href="{{url('index')}}">
@@ -155,7 +156,10 @@
           <img class="user-profile" src="assets/images/sami.JPG" alt="" />
           <div class="user-name">Samiullah Shaheen</div>
         </div>
-      </div>
+      </div> -->
+
+
+
       <div class="wrapper">
         <div class="search-menu">
           <div class="search-bar">
