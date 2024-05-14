@@ -200,10 +200,10 @@
         </div>
 
         <div class="form-group">
-          <label for="expaireTime">Expaires Time:</label>
+          <label for="expairTime">Expaires Time:</label>
           <input
             type="datetime-local"
-            id="expaireTime"
+            id="expairTime"
             name="expairTime"
             required
           />

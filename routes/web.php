@@ -64,13 +64,6 @@ Route::get('/home', [HomeController::class, 'redirect'])->name('home.redirect');
 /*=================== Redirect To home page =======================*/
 
 
-/*=================== Resume part =======================*/
-
-/*=================== Resume part =======================*/
-
-
-
-
 /*=================== Admin panal =======================*/
 
                  /*---Users---*/
@@ -83,12 +76,16 @@ Route::get('/home', [AdminController::class, 'countData'])->name('home.countData
  Route::resource('/company', CompanyController::class);
  Route::get('/company', [CompanyController::class, 'search'])->name('company.search');
  Route::get('/Companeis_Rate', [CompanyController::class, 'CompanyRate'])->name('Companeis_Rate.CompanyRate');
- 
+
  
               /*--- posts---*/
 Route::resource('posts', PostJobController::class);
 Route::get('/posts', [PostJobController::class, 'adminPost'])->name('posts');
 Route::get('/posts', [PostJobController::class, 'search'])->name('posts.search');
+      /*---show cart data in the index page  ---*/
+Route::get('/', [PostJobController::class, 'index'])->name('jobs.index');
+
+
 
 
 Route::get("/category",function(){
@@ -175,6 +172,6 @@ Route::resource('/contact', ContactFormController::class);
 Route::get('/cotact', [ContactFormController::class, 'search'])->name('contact.search');
 
 
-
+route::get('companies',[PostJobController::class,'postscount']);
 /*========= Contact form  =============*/
 

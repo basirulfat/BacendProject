@@ -90,16 +90,16 @@
       </button>
       <div class="slider__wrapper">
        
+           
             
-     
-        <div class="company__info">
-          <div class="company__logo">
-            <img src="./assets/images/company logo/unicif.png" alt="" />
-            <h3>Unicif</h3>
-            <span>N</span>
-            <h4>job oppertunities</h4>
-          </div>
-        </div>
+            <div class="company__info">
+              <div class="company__logo">
+                <h3></h3>
+                <span>N</span>
+                <h4>job oppertunities</h4>
+              </div>
+            </div>
+            
         <div class="company__info">
           <div class="company__logo">
             <img src="./assets/images/company logo/khan.jpg" alt="" />
@@ -317,13 +317,14 @@
       <a href="#">W . H . O</a>
     </div>
   </section>
-      <!--=======================map============================== -->
+      <!--=================== map ================= -->
   <section>
   <h1 class="text-center">Find Job Location in Maps and See</h1>
         <div id="map"></div>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsvEv3lrJ4A8_M4HofeymlNoqz48NqoQc&callback=initMap" async></script>
         <script>
-            let map, activeInfoWindow, markers = [];
+            let  map, activeInfoWindow, markers = [];
+           
 
             /* ----------------------------- Initialize Map ----------------------------- */
             function initMap() {
@@ -344,7 +345,7 @@
 
             /* --------------------------- Initialize Markers --------------------------- */
             function initMarkers() {
-                const initialMarkers = <?php echo json_encode($initialMarkers); ?>;
+                
 
                 for (let index = 0; index < initialMarkers.length; index++) {
 
@@ -481,38 +482,54 @@
      <!--============================== new========================================== -->
 
     <div class="jobcart__wrapper">
+           
+      @foreach( $jobs as $job)
 
-      <!--============================== new========================================== -->
-    
-  <!-- cartssssssssssssssssssssssssssssss is comemted -->
       <div class="job-card">
         <div class="job-card-header">
-        <img src="assets/images/company logo/khan.jpg" alt="">
-          <div class="job-card-title">Project Manager</div>
+        <img src="{{ asset(str_replace('public/', 'storage/', $job->logo)) }}" alt="Company Logo">
+          <div class="job-card-title">{{$job->jobTitle}}
+          <p>{{$job->company->company_name}}</p>
+         </div>
           <div class="menu-dot"></div>
         </div>
         <div class="job-card-subtitle">
-          The User Experience Designer position exists to create
-          compelling and digital user experience through excellent
-          design...
+           <!-- jobDescription show less -->
+        <?php
+                $description = $job->jobDescription;
+                $truncated = substr($description, 0, 150);
+                $remaining = strlen($description) > 150;
+
+                echo nl2br($truncated);
+                if ($remaining) {
+                    echo '...';
+                }
+                ?>
+           <!-- jobDescription show less -->
         </div>
         <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            Full Time
+        <button class="search-buttons detail-button btn">
+            {{$job->jobType}}
           </button>
           <button class="search-buttons detail-button btn">
-            Min. 1 Year
+          {{$job->experience}}
           </button>
           <button class="search-buttons detail-button btn">
-            Senior level
+          {{$job->seniority}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$job->category}}
           </button>
         </div>
         <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            3000 $
+        <button class="search-buttons detail-button btn">
+            {{$job->salary}}
           </button>
           <button class="search-buttons detail-button btn">
-            3 hour ago
+          {{$job->location}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$job->created_at}}
           </button>
         </div>
         <div class="job-card-buttons">
@@ -522,159 +539,13 @@
           </button>
         </div>
       </div>
-
-      <div class="job-card">
-        <div class="job-card-header">
-        <img src="assets/images/company logo/khan.jpg" alt="">
-       <div class="job-card-title">Cleaner</div>
-          <div class="menu-dot"></div>
-        </div>
-        <div class="job-card-subtitle">
-          The User Experience Designer position exists to create
-          compelling and digital user experience through excellent
-          design...
-        </div>
-        <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            Full Time
-          </button>
-          <button class="search-buttons detail-button btn">
-            Min. 1 Year
-          </button>
-          <button class="search-buttons detail-button btn">
-            Senior level
-          </button>
-        </div>
-        <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            3000 $
-          </button>
-          <button class="search-buttons detail-button btn">
-            3 hour ago
-          </button>
-        </div>
-        <div class="job-card-buttons">
-          <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
-          <button class="search-buttons card-buttons-msg  btn">
-            Messages
-          </button>
-        </div>
-      </div>
-
-      <div class="job-card">
-        <div class="job-card-header">
-          <img src="assets/images/company logo/khan.jpg" alt="">
-          <div class="job-card-title">Employes</div>
-          <div class="menu-dot"></div>
-        </div>
-        <div class="job-card-subtitle">
-          The User Experience Designer position exists to create
-          compelling and digital user experience through excellent
-          design...
-        </div>
-        <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            Full Time
-          </button>
-          <button class="search-buttons detail-button btn">
-            Min. 1 Year
-          </button>
-          <button class="search-buttons detail-button btn">
-            Senior level
-          </button>
-        </div>
-        <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            3000 $
-          </button>
-          <button class="search-buttons detail-button btn">
-            3 hour ago
-          </button>
-        </div>
-        <div class="job-card-buttons">
-          <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
-          <button class="search-buttons card-buttons-msg  btn">
-            Messages
-          </button>
-        </div>
-      </div>
-
-      <div class="job-card">
-        <div class="job-card-header">
-          <img src="assets/images/company logo/unicif.png" alt="">
-          <div class="job-card-title">Supper waizer</div>
-          <div class="menu-dot"></div>
-        </div>
-        <div class="job-card-subtitle">
-          The User Experience Designer position exists to create
-          compelling and digital user experience through excellent
-          design...
-        </div>
-        <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            Full Time
-          </button>
-          <button class="search-buttons detail-button btn">
-            Min. 1 Year
-          </button>
-          <button class="search-buttons detail-button btn">
-            Senior level
-          </button>
-        </div>
-        <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            3000 $
-          </button>
-          <button class="search-buttons detail-button btn">
-            3 hour ago
-          </button>
-        </div>
-        <div class="job-card-buttons">
-          <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
-          <button class="search-buttons card-buttons-msg  btn">
-            Messages
-          </button>
-        </div>
-      </div>
-
-      <div class="job-card">
-        <div class="job-card-header">
-          <img src="assets/images/company logo/meli.jpg" alt="">
-          <div class="job-card-title">Cook / Cleaner</div>
-          <div class="menu-dot"></div>
-        </div>
-        <div class="job-card-subtitle">
-          The User Experience Designer position exists to create
-          compelling and digital user experience through excellent
-          design...
-        </div>
-        <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            Full Time
-          </button>
-          <button class="search-buttons detail-button btn">
-            Min. 1 Year
-          </button>
-          <button class="search-buttons detail-button btn">
-            Senior level
-          </button>
-        </div>
-        <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            3000 $
-          </button>
-          <button class="search-buttons detail-button btn">
-            3 hour ago
-          </button>
-        </div>
-        <div class="job-card-buttons">
-          <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
-          <button class="search-buttons card-buttons-msg  btn">
-            Messages
-          </button>
-        </div>
-      </div>
+      @endforeach
     </div>
+    <!-------------------------------pagenation ------------------------------------>
+    <div class="pagination-container">
+      {{ $jobs->links() }}
+    </div>
+     <!-------------------------------pagenation ------------------------------------>
     <div class="job__btn">
       <a href="{{url('showJobs')}}">See More Jobs<i class="ri-arrow-down-s-line"></i></a>
 

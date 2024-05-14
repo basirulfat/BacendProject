@@ -466,11 +466,10 @@ select {
     z-index: 1; 
     top: 500px; */
 }
-.table .tablescroll {
+/* .table .tablescroll {
     overflow: auto;
     height: 100%;
-    /* border: 1px solid red; */
-}
+} */
 
 .table-container table {
     width: 100%;

@@ -25,8 +25,8 @@ class AdminController extends Controller
     /*--===============  show Users in the Dashboard company  page  =============*/
     public function index()
     {
-        $user = User::all();
-        return view('admin.myusers', compact('user'));
+        $users = User::paginate(2);
+        return view('admin.myusers', compact('users'));
         
     }
 

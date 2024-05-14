@@ -1,12 +1,12 @@
 #header-section {
     width: 95%;
-    border: 1px solid var(--first-color--lighten);
+    /* border: 1px solid var(--first-color--lighten); */
     margin: 0 auto;
     margin-top: 7em;
     padding: 1em;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    background-color: var(--main-bg-color);
+    background-color: var(--light);
 }
 
 #header-section .section-1 ol {
@@ -27,8 +27,8 @@
     margin: 0;
 }
 #header-section .section-1 ol li:hover {
-    background-color: var(--first-color--lighten);
-    border: 1px solid var(--first-color-light-gray);
+    background-color: var(--light);
+    /* border: 1px solid var(--first-color-light-gray); */
 }
 
 #header-section .section-1 ol span {
@@ -83,9 +83,9 @@
     margin: 0 auto;
     margin-top: 1em;
     padding: 1em;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    background-color: var(--main-bg-color);
+    background-color: var(--light);
 }
 #sub-info {
     display: flex;
@@ -112,6 +112,7 @@
     width: 100%;
     padding: 10px;
     font-size: 14px;
+    background-color: var(--low-gray);
 }
 .form-control.success input {
     border-color: var(--danger);
@@ -169,6 +170,7 @@
     width: 100%;
     padding: 10px;
     font-size: 14px;
+    background-color: var(--low-gray);
 }
 #image-section {
     margin-bottom: 60px;
@@ -211,9 +213,9 @@
     /* For Neumorphism Effect */
     display: inline-block;
     margin: 2rem auto;
-    background: #1c92d2;
-    background: -webkit-linear-gradient(to left, #f2fcfe, #1c92d2);
-    background: linear-gradient(to left, #f2fcfe, #1c92d2);
+    background: #e8f9f9;
+    background: -webkit-linear-gradient(to left, #f2fcfe, #e8f9f9);
+    background: linear-gradient(to left, #f2fcfe, #e8f9f9);
 }
 #img-view {
     width: 100%;
@@ -223,16 +225,20 @@
     background-position: center;
     background-size: cover;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
 #img-view img {
     width: 100px;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 #img-view span {
     display: block;
     font-size: 12px;
     color: var(--gray);
-    margin-top: 15px;
 }
 /* ========== drag an drop ========= */
 #Upload-btn {
@@ -256,7 +262,7 @@
     width: 100%;
     box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6),
         -9px -9px 16px rgba(255, 255, 255, 0.5);
-    /* For Neumorphism Effect */
+    padding: 1rem;
 }
 #status_prfile {
     border: 2px solid var(--light);
@@ -264,6 +270,16 @@
     width: 100%;
     padding: 10px;
     font-size: 14px;
+    background-color: var(--low-gray);
+}
+#submit {
+    background: var(--blue);
+    border-radius: 4px;
+    color: var(--light);
+    margin: 1rem 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 .btn-bt {
     width: 100px;
@@ -278,15 +294,15 @@
 }
 
 #education-section {
-    width: 95%;
+    width: 100%;
     height: auto;
     border: 1px solid var(--first-color--lighten);
     margin: 0 auto;
     margin-top: 1em;
     padding: 1em;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    background-color: var(--main-bg-color);
+    /* background-color: var(--main-bg-color); */
 }
 .form-control-1 {
     width: 100%;
@@ -297,6 +313,10 @@
     justify-content: space-between;
     align-items: center;
     margin: 5px;
+    width: 100%;
+}
+.sub-1 {
+    margin: 0 auto;
     width: 100%;
 }
 .btn-1 {
@@ -426,9 +446,9 @@
     margin: 0 auto;
     margin-top: 1em;
     padding: 1em;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    background-color: var(--main-bg-color);
+    /* background-color: var(--main-bg-color); */
 }
 .form-1 {
     margin-bottom: 10px;
@@ -441,6 +461,7 @@
     width: 100%;
     padding: 10px;
     font-size: 14px;
+    background-color: var(--low-gray);
 }
 @media only screen and (min-width: 768px) {
     #experience {
@@ -463,7 +484,6 @@
     margin: 0 auto;
     margin-top: 1em;
     padding: 1em;
-    background-color: var(--main-bg-color);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
     border-radius: 10px;
 }

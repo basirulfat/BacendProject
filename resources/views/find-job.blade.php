@@ -44,17 +44,6 @@
         />
         <button type="submit"><i class="ri-search-line"></i></button>
       </div>
-      <div class="job-catagory">
-        <span>SEO</span>
-        <span>Engineer</span>
-        <span>HR</span>
-        <span>Sales</span>
-        <span>Accountant</span>
-        <span>Web Desgin</span>
-        <span>Web Development</span>
-        <span>Data Science</span>
-        <span>AI</span>
-      </div>
     </section>
 
     <!--====================== Job catagory section================== -->
@@ -109,232 +98,72 @@
       </div>
       <div class="jobcart__wrapper">
         
-      @foreach( $post as $posts)
-      <div class="job-card">
-        <div class="job-card-header">
-         
-        <img src="{{ asset(str_replace('public/', 'storage/', $posts->logo)) }}" alt="Company Logo">
-          <div class="job-card-title">{{$posts->jobTitle}} 
-          <p>{{$posts->company->company_name}}</p>
+          @foreach( $post as $posts)
+          <div class="job-card">
+            <div class="job-card-header">
+            
+            <img src="{{ asset(str_replace('public/', 'storage/', $posts->logo)) }}" alt="Company Logo">
+              <div class="job-card-title">{{$posts->jobTitle}} 
+              <p>{{$posts->company->company_name}}</p>
 
+              </div>
+                              
+              <div class="menu-dot"></div>
+            </div>
+            <div class="job-card-subtitle">
+              <!-- jobDescription show less -->
+            <?php
+                    $description = $posts->jobDescription;
+                    $truncated = substr($description, 0, 150);
+                    $remaining = strlen($description) > 150;
+
+                    echo nl2br($truncated);
+                    if ($remaining) {
+                        echo '...';
+                    }
+                    ?>
+              <!-- jobDescription show less -->
+            </div>
+            <div class="job-detail-buttons">
+              <button class="search-buttons detail-button btn">
+                {{$posts->jobType}}
+              </button>
+              <button class="search-buttons detail-button btn">
+              {{$posts->experience}}
+              </button>
+              <button class="search-buttons detail-button btn">
+              {{$posts->seniority}}
+              </button>
+              <button class="search-buttons detail-button btn">
+              {{$posts->category}}
+              </button>
+            </div>
+            <div class="job-detail-buttons">
+              <button class="search-buttons detail-button btn">
+                {{$posts->salary}}
+              </button>
+              <button class="search-buttons detail-button btn">
+              {{$posts->location}}
+              </button>
+              <button class="search-buttons detail-button btn">
+              {{$posts->created_at}}
+              </button>
+            </div>
+            <div class="job-card-buttons">
+              <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
+              <button class="search-buttons card-buttons-msg  btn">
+                Messages
+              </button>
+            </div>
           </div>
-                           
-          <div class="menu-dot"></div>
-        </div>
-        <div class="job-card-subtitle">
-          <!-- jobDescription show less -->
-        <?php
-                $description = $posts->jobDescription;
-                $truncated = substr($description, 0, 150);
-                $remaining = strlen($description) > 150;
+          @endforeach
 
-                echo nl2br($truncated);
-                if ($remaining) {
-                    echo '...';
-                }
-                ?>
-           <!-- jobDescription show less -->
-        </div>
-        <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            {{$posts->jobType}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$posts->experience}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$posts->seniority}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$posts->category}}
-          </button>
-        </div>
-        <div class="job-detail-buttons">
-          <button class="search-buttons detail-button btn">
-            {{$posts->salary}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$posts->location}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$posts->created_at}}
-          </button>
-        </div>
-        <div class="job-card-buttons">
-          <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
-          <button class="search-buttons card-buttons-msg  btn">
-            Messages
-          </button>
-        </div>
       </div>
-      @endforeach
-
-
-        <div class="job-card">
-          <div class="job-card-header">
-            <img src="assets/images/company logo/alokozay (2).jpg" alt="" />
-            <div class="job-card-title">Project Manager</div>
-            <div class="menu-dot"></div>
-          </div>
-          <div class="job-card-subtitle">
-            The User Experience Designer position exists to create compelling
-            and digital user experience through excellent design...
-          </div>
-          <div class="job-detail-buttons">
-            <button class="search-buttons detail-button btn">Full Time</button>
-            <button class="search-buttons detail-button btn">
-              Min. 1 Year
-            </button>
-            <button class="search-buttons detail-button btn">
-              Senior level
-            </button>
-          </div>
-          <div class="job-detail-buttons">
-            <button class="search-buttons detail-button btn">3000 $</button>
-            <button class="search-buttons detail-button btn">3 hour ago</button>
-          </div>
-          <div class="job-card-buttons">
-            <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn"
-              >Apply Now</a
-            >
-            <button class="search-buttons card-buttons-msg btn">
-              Messages
-            </button>
-          </div>
+   <!-------------------------------pagenation ------------------------------------>
+        <div class="pagination-container">
+          {{ $post->links() }}
         </div>
-
-        <div class="job-card">
-          <div class="job-card-header">
-            <img src="assets/images/company logo/alokozay (2).jpg" alt="" />
-            <div class="job-card-title">Project Manager</div>
-            <div class="menu-dot"></div>
-          </div>
-          <div class="job-card-subtitle">
-            The User Experience Designer position exists to create compelling
-            and digital user experience through excellent design...
-          </div>
-          <div class="job-detail-buttons">
-            <button class="search-buttons detail-button btn">Full Time</button>
-            <button class="search-buttons detail-button btn">
-              Min. 1 Year
-            </button>
-            <button class="search-buttons detail-button btn">
-              Senior level
-            </button>
-          </div>
-          <div class="job-detail-buttons">
-            <button class="search-buttons detail-button btn">3000 $</button>
-            <button class="search-buttons detail-button btn">3 hour ago</button>
-          </div>
-          <div class="job-card-buttons">
-            <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn"
-              >Apply Now</a
-            >
-            <button class="search-buttons card-buttons-msg btn">
-              Messages
-            </button>
-          </div>
-        </div>
-
-        <div class="job-card">
-          <div class="job-card-header">
-            <img src="assets/images/company logo/alokozay (2).jpg" alt="" />
-            <div class="job-card-title">Project Manager</div>
-            <div class="menu-dot"></div>
-          </div>
-          <div class="job-card-subtitle">
-            The User Experience Designer position exists to create compelling
-            and digital user experience through excellent design...
-          </div>
-          <div class="job-detail-buttons">
-            <button class="search-buttons detail-button btn">Full Time</button>
-            <button class="search-buttons detail-button btn">
-              Min. 1 Year
-            </button>
-            <button class="search-buttons detail-button btn">
-              Senior level
-            </button>
-          </div>
-          <div class="job-detail-buttons">
-            <button class="search-buttons detail-button btn">3000 $</button>
-            <button class="search-buttons detail-button btn">3 hour ago</button>
-          </div>
-          <div class="job-card-buttons">
-            <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn"
-              >Apply Now</a
-            >
-            <button class="search-buttons card-buttons-msg btn">
-              Messages
-            </button>
-          </div>
-        </div>
-
-        <div class="job-card">
-          <div class="job-card-header">
-            <img src="assets/images/company logo/alokozay (2).jpg" alt="" />
-            <div class="job-card-title">Project Manager</div>
-            <div class="menu-dot"></div>
-          </div>
-          <div class="job-card-subtitle">
-            The User Experience Designer position exists to create compelling
-            and digital user experience through excellent design...
-          </div>
-          <div class="job-detail-buttons">
-            <button class="search-buttons detail-button btn">Full Time</button>
-            <button class="search-buttons detail-button btn">
-              Min. 1 Year
-            </button>
-            <button class="search-buttons detail-button btn">
-              Senior level
-            </button>
-          </div>
-          <div class="job-detail-buttons">
-            <button class="search-buttons detail-button btn">3000 $</button>
-            <button class="search-buttons detail-button btn">3 hour ago</button>
-          </div>
-          <div class="job-card-buttons">
-            <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn"
-              >Apply Now</a
-            >
-            <button class="search-buttons card-buttons-msg btn">
-              Messages
-            </button>
-          </div>
-        </div>
-
-        <div class="job-card">
-          <div class="job-card-header">
-            <img src="assets/images/company logo/alokozay (2).jpg" alt="" />
-            <div class="job-card-title">Project Manager</div>
-            <div class="menu-dot"></div>
-          </div>
-          <div class="job-card-subtitle">
-            The User Experience Designer position exists to create compelling
-            and digital user experience through excellent design...
-          </div>
-          <div class="job-detail-buttons">
-            <button class="search-buttons detail-button btn">Full Time</button>
-            <button class="search-buttons detail-button btn">
-              Min. 1 Year
-            </button>
-            <button class="search-buttons detail-button btn">
-              Senior level
-            </button>
-          </div>
-          <div class="job-detail-buttons">
-            <button class="search-buttons detail-button btn">3000 $</button>
-            <button class="search-buttons detail-button btn">3 hour ago</button>
-          </div>
-          <div class="job-card-buttons">
-            <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn"
-              >Apply Now</a
-            >
-            <button class="search-buttons card-buttons-msg btn">
-              Messages
-            </button>
-          </div>
-        </div>
-      </div>
+  <!-------------------------------pagenation ------------------------------------>
       <div id="view-all-blog-posts">
         <a href="{{url('showJobs')}}">See More Jobs</a>
       </div>
@@ -495,12 +324,12 @@
             alt=""
           />
           <h5>
-            What is a resume and how to <br />
-            write a professional resume?
+            What is a resume and how to 
+            write a professional CV?
           </h5>
           <p>
-            if you are locking for a job and <br />
-            want to be hired by a reputable <br />
+            if you are locking for a job and 
+            want to be hired by a reputable 
             company. the first thing you are...
           </p>
           <a href="{{url('guide')}}">Read More</a>
@@ -513,12 +342,12 @@
             alt=""
           />
           <h5>
-            How to write work experience<br />
-            on resume?
+            How to write work experience
+            on CV?
           </h5>
           <p>
-            if you want to write a<br />
-            professional resume,it is better <br />
+            if you want to write a
+            professional resume,it is better 
             to know thar the work that you want to hired there...
           </p>
           <a href="{{url('guideExperience')}}">Read More</a>
@@ -531,12 +360,12 @@
             alt=""
           />
           <h5>
-            Guide to making a resume in <br />
+            Guide to making a resume in 
             AfghanTalent?
           </h5>
           <p>
-            During its 17 year of operation, <br />
-            AfghanTalent.com has always tried <br />
+            During its 17 year of operation, 
+            AfghanTalent.com has always tried 
             to change the recruitment...
           </p>
           <a href="{{url('guide-resume-in-afghanjb')}}">Read More</a>
@@ -549,12 +378,12 @@
             alt=""
           />
           <h5>
-            Interview tips that will help <br />
+            Interview tips that will help 
             you get hired
           </h5>
           <p>
-            Even if you are a professional<br />
-            interview and you have been <br />
+            Even if you are a professional
+            interview and you have been 
             interviewed by different language and can...
           </p>
           <a href="{{url('index')}}">Read More</a>
