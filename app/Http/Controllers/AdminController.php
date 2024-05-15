@@ -20,7 +20,7 @@ class AdminController extends Controller
         $admins = User::where('usertype','1')->count();
         $companies =Company::count();
         $posts = PostJob::count();
-        return view("admin.home",compact("users", "admins","companies","posts"));
+        return view("admin.mydashboard",compact("users", "admins","companies","posts"));
     }
     /*--===============  show Users in the Dashboard company  page  =============*/
     public function index()

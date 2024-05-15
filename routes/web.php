@@ -79,11 +79,8 @@ Route::middleware([
                  /*---Users---*/
 Route::resource('/user', AdminController::class);
 Route::get('/user', [AdminController::class, 'search'])->name('user.search');
-
-
 Route::get('/paginate', [AdminController::class,'index']);
-
-Route::get('/countdata', [AdminController::class, 'countData'])->name('home.countData');
+Route::get('/mydashboard', [AdminController::class, 'countData'])->name('home.countData');
 
 
 
@@ -97,6 +94,7 @@ Route::get('/countdata', [AdminController::class, 'countData'])->name('home.coun
 Route::resource('posts', PostJobController::class);
 Route::get('/posts', [PostJobController::class, 'adminPost'])->name('posts');
 Route::get('/posts', [PostJobController::class, 'search'])->name('posts.search');
+Route::get('/', [PostJobController::class,'index']);
 
 
 Route::get("/category",function(){

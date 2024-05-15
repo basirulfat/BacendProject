@@ -20,7 +20,7 @@ class HomeController extends Controller
             }
             else{
 
-                return view('admin.home');
+                return view('admin.mydashboard');
             }
         }
         else{
