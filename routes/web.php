@@ -16,8 +16,6 @@ use App\Http\Controllers\ResumeController;
 
 
 
-
-
 /*=================== Redirect To home page =======================*/
 
 use App\Http\Controllers\GoogelAuthController;
