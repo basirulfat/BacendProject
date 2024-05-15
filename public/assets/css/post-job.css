@@ -1,23 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: var(--low-gray);
-    /* padding-top: 6rem; */
-
-    background: #ada996; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-        to bottom,
-        #eaeaea,
-        #dbdbdb,
-        #f2f2f2,
-        #ada996
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-        to bottom,
-        #eaeaea,
-        #dbdbdb,
-        #f2f2f2,
-        #ada996
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: var(--light);
 }
 .post_title {
     font-size: 2rem;
@@ -30,11 +14,8 @@ body {
     max-width: 800px;
     margin: 3rem auto;
     padding: 20px 40px;
-    background-color: var(--light);
+    background-color: var(--low-gray);
     border-radius: 8px;
-    background: #efefbb;
-    background: -webkit-linear-gradient(to top, #d4d3dd, #efefbb);
-    background: linear-gradient(to top, #d4d3dd, #efefbb);
     box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
         inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
@@ -73,13 +54,11 @@ input[type="checkbox"] {
 
 .postSubmit {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: var(--blue);
     color: var(--light);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
-        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
 }
 
 .postSubmit:hover {

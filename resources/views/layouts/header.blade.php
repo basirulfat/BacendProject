@@ -21,7 +21,8 @@
           <li><a href="{{url('index')}}" class="nav__link">@lang('msg.home')</a></li>
 
           <li><a href="{{url('find-job')}}" class="nav__link">@lang('msg.Find job')</a></li>
-          <li><a href="{{url('Dashboarded')}}" class="nav__link">Dashboard</a></li>
+          <!-- <li><a href="{{url('Dashboarded')}}" class="nav__link">Dashboard</a></li> -->
+           <li><a href="{{url('Post-job')}}" class="nav__link">Post Job</a></li>
 
           <!--=============== DROPDOWN 1 ===============-->
           <li class="dropdown__item">
@@ -46,8 +47,7 @@
               <!--=============== DROPDOWN SUBMENU ===============-->
               <li class="dropdown__subitem">
                 <div class="dropdown__link">
-                  <a href="{{url('Post-job')}}"><i class="ri-megaphone-fill"></i> post a Job</a>
-                  <!-- <input class="btn" type="search" placeholder="Search" /> -->
+                  <a href="{{route('personalInformation.create')}}"><i class="ri-file-edit-line"></i>  Create CV</a>
                   <i class="ri-add-line dropdown__add"></i>
                 </div>
 
@@ -74,7 +74,7 @@
             </ul>
           </li>
 
-          <li><a href="{{route('personalInformation.create')}}" class="nav__link">Create CV</a></li>
+          <li><a href="{{url('showJobs')}}" class="nav__link">Jobs</a></li>
 
           <!-- =============== DROPDOWN 2 ===============-->
           <li class="dropdown__item">

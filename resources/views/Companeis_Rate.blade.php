@@ -108,70 +108,20 @@
             </div>
             <div class="card-icon">
              
-              <p><i class="fa-solid fa-bag-shopping">job title</i></p>
+              <p><i class="fa-solid fa-bag-shopping"></i> New Jobs</p>
               <p><i class="fa-solid fa-user-group"></i>{{$company->company_size}}</p>
             </div>
           </div>
           @endforeach
 
-          <!-- second card -->
-          <div class="cards-wrap">
-            <h3>Khan Stel</h3>
-            <div id="logo-wrapper">
-              <div class="img com-logo">
-                <img src="./assets/images/company logo/emp-test.png" alt="" />
-              </div>
-              <div class="com-job-deatils">
-                <span>3.7</span>
-                <div class="card-stars">
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </div>
-                <div class="card-lin">
-                  <a href="#">12 Jobs</a>
-                  <a href="#" class="a-border">See Reviews</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-icon">
-              <p><i class="fa-solid fa-bag-shopping"></i>ICT and Telegram</p>
-              <p><i class="fa-solid fa-user-group"></i>500 Employers or more</p>
-            </div>
-          </div>
-          <!-- third card -->
-          <div class="cards-wrap">
-            <h3>Azizy Company</h3>
-            <div id="logo-wrapper">
-              <div class="img com-logo">
-                <img src="./assets/images/company logo/alokozay.jpg" alt="" />
-              </div>
-              <div class="com-job-deatils">
-                <span>3.7</span>
-                <div class="card-stars">
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                  <i class="ri-star-line"></i>
-                </div>
-                <div class="card-lin">
-                  <a href="#">12 Jobs</a>
-                  <a href="#" class="a-border">See Reviews</a>
-                </div>
-              </div>
-            </div>
-            <div class="card-icon">
-              <p><i class="fa-solid fa-bag-shopping"></i>ICT and Telegram</p>
-              <p><i class="fa-solid fa-user-group"></i>500 Employers or more</p>
-            </div>
-          </div>
-        </div>
-
+         </div>
 
       </div>
+          <!-------------------------------pagenation ------------------------------------>
+        `    <div class="pagination-container">
+              {{ $company->links() }}
+            </div>`
+          <!-------------------------------pagenation ------------------------------------>
 
       <!-- Rate your employer -->
       <div id="Rate-your-Employer">
@@ -187,25 +137,6 @@
           <i class="ri-star-line"></i>
           <i class="ri-star-line"></i>
         </div>
-      </div>
-
-      <div id="pageniation-wraper">
-        <div class="pagination">
-          <button class="btn1 btn" onclick="prevbtn()">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <ul>
-            <li class="page-link active" value="1" onclick="activelink()">1</li>
-            <li class="page-link" value="2" onclick="activelink()">2</li>
-            <li class="page-link" value="3" onclick="activelink()">3</li>
-            <li class="page-link" value="4" onclick="activelink()">4</li>
-            <li class="page-link" value="5" onclick="activelink()">5</li>
-          </ul>
-          <button class="btn2 btn" onclick="nextbtn()">
-            <i class="fa-solid fa-angle-right"></i>
-          </button>
-        </div>
-        <h5>1-30 of 500 Companies</h5>
       </div>
 
       <!-- ============Rating page==============  -->

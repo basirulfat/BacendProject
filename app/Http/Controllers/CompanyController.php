@@ -24,7 +24,7 @@ class CompanyController extends Controller
 
     public function CompanyRate()
     {
-        $company = Company::all(); // Retrieve all companies from the database
+       $company = Company::paginate(9); // Retrieve all companies from the database
         return view('Companeis_Rate', compact('company'));
     }
 

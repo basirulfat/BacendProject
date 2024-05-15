@@ -12,18 +12,26 @@ use Carbon\Carbon;
 
 class PostJobController extends Controller
 {
+     /*-============show data in slider in index page page ==========*/
+    //  public function slider()
+    //  {
+    //      $jobs = PostJob::all();
+    //      return view('index',compact('jobs'));
+    //  }
 /* ============show data in index page ============ */
     public function index()
     {
-        $post = PostJob::all();
+        $jobs = PostJob::with('company')->paginate(9);
+        $company = Company::all(); // Retrieve all companies from the database
         $posts = new PostJob();
         $results = $posts->getProductsByCategory();
-        return view('index', compact('post'));
+        $r=collect($results)->zip('posts');
+        return view('index', compact('jobs','r'));
     }
  /*-============show data in find-job page ==========*/
     public function findJob()
     {
-        $post = PostJob::all();
+        $post = PostJob::with('company')->paginate(12);
         return view('find-job',compact('post'));
     }
 /*-============show data in showjob page ==========*/
@@ -70,7 +78,7 @@ class PostJobController extends Controller
         $jobPost->seniority = $request->input('seniority');
         $jobPost->salary = $request->input('salary');
         $jobPost->postingTime = $request->input('postingTime');
-        $jobPost->expairTime = $request->input('expaireTime');
+        $jobPost->expairTime = $request->input('expairTime');
     
         if ($request->hasFile('logo')) {
             $logo = $request->file('logo');
@@ -146,6 +154,6 @@ class PostJobController extends Controller
     
     public function postscount(){
       
-         return $results;
+       
     }
 }

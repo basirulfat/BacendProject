@@ -119,7 +119,7 @@
         <label for="input-file" id="drop-area">
           <input type="file" accept="image/*" name="image" id="input-file" hidden>
           <div id="img-view" >
-              <img src="assets/images/icon.png" alt="">
+              <img src="assets/images/drag.jpG" alt="">
               <p>Drag and drop or click here <br> to upload image</p>
               <span>Upload any image from desktop</span>
           </div>
@@ -159,18 +159,18 @@
       <div class="form-control-2">
         <div>
           <label for="country">Country</label>
-          <input type="text" id="country" name="country"/>
+          <input type="text" id="country" name="country" placeholder="enter yur country"/>
           <small>Error message</small>
         </div>
 
         <div>
           <label for="City">City</label>
-          <input type="text" id="text" name="city"/>
+          <input type="text" id="text" name="city" placeholder="enter your city"/>
           <small>Error message</small>
         </div>
 
         <div>
-          <input class="btn-bt" type="submit" value="Submit">
+          <input id="submit" type="submit" value="Submit">
           <button class="btn-bt" type="button" name="Next" onclick="changeColor()">Next</button>
         </div>
       </div>
@@ -186,7 +186,7 @@
     </h5>
 
     <div id="sub-info">
-      <div class="sub-infor-section">
+      <div class="sub-infor-section   sub-1">
           @csrf
           <h2>Enter Your Full Education Career</h2>
           <div id="divide-section">
@@ -303,7 +303,7 @@
         </div>
         <div class="form-control">
           <label for="optionsInput">Location</label>
-          <input type="text" id="optionsInput" name="location" class="options-input">
+          <input type="text" id="optionsInput" name="location" placeholder="Location" class="options-input">
         </div>
     
 
