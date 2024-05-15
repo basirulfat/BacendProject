@@ -70,6 +70,7 @@ Route::get('/home', [HomeController::class, 'redirect'])->name('home.redirect');
 Route::resource('/user', AdminController::class);
 Route::get('/user', [AdminController::class, 'search'])->name('user.search');
 Route::get('/home', [AdminController::class, 'countData'])->name('home.countData');
+Route::get('/paginate', [AdminController::class,'index']);
 
 
                 /*--- company---*/

@@ -3,7 +3,7 @@
             <h2>Welcom to AfghanTalent</h2>
             <img src="Admin/sami.JPG" alt="" width="50" height="50" srcset="" />
           </div>
-             <form action="{{ route('user.search') }} " method="get">
+             <form action="#" method="get">
           <div class="search-bar">
             <input type="text" name="search" class="search-input" placeholder="Search For" />
             <button type="submit" class="search-button">
