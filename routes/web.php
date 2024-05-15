@@ -161,6 +161,11 @@ Route::get('/locale/{lang}', [LocalControler::class,'setlocale']);
 
 
 
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
 /*========= Contact form  =============*/
 Route::resource('/contact', ContactFormController::class);
 
