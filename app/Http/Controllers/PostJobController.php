@@ -31,7 +31,7 @@ class PostJobController extends Controller
  /*-============show data in find-job page ==========*/
     public function findJob()
     {
-        $post = PostJob::with('company')->paginate(12);
+        $post = PostJob::with('company')->paginate(9);
         return view('find-job',compact('post'));
     }
 /*-============show data in showjob page ==========*/

@@ -22,11 +22,11 @@ class CompanyController extends Controller
 
 /*--===============  show cmpany in the company Rate page  =============*/
 
-    public function CompanyRate()
-    {
-       $company = Company::paginate(9); // Retrieve all companies from the database
-        return view('Companeis_Rate', compact('company'));
-    }
+public function CompanyRate()
+{
+    $companies = Company::paginate(9); // Retrieve all companies from the database
+    return view('Companeis_Rate', compact('companies'));
+}
 
     /**
      * Show the form for creating a new resource.
