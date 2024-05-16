@@ -36,7 +36,7 @@
 
           
 
-          <a href="{{route('home.redirect')}}" class="footer-links">@lang('msg.home')</a>
+          <a href="{{url('home')}}" class="footer-links">@lang('msg.home')</a>
 
           
 

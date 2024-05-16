@@ -24,10 +24,15 @@ use App\Http\Controllers\showjobmapController;
 
 
 Auth::routes();
+/*=========================for Authentication =============================*/
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'redirect'])->name('home');
+
+
+
 Route::get('/', [mapController::class, 'index']);
 Route::get('/showjob', [showjobmapController::class, 'index']);
 
-Route::get('/index', [HomeController::class, 'redirect'])->name('home.redirect')->middleware('auth');;
+
 Route::get('auth/google',[GoogelAuthController::class,'redirects'])->name('google-auth');
 Route::get('auth/google/call-back',[GoogelAuthController::class,'callbackGoogle']);
 
@@ -36,7 +41,7 @@ Route::get('auth/google/call-back',[GoogelAuthController::class,'callbackGoogle'
 // Route::get('/home', [RegisterController::class, 'redirect']);
 
 // Route::get('/home', [LoginController::class, 'redirect']);
-Route::get('/home', [HomeController::class, 'redirect'])->name('home.redirect');
+
 
 Route::resource('personalInformation',PersonalInformationController::class)->middleware('auth');
 Route::resource('education',EducationController::class)->middleware('auth');
@@ -57,9 +62,16 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/home', [HomeController::class, 'redirect'])->name('home.redirect');
+
 
 /*=================== Redirect To home page =======================*/
+
+
+/*=================== Resume part =======================*/
+
+/*=================== Resume part =======================*/
+
+
 
 
 /*=================== Admin panal =======================*/
@@ -67,23 +79,19 @@ Route::get('/home', [HomeController::class, 'redirect'])->name('home.redirect');
                  /*---Users---*/
 Route::resource('/user', AdminController::class);
 Route::get('/user', [AdminController::class, 'search'])->name('user.search');
-Route::get('/home', [AdminController::class, 'countData'])->name('home.countData');
+Route::get('/countdata', [AdminController::class, 'countData'])->name('home.countData');
 
 
                 /*--- company---*/
  Route::resource('/company', CompanyController::class);
  Route::get('/company', [CompanyController::class, 'search'])->name('company.search');
  Route::get('/Companeis_Rate', [CompanyController::class, 'CompanyRate'])->name('Companeis_Rate.CompanyRate');
-
+ 
  
               /*--- posts---*/
 Route::resource('posts', PostJobController::class);
 Route::get('/posts', [PostJobController::class, 'adminPost'])->name('posts');
 Route::get('/posts', [PostJobController::class, 'search'])->name('posts.search');
-      /*---show cart data in the index page  ---*/
-Route::get('/', [PostJobController::class, 'index'])->name('jobs.index');
-
-
 
 
 Route::get("/category",function(){
@@ -156,13 +164,6 @@ Route::get("/Top_company",function(){
 Route::get('/locale/{lang}', [LocalControler::class,'setlocale']);
 
 
-
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-
 /*========= Contact form  =============*/
 Route::resource('/contact', ContactFormController::class);
 
@@ -170,6 +171,6 @@ Route::resource('/contact', ContactFormController::class);
 Route::get('/cotact', [ContactFormController::class, 'search'])->name('contact.search');
 
 
-route::get('companies',[PostJobController::class,'postscount']);
+
 /*========= Contact form  =============*/
 
