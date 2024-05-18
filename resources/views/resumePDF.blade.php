@@ -8,7 +8,7 @@
     />
     <title>Responsive CV</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/resume.css" />
-
+       
         <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
@@ -160,7 +160,7 @@
           <div class="about skills">
             <h2 class="title2">Professionals skills</h2>
             <div class="box">
-              <h4>{{$s->skill}}</h4>
+              <h4 style="color:red">{{$s->skill}}</h4>
               <div class="percent">
                 <div class="htmlws30"></div>
               </div>

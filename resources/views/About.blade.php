@@ -10,7 +10,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <title>About US</title>
+    <title>@lang('msg.About1')</title>
   </head>
 
   <body>
@@ -21,29 +21,23 @@
 
     <section class="about">
       <div class="about_contaent">
-        <h1>About US</h1>
+        <h1> @lang('msg.About1')</h1>
         <p>
-          Afghan Talent website offers online job posting services. it is the
-          only website in Afghanistan that provides high level of service,job
-          announcements,commercial ads on this website. this website is the best
-          solution for those people whoes want to find there job in Afghanistan.
+        @lang('msg.About2')
         </p>
       </div>
     </section>
 
     <section class="our_mission">
       <div class="wrapper">
-        <h2>Our Mission</h2>
+        <h2> @lang('msg.About3')</h2>
         <p>
-          Our Mission is sample we try to make an online platform for those
-          people whoes want to find there best job in Afghanistan with there
-          faverite company and also the can create there CV here.
+        @lang('msg.About4')
         </p>
 
-        <h2>Our Vision</h2>
+        <h2> @lang('msg.About5')</h2>
         <p>
-          Our vision is to vecome tthe primary online reference for Afghan
-          professionals and managers.
+        @lang('msg.About6')
         </p>
       </div>
     </section>
@@ -52,130 +46,103 @@
       <div class="wrapper_happ">
         <div class="happiness">
           <img src="./assets/images/company logo/f1.png" alt="happiness" />
-          <h3>Happiness</h3>
+          <h3> @lang('msg.About7')</h3>
           <p>
-            Understanding clients' needs are the key to obtain their
-            HAPPINESS.We listen to our custommeers and provide fro their needs
-            so that they can achieve their goals.
+          @lang('msg.About8')
           </p>
         </div>
 
         <div class="happiness">
           <img src="./assets/images/company logo/f2.png" alt="happiness" />
-          <h3>Opportunity</h3>
+          <h3> @lang('msg.About9')</h3>
           <p>
-            We strive to provide OPPORTUNITY for both candldates and employets,
-            allowing them to be discover essily
+          @lang('msg.About10')
           </p>
         </div>
 
         <div class="happiness">
           <img src="./assets/images/company logo/f3.png" alt="happiness" />
-          <h3>Productivity</h3>
+          <h3> @lang('msg.About11')</h3>
           <p>
-            With PRODUCTIVITY on our mind ,we will achiebe everything we have
-            been wishing fro. We bleve there is no limit to our work, only time.
+          @lang('msg.About12')
           </p>
         </div>
 
         <div class="happiness">
           <img src="./assets/images/company logo/f4.png" alt="happiness" />
-          <h3>Evidence</h3>
+          <h3> @lang('msg.About13')</h3>
           <p>
-            A decision would be valid only when it is based on concrete
-            EVIDENCE.Our ongoing growth jourmey gas been embarking upon facts,
-            data and professional analysis.
+          @lang('msg.About14')
           </p>
         </div>
       </div>
     </section>
 
     <section class="right">
-      <h4>We do it right</h4>
+      <h4> @lang('msg.About15')</h4>
       <div class="image-wrapper">
         <div class="imge-conteant">
-          <h5>We Work Smart</h5>
+          <h5> @lang('msg.About16')</h5>
           <p>
-            Over the years, we gave fine-tuned our CV builder and CV Search
-            tools. This adjusting will help candidates to make their CV easier
-            than before. Also by Improving our CV search system, employers can
-            find their ideal candidates effortlessy.
+          @lang('msg.About17')
           </p>
         </div>
 
         <div class="imge-conteant">
-          <h5>We speak a common language</h5>
+          <h5> @lang('msg.About18')</h5>
           <p>
-            Over the years, we gave fine-tuned our CV builder and CV Search
-            tools. This adjusting will help candidates to make their CV easier
-            than before. Also by Improving our CV search system, employers can
-            find their ideal candidates effortlessy.
+          @lang('msg.About19')
           </p>
         </div>
 
         <div class="imge-conteant">
-          <h5>we've got your back</h5>
+          <h5> @lang('msg.About20')</h5>
           <p>
-            Over the years, we gave fine-tuned our CV builder and CV Search
-            tools. This adjusting will help candidates to make their CV easier
-            than before. Also by Improving our CV search system, employers can
-            find their ideal candidates effortlessy.
+          @lang('msg.About21')
           </p>
         </div>
       </div>
-      <h6>Conquer the summit</h6>
+      <h6> @lang('msg.About22')</h6>
 
       <div class="text-wrapper">
         <div class="text-conteant">
           <h5>1,000,000 CVs</h5>
           <p>
-            You'll have access to almost one million CVs of professionals that
-            you can search and review..
+          @lang('msg.About23')
           </p>
         </div>
 
         <div class="text-conteant">
-          <h5>Effective Job Posting</h5>
+          <h5> @lang('msg.About24')</h5>
           <p>
-            Posting a job vacancy in IranTalent is the most effective online
-            solution to find best employees. Also by sending weekly job alerts,
-            we make sure that most candidates will review and apply for your job
-            vacancies.
+          @lang('msg.About25')
           </p>
         </div>
 
         <div class="text-conteant">
-          <h5>Recruit Like Never Before</h5>
+          <h5> @lang('msg.About26')</h5>
           <p>
-            Our new dashboard design enables you to manage CVs and folders
-            easily. It also helps you track every hiring stage for each
-            candidates..
+          @lang('msg.About27')
           </p>
         </div>
       </div>
     </section>
 
     <section class="end-section">
-      <h1>In Afghan Talent everybody trusts</h1>
+      <h1> @lang('msg.About28')</h1>
       <div class="big-wrapper">
         <div class="text-class">
-          <h2>The First Choice of Employers</h2>
+          <h2> @lang('msg.About29')</h2>
           <p>
-            Both international and Afghan companies consider us as their primary
-            recruitment channel – confident with our deep local insights and
-            global outlook.
+          @lang('msg.About30')
           </p>
-          <h2>Well-Known Among Major Players</h2>
+          <h2>@lang('msg.About31')</h2>
           <p>
-            Major players across different industries trust us, since we have
-            delivered great results with an understanding of their specific
-            needs over the years.
+          @lang('msg.About32')
           </p>
-          <h2>Precise, Even to Smallest Details</h2>
+          <h2>@lang('msg.About33')</h2>
           <p>
-            After all these years, we've deeply understood the small differences
-            among job categories. This extensive experience enables us to
-            provide the perfect solution to your needs.
+          @lang('msg.About34')
           </p>
         </div>
         <div class="big-img">
@@ -185,17 +152,15 @@
 
       <div class="under-class">
         <div class="under-wapper">
-          <h3>Extensive</h3>
+          <h3>@lang('msg.About35')</h3>
           <p>
-            Having The Largest Database of Afghan Professionals , almost 1
-            Thousandth CVs.
+          @lang('msg.About36')
           </p>
-          <h3>Experienced</h3>
-          <p>Afghan Leading job site with more than 1 years of experience.</p>
-          <h3>Trustworthy</h3>
+          <h3>@lang('msg.About37')</h3>
+          <p>@lang('msg.About38')</p>
+          <h3>@lang('msg.About39')</h3>
           <p>
-            Serving over 500 major national and locally-based international
-            companies.
+          @lang('msg.About40')
           </p>
         </div>
       </div>

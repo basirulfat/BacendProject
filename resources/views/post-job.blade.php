@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="{{asset('/')}}">
-    <title>Post a Job</title>
+    <title>@lang('msg.Post0')</title>
     <!--=============== Css links ===============-->
     <link rel="stylesheet" href="assets/css/companyRegister.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -21,21 +21,21 @@
     <!--=============== HEADER ===============-->
      @include('layouts.header')
     <!--===============POST JOB ===============-->
-    <h1 class="post_title">Here Is The Place For Your Announcement</h1>
+    <h1 class="post_title">@lang('msg.Post1')</h1>
     <div class="container-post-job">
-      <h1>Post a Job</h1>
+      <h1>@lang('msg.Post2')</h1>
       <form action="{{ route('postjob.store') }}" method="POST" enctype="multipart/form-data">
          @csrf 
         <div class="form-group">
-          <label for="jobTitle">Job Title:</label>
+          <label for="jobTitle">@lang('msg.Post3')</label>
           <input type="text" id="jobTitle" name="jobTitle" required />
         </div>
         <div class="form-group">
-          <label for="jobTitle">company:</label>
+          <label for="jobTitle">@lang('msg.keycompany1')</label>
           <input type="text" id="jobTitle" name="company" required />
         </div>
         <div class="form-group">
-          <label for="jobDescription">Job Description:</label>
+          <label for="jobDescription">@lang('msg.Post4')</label>
           <textarea
             id="jobDescription"
             name="jobDescription"
@@ -44,7 +44,7 @@
           ></textarea>
         </div>
         <div class="form-group">
-          <label for="category">Category:</label>
+          <label for="category">@lang('msg.keycatagory1')</label>
           <select class=""  name="category" id="category">
               <option value="">...</option>
                <option value="Admin-Clerical">Admin-Clerical</option>
@@ -116,11 +116,11 @@
             </select>
         </div>
         <div class="form-group">
-          <label for="applyLink">Link to Apply:</label>
+          <label for="applyLink">@lang('msg.Post5')</label>
           <input type="url" id="applyLink" name="applyLink" required />
         </div>
         <div class="form-group">
-          <label for="jobType">Job Type:</label>
+          <label for="jobType">@lang('msg.Post6')</label>
           <select id="jobType" name="jobType" required>
             <option value="Full-time">Full-time</option>
             <option value="Part-time">Part-time</option>
@@ -129,7 +129,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="location">Location:</label>
+          <label for="location">@lang('msg.Post7')</label>
           <select  id="location" name="location" required >
                 <option value="">Select Province</option>
                 <option value="Badakhshan">Badakhshan</option>
@@ -170,27 +170,27 @@
         </div>
 
         <div class="form-group">
-          <label for="skills">Skills Required:</label>
+          <label for="skills">@lang('msg.Post8')</label>
           <input type="text" id="skills" name="skills" required />
         </div>
         <div class="form-group">
-          <label for="logo">Company Logo:</label>
+          <label for="logo">@lang('msg.Post9')</label>
           <input type="file" id="logo" name="logo" accept="image/*" required />
         </div>
         <div class="form-group">
-          <label for="experience">Experience Required:</label>
+          <label for="experience">@lang('msg.Post10')</label>
           <input type="text" id="experience" name="experience" required />
         </div>
         <div class="form-group">
-          <label for="seniority">Seniority Level:</label>
+          <label for="seniority">@lang('msg.Post11')</label>
           <input type="text" id="seniority" name="seniority" required />
         </div>
         <div class="form-group">
-          <label for="salary">Salary Range:</label>
+          <label for="salary">@lang('msg.Post12')</label>
           <input type="text" id="salary" name="salary" required />
         </div>
         <div class="form-group">
-          <label for="postingTime">Posting Time:</label>
+          <label for="postingTime">@lang('msg.Post13')</label>
           <input
             type="datetime-local"
             id="postingTime"
@@ -200,7 +200,7 @@
         </div>
 
         <div class="form-group">
-          <label for="expairTime">Expaires Time:</label>
+          <label for="expairTime">@lang('msg.Post14')</label>
           <input
             type="datetime-local"
             id="expairTime"

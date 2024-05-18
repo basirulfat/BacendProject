@@ -2,54 +2,54 @@
     <div class="main">
       <div class="logo row">
         <div class="footer-header">
-          <i class="ri-open-arm-fill logo-icon"></i> AfghanTalent
+          <i class="ri-open-arm-fill logo-icon"></i> @lang('msg.key75')
         </div>
         <div class="logo-des">
-          <p>Jobs and employment for Afghans</p>
+          <p>@lang('msg.key76')</p>
         </div>
         <div class="footer-header">
-          <h3>Condidate</h3>
+          <h3>@lang('msg.key77')</h3>
         </div>
         <div class="link-des">
-          <a href="{{url('find-job')}}" class="footer-links">Find Job</a>
-          <a href="{{url('showJobs')}}" class="footer-links">Show Jobs</a>
+          <a href="{{url('find-job')}}" class="footer-links">@lang('msg.key78')</a>
+          <a href="{{url('showJobs')}}" class="footer-links">@lang('msg.key79')</a>
         </div>
       </div>
       <div class="link row">
         <div class="footer-header">
-          <h3>Condidate</h3>
+          <h3>@lang('msg.key80')</h3>
         </div>
 
         <div class="link-des">
-          <a href="{{url('post-job')}}" class="footer-links">Post Job</a>
-          <a href="{{route('personalInformation.create')}}" class="footer-links">Create CV</a>
-          <a href="{{url('Top_company')}}" class="footer-links">Companies Rate</a>
+          <a href="{{url('post-job')}}" class="footer-links">@lang('msg.key81')</a>
+          <a href="{{route('personalInformation.create')}}" class="footer-links">@lang('msg.key82')</a>
+          <a href="{{url('Top_company')}}" class="footer-links">@lang('msg.key83')</a>
         </div>
       </div>
 
       <div class="link row">
         <div class="footer-header">
-          <h3>AfghanTalent</h3>
+          <h3>@lang('msg.key84')</h3>
         </div>
         <div class="link-des">
 
 
           
 
-          <a href="{{url('home')}}" class="footer-links">@lang('msg.home')</a>
+          <a href="{{url('home')}}" class="footer-links">@lang('msg.key85')</a>
 
           
 
-          <a href="{{url('About')}}" class="footer-links">@lang('msg.about')</a>
+          <a href="{{url('About')}}" class="footer-links">@lang('msg.key86')</a>
 
-          <a href="{{url('Contact_Us')}}" class="footer-links">Contact Us</a>
-          <a href="{{url('FAQ')}}" class="footer-links">FAQ</a>
-          <a href="{{url('blog')}}" class="footer-links">blog</a>
+          <a href="{{url('Contact_Us')}}" class="footer-links">@lang('msg.key87')</a>
+          <a href="{{url('FAQ')}}" class="footer-links">@lang('msg.key88')</a>
+          <a href="{{url('blog')}}" class="footer-links">@lang('msg.key89')</a>
         </div>
       </div>
       <div class="newsletter row">
         <div class="footer-header">
-          <h3>Newsletter</h3>
+          <h3>@lang('msg.key90')</h3>
         </div>
         <div class="newsletter-des">
           <div class="subscribe">
@@ -58,16 +58,16 @@
             <i class="sub-icon ri-arrow-right-line"></i>
           </div>
           <div class="icons">
-            <a href="#"><i class="social-icon ri-facebook-fill"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100009044579781&mibextid=ZbWKwL"><i class="social-icon ri-facebook-fill"></i></a>
             <a href="#"><i class="social-icon ri-instagram-line"></i></a>
             <a href="#"><i class="social-icon ri-linkedin-fill"></i></a>
-            <a href="#"><i class="social-icon ri-github-line"></i></a>
+            <a href="https://github.com/settings/profile"><i class="social-icon ri-github-line"></i></a>
           </div>
         </div>
       </div>
     </div>
     <div class="copyright">
       <hr />
-      <p>© Copyright 2024 AfghanTalent</p>
+      <p>@lang('msg.key91')</p>
     </div>
   </footer>

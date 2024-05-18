@@ -20,7 +20,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <title>Contact Us</title>
+    <title>@lang('msg.cotact0')</title>
   </head>
   <body>
     <!--=============== HEADER ===============-->
@@ -30,24 +30,23 @@
 
     <section id="contact-container">
       <section id="left-container">
-        <h2>Contact Form</h2>
+        <h2>@lang('msg.cotact1')</h2>
         <section id="contact-form">
           <p>
-            To answer questions you may have, please review our frequently asked
-            questions( <a href="{{url('FAQ')}}">FAQ</a> )
+          @lang('msg.cotact2')( <a href="{{url('FAQ')}}">@lang('msg.cotact3')</a> )
           </p>
           <form action="{{ route('contact.store') }}" method="POST" autocomplete="off">
               @csrf
             <div id="general-container">
               <div class="field-container">
 
-                <label for="username">Name & LastName</label>
+                <label for="username">@lang('msg.cotact4')</label>
                 <input type="text" name="name" id="username" /><br />
                 @error('name')
                 <small style="color:red;">{{$message}}</small>
                 @enderror
                 
-                <label for="email">Email Address</label>
+                <label for="email">@lang('msg.cotact5')</label>
                 <input type="email" name="email" id="email" /> <br />
                 @error('email')
                 <small style="color:red;">{{$message}}</small>
@@ -55,13 +54,13 @@
               </div>
 
               <div class="field-container">
-                <label for="telephone">Telephone</label>
+                <label for="telephone">@lang('msg.cotact6')</label>
                 <input type="tel" name="telephone" id="telephone" /> <br />
                 @error('telephone')
                 <small style="color:red;">{{$message}}</small>
                 @enderror
 
-                <label for="">Type</label>
+                <label for="">@lang('msg.cotact7')</label>
                 <select name="type">
                   <option value="Problem with site">Problem with site</option>
                   <option value="Feedback & Suggestion">Feedback & Suggestion</option>
@@ -72,14 +71,14 @@
             </div>
             <div id="general-container1">
               <div class="field-container1">
-                <label for="">Subject</label>
+                <label for="">@lang('msg.cotact8')</label>
                 <input type="text" name="subject" />
                 @error('subject')
                 <small style="color:red;">{{$message}}</small>
                 @enderror
               </div>
               <div class="field-container1">
-                <label for="description">Description</label>
+                <label for="description">@lang('msg.cotact9')</label>
                 <textarea name="description" id="description" cols="30" rows="1"></textarea>
                 @error('description')
                   <small style="color:red;">{{$message}}</small>
@@ -91,45 +90,43 @@
         </section>
         <div id="contact-company">
           <div class="contact-image">
-            <h1>Companies</h1>
+            <h1>@lang('msg.cotact10')</h1>
             <p>
-              If you are a company looking to recruit staff, please see
-              recruiting solutions for employers
+            @lang('msg.cotact11')
             </p>
-            <a href="{{url('post-job')}}" class="com-btn">Submit</a>
+            <a href="{{url('post-job')}}" class="com-btn">@lang('msg.cotact12')</a>
           </div>
           <div class="contact-image">
-            <h1>Condidates</h1>
+            <h1>@lang('msg.cotact13')</h1>
             <p>
-              To register and apply for job opportunities, go to candidate
-              registration
+            @lang('msg.cotact14')
             </p>
-            <a href="{{url('find-job')}}" class="job-btn">Find Your Job</a>
+            <a href="{{url('find-job')}}" class="job-btn">@lang('msg.cotact15')</a>
           </div>
         </div>
       </section>
       <section id="right-container">
-        <h2>Contact <br />information</h2>
+        <h2>@lang('msg.cotact16') <br />@lang('msg.cotact17')</h2>
         <address>
-          <i class="fa-solid fa-location-dot"></i> 9th District,<br />
-          Kandahar,Afghanistan
+          <i class="fa-solid fa-location-dot"></i> @lang('msg.cotact18')<br />
+          @lang('msg.cotact19')
         </address>
         <address>
-          <i class="fa-solid fa-mobile-screen-button"></i>Mobile:0775480806
+          <i class="fa-solid fa-mobile-screen-button"></i>@lang('msg.cotact20'):0775480806
         </address>
         <i></i
         ><time>
-          <i class="fa-solid fa-clock"></i> We are open form <br />
+          <i class="fa-solid fa-clock"></i>@lang('msg.cotact21')<br />
           9:00 AM - 4:00 PM
         </time>
-        <h2 id="follow">Follow us</h2>
+        <h2 id="follow">@lang('msg.cotact22')</h2>
         <div class="social-link">
           <a href="#"><i class="fa-solid fa-envelope"></i></a>
           <a href="#"><i class="fa-brands fa-facebook"></i></a>
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
           <a href="#"><i class="fa-brands fa-twitter"></i></a>
         </div>
-        <a href="{{url('About')}}" class="about-btn">About Us</a>
+        <a href="{{url('About')}}" class="about-btn">@lang('msg.cotact23')</a>
       </section>
     </section>
 

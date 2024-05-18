@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Pagination\Paginator;
 use App\Providers\RouteServiceProviders;
 
@@ -22,5 +23,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrap();
+
+        $locale = Session::get('$locale','en');
+        app()->setLocale($locale);
+        if($locale == 'fa' || $locale == 'ps'){
+            $direction = 'rtl';
+        }else{
+            $direction ='ltr';
+        }
+        view()->share('pageDirection', $direction);
+
     }
 }

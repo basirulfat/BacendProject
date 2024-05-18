@@ -41,7 +41,7 @@
         
      <div class="card">
         <div class="card-body">
-        <table style="width: 1400px; border-collapse: collapse;">
+        <table style="width: 100%; border-collapse: collapse;">
   <tr>
     <th style="padding: 10px; border: 1px solid black;">Job Title</th>
     <th style="padding: 10px; border: 1px solid black;">Seniority</th>

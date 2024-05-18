@@ -199,8 +199,11 @@
             </ul>
           </div>
         </div>
-      </div>
 
+       
+      </div>
+      <a class="btn btn-sm btn-primary" href="{{ route('personalInformation.index') }}" role="button" style="background-color:blue; color:white;position: relative; left: 250px; width:200px;">Edit Your CV</a>
+      <a class="btn btn-sm btn-primary" href="{{route('resume.download')}}" role="button" style="background-color:blue; color:white;position: relative; left: 250px; width:200px;">Download CV</a>
       <!--=============== FOOTER ===============-->
       @include('layouts.footer')
     </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Find Job</title>
+    <title>@Lang('msg.find0')</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,7 +36,7 @@
    @include('layouts.header')
     <!-- ====================heading section started================== -->
     <section id="heading-section">
-      <h5>Employment in the AfghanTalent and national companies</h5>
+      <h5>@lang('msg.find1')</h5>
       <div class="search-container">
         <input
           type="search"
@@ -50,13 +50,13 @@
     <section id="job-catagories">
       <div class="job-links">
         <ul>
-          <li><i class="ri-archive-fill"></i><a href="#">Job Catagory</a></li>
+          <li><i class="ri-archive-fill"></i><a href="#">@lang('msg.find2')</a></li>
           <li>
-            <i class="ri-graduation-cap-fill"></i><a href="#">Education</a>
+            <i class="ri-graduation-cap-fill"></i><a href="#">@lang('msg.find3')</a>
           </li>
-          <li><i class="ri-map-pin-2-fill"></i><a href="#">Location</a></li>
-          <li><i class="ri-briefcase-2-fill"></i><a href="#">Industry</a></li>
-          <li><i class="ri-building-3-fill"></i><a href="#">Seniority</a></li>
+          <li><i class="ri-map-pin-2-fill"></i><a href="#">@lang('msg.find4')</a></li>
+          <li><i class="ri-briefcase-2-fill"></i><a href="#">@lang('msg.find5')</a></li>
+          <li><i class="ri-building-3-fill"></i><a href="#">@lang('msg.find6')</a></li>
         </ul>
       </div>
 
@@ -72,7 +72,7 @@
             <i class="ri-search-line"></i>
           </button>
         </div>
-        <a href="{{url('showJobs')}}" id="view-all-jobs">View all jobs</a>
+        <a href="{{url('showJobs')}}" id="view-all-jobs">@lang('msg.find7')</a>
       </div>
 
       <div id="all-job-section">
@@ -90,10 +90,10 @@
     <section id="last-job">
       <div class="job-linked">
         <ul>
-          <li><a href="#">Latest Jobs</a></li>
-          <li><a href="#">Recommended Jobs</a></li>
-          <li><a href="#">Applied Jobs</a></li>
-          <li><a href="#">Saved Jobs</a></li>
+          <li><a href="#">@lang('msg.find8')</a></li>
+          <li><a href="#">@lang('msg.find9')</a></li>
+          <li><a href="#">@lang('msg.find10')</a></li>
+          <li><a href="#">@lang('msg.find11')</a></li>
         </ul>
       </div>
       <div class="jobcart__wrapper">
@@ -150,9 +150,9 @@
               </button>
             </div>
             <div class="job-card-buttons">
-              <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
+              <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">@lang('msg.find12')</a>
               <button class="search-buttons card-buttons-msg  btn">
-                Messages
+              @lang('msg.find13')
               </button>
             </div>
           </div>
@@ -165,24 +165,24 @@
         </div>
   <!-------------------------------pagenation ------------------------------------>
       <div id="view-all-blog-posts">
-        <a href="{{url('showJobs')}}">See More Jobs</a>
+        <a href="{{url('showJobs')}}">@lang('msg.find14')</a>
       </div>
     </section>
 
     <!-- ====================== GUIDE SECTION ==================== -->
 
     <section id="giude-section">
-      <h1>3 steps to find the job you love!</h1>
+      <h1>@lang('msg.key43')</h1>
       <div id="direction-for-employer">
         <div class="registrition">
           <i class="ri-user-add-line"></i>
           <a href="#">
-            <h3>Register</h3>
+            <h3>@lang('msg.key44')</h3>
           </a>
           <p>
-            Start Your professional career <br />
-            path by registering on AfghanTalent <br />
-            website
+          @lang('msg.key45') <br />
+          @lang('msg.key46') <br />
+          @lang('msg.key47')
           </p>
         </div>
 
@@ -193,12 +193,12 @@
         <div class="registrition">
           <i class="ri-file-upload-line"></i>
           <a href="#">
-            <h3>Upload Your CV</h3>
+            <h3>@lang('msg.key48')</h3>
           </a>
           <p>
-            The First step to get hired in your <br />
-            dream job is to create a <br />
-            professional CV
+          @lang('msg.key49') <br />
+          @lang('msg.key50') <br />
+          @lang('msg.key51')
           </p>
         </div>
 
@@ -209,12 +209,12 @@
         <div class="registrition">
           <i class="ri-briefcase-line"></i>
           <a href="#">
-            <h3>Apply for jobs</h3>
+            <h3>@lang('msg.key52')</h3>
           </a>
           <p>
-            Send your CV to employers and <br />
-            let them know you are ready to <br />
-            apply for jobs.
+          @lang('msg.key53') <br />
+          @lang('msg.key54') <br />
+          @lang('msg.key55')
           </p>
         </div>
       </div>
@@ -223,7 +223,7 @@
     <!--======================= top companies===================== -->
     <section id="top-company">
       <div id="level-2">
-        <h4>Top Raled Companies in AfghanTalent</h4>
+        <h4>@lang('msg.find15')</h4>
         <hr />
       </div>
       <div id="top-company-container">
@@ -304,7 +304,7 @@
       </div>
       <div class="view-all-company-btn">
         <a href="{{url('Companeis_Rate')}}" id="view-all-company"
-          >View Other Company</a
+          >@lang('msg.find16')</a
         >
       </div>
     </section>
@@ -313,7 +313,7 @@
 
     <section id="find-job-guides">
       <div id="level-3">
-        <h4>How to find your favorite</h4>
+        <h4>@lang('msg.find17')</h4>
         <hr />
       </div>
 
@@ -324,16 +324,16 @@
             alt=""
           />
           <h5>
-            What is a resume and how to 
-            write a professional CV?
+          @lang('msg.find18') <br />
+          @lang('msg.find19')
           </h5>
           <p>
-            if you are locking for a job and 
-            want to be hired by a reputable 
-            company. the first thing you are...
+          @lang('msg.find20') <br />
+          @lang('msg.find21') <br />
+          @lang('msg.find22')
           </p>
-          <a href="{{url('guide')}}">Read More</a>
-          <button>Candidates</button>
+          <a href="{{url('guide')}}">@lang('msg.find23')</a>
+          <button>@lang('msg.find24')</button>
         </div>
 
         <div class="cards-design">
@@ -342,16 +342,16 @@
             alt=""
           />
           <h5>
-            How to write work experience
-            on CV?
+          @lang('msg.find25')<br />
+          @lang('msg.find26')
           </h5>
           <p>
-            if you want to write a
-            professional resume,it is better 
-            to know thar the work that you want to hired there...
+          @lang('msg.find27')<br />
+          @lang('msg.find28') <br />
+          @lang('msg.find29')
           </p>
-          <a href="{{url('guideExperience')}}">Read More</a>
-          <button>Candidates</button>
+          <a href="{{url('guideExperience')}}">@lang('msg.find23')</a>
+          <button>@lang('msg.find24')</button>
         </div>
 
         <div class="cards-design">
@@ -360,16 +360,16 @@
             alt=""
           />
           <h5>
-            Guide to making a resume in 
-            AfghanTalent?
+          @lang('msg.find30') <br />
+          @lang('msg.find31')
           </h5>
           <p>
-            During its 17 year of operation, 
-            AfghanTalent.com has always tried 
-            to change the recruitment...
+          @lang('msg.find32') <br />
+          @lang('msg.find33') <br />
+          @lang('msg.find34')
           </p>
-          <a href="{{url('guide-resume-in-afghanjb')}}">Read More</a>
-          <button>Candidates</button>
+          <a href="{{url('guide-resume-in-afghanjb')}}">@lang('msg.find23')</a>
+          <button>@lang('msg.find24')</button>
         </div>
 
         <div class="cards-design">
@@ -378,20 +378,20 @@
             alt=""
           />
           <h5>
-            Interview tips that will help 
-            you get hired
+          @lang('msg.find35') <br />
+          @lang('msg.find36')
           </h5>
           <p>
-            Even if you are a professional
-            interview and you have been 
-            interviewed by different language and can...
+          @lang('msg.find37')<br />
+          @lang('msg.find38') <br />
+          @lang('msg.find39')
           </p>
-          <a href="{{url('index')}}">Read More</a>
-          <button>Candidates</button>
+          <a href="{{url('index')}}">@lang('msg.find23')</a>
+          <button>@lang('msg.find24')</button>
         </div>
       </div>
       <div id="view-all-blog-posts">
-        <a href="{{url('blog')}}">View all blog posts</a>
+        <a href="{{url('blog')}}">@lang('msg.find40')</a>
       </div>
     </section>
 

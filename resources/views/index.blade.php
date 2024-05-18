@@ -11,7 +11,7 @@
   <!--=============== CSS ===============-->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <title>AfghanTalent</title>
+  <title>@lang('msg.key1')</title>
   <style>  
             .text-center {
                 text-align: center;
@@ -33,14 +33,14 @@
     <div class="heading__part">
       <div class="first__img img"></div>
       <div class="FT__catchword">
-        <h1>Find your job here</h1>
-        <h2>We provide the best oppertunities for you</h2>
+        <h1>@lang('msg.key16')</h1>
+        <h2>@lang('msg.key17')</h2>
         <div class="registration__btn">
 
 
 
-          <a class="btn head__btn" href="{{url('find-job')}}">@lang('msg.Apply for job')</a>
-          <a class="btn head__btn" href="{{route('personalInformation.create')}}">Create Your CV</a>
+          <a class="btn head__btn" href="{{url('find-job')}}">@lang('msg.key18')</a>
+          <a class="btn head__btn" href="{{route('personalInformation.create')}}">@lang('msg.key19')</a>
 
          
 
@@ -54,31 +54,31 @@
         <div class="featurs__icon">
           <a href="#"><i class="ri-search-line"></i></a>
         </div>
-        <h4>Find jobs</h4>
+        <h4>@lang('msg.key20')</h4>
       </div>
       <div class="featurs__item">
         <div class="featurs__icon">
           <a href="#"><i class="ri-hand-heart-line"></i></a>
         </div>
-        <h4>Job coaching</h4>
+        <h4>@lang('msg.key21')</h4>
       </div>
       <div class="featurs__item">
         <div class="featurs__icon">
           <a href="#"><i class="ri-survey-line"></i></a>
         </div>
-        <h4>Career Tests</h4>
+        <h4>@lang('msg.key22')</h4>
       </div>
       <div class="featurs__item">
         <div class="featurs__icon">
           <a href="#"><i class="ri-wallet-3-line"></i></a>
         </div>
-        <h4>Salary Estimation</h4>
+        <h4>@lang('msg.key23')</h4>
       </div>
       <div class="featurs__item">
         <div class="featurs__icon">
           <a href="#"><i class="ri-message-2-line"></i></a>
         </div>
-        <h4>Company Reviews</h4>
+        <h4>@lang('msg.key24')</h4>
       </div>
     </div>
   </section>
@@ -166,27 +166,27 @@
   </section>
   <!-- =============== job filter =============== -->
   <section id="jobs">
-    <h1>Find Jobs</h1>
+    <h1>@lang('msg.key20')</h1>
     <div class="job__filteration__wrapper">
       <div class="category">
         <i class="ri-archive-fill job__icon"></i>
-        <h4>Catagories</h4>
+        <h4>@lang('msg.key25')</h4>
       </div>
       <div class="category">
         <i class="ri-map-pin-fill job__icon"></i>
-        <h4>Location</h4>
+        <h4>@lang('msg.key26')</h4>
       </div>
       <div class="category">
         <i class="ri-community-line job__icon"></i>
-        <h4>Companies</h4>
+        <h4>@lang('msg.key27')</h4>
       </div>
       <div class="category">
         <i class="ri-briefcase-fill job__icon"></i>
-        <h4>Industories</h4>
+        <h4>@lang('msg.key28')</h4>
       </div>
       <div class="category">
         <i class="ri-medal-line job__icon"></i>
-        <h4>Seniority</h4>
+        <h4>@lang('msg.key29')</h4>
       </div>
     </div>
     <div class="line"></div>
@@ -285,13 +285,13 @@
     </div>
     <div class="job__btn">
       <button class="btn More_Jobs">
-        See More<i class="ri-arrow-down-s-line"></i>
+      @lang('msg.key30')<i class="ri-arrow-down-s-line"></i>
       </button>
     </div>
   </section>
   <!-- =============== JOB SEARCH =============== -->
   <section id="job-searching">
-    <h1>Top Job Searches</h1>
+    <h1>@lang('msg.key31')</h1>
     <div class="job__parts">
       <a href="#">Alokozay</a>
       <a href="#">Software Development</a>
@@ -319,7 +319,7 @@
   </section>
       <!--=================== map ================= -->
   <section>
-  <h1 class="text-center">Find Job Location in Maps and See</h1>
+  <h1 class="text-center">@lang('msg.keymap')</h1>
         <div id="map"></div>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsvEv3lrJ4A8_M4HofeymlNoqz48NqoQc&callback=initMap" async></script>
         <script>
@@ -403,7 +403,7 @@
   </section>
   <!-- ===============  LAST JOB OPPERTUNITEIES =============== -->
   <section id="last-job">
-    <h1>Last Job oppertunities</h1>
+    <h1>@lang('msg.key32')</h1>
     <div class="last__job__input">
     <form action="{{ route('postSearch') }} " method="get" enctype="multipart/form-data">
       <input type="text" id="fruits" list="fruit-list" placeholder="Select job category" />
@@ -483,97 +483,36 @@
 
     <div class="jobcart__wrapper">
            
-      @foreach( $jobs as $job)
-
-      <div class="job-card">
-        <div class="job-card-header">
-        <img src="{{ asset(str_replace('public/', 'storage/', $job->logo)) }}" alt="Company Logo">
-          <div class="job-card-title">{{$job->jobTitle}}
-          <p>{{$job->company->company_name}}</p>
-         </div>
-          <div class="menu-dot"></div>
-        </div>
-        <div class="job-card-subtitle">
-           <!-- jobDescription show less -->
-        <?php
-                $description = $job->jobDescription;
-                $truncated = substr($description, 0, 150);
-                $remaining = strlen($description) > 150;
-
-                echo nl2br($truncated);
-                if ($remaining) {
-                    echo '...';
-                }
-                ?>
-           <!-- jobDescription show less -->
-        </div>
-        <div class="job-detail-buttons">
-        <button class="search-buttons detail-button btn">
-            {{$job->jobType}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$job->experience}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$job->seniority}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$job->category}}
-          </button>
-        </div>
-        <div class="job-detail-buttons">
-        <button class="search-buttons detail-button btn">
-            {{$job->salary}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$job->location}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$job->created_at}}
-          </button>
-        </div>
-        <div class="job-card-buttons">
-          <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
-          <button class="search-buttons card-buttons-msg  btn">
-            Messages
-          </button>
-        </div>
-      </div>
-      @endforeach
-    </div>
-    <!-------------------------------pagenation ------------------------------------>
-    <div class="pagination-container">
-      {{ $jobs->links() }}
-    </div>
+     
      <!-------------------------------pagenation ------------------------------------>
     <div class="job__btn">
-      <a href="{{url('showJobs')}}">See More Jobs<i class="ri-arrow-down-s-line"></i></a>
+      <a href="{{url('showJobs')}}">@lang('msg.key36')<i class="ri-arrow-down-s-line"></i></a>
 
     </div>
   </section>
   <!-- =============== start with you =============== -->
   <section id="start-with-you">
-    <h1>Change Start With You</h1>
+    <h1>@lang('msg.key37')</h1>
     <div class="star__wrapper">
       <div class="start__links__wrapper">
         <div class="start__links">
-          <a href="{{url('CreateCV')}}">Build your resume</a>
+          <a href="{{url('CreateCV')}}">@lang('msg.key38')</a>
           <a href="{{url('CreateCV')}}"> <i class="ri-arrow-right-s-line"></i></a>
         </div>
         <div class="start__links">
-          <a href="#">Apply for jobs</a>
+          <a href="#">@lang('msg.key39')</a>
           <a href="#"><i class="ri-arrow-right-s-line"></i></a>
         </div>
         <div class="start__links">
-          <a href="#">Test Your skells</a>
+          <a href="#">@lang('msg.key40')</a>
           <a href="#"><i class="ri-arrow-right-s-line"></i></a>
         </div>
         <div class="start__links">
-          <a href="#">stimate your salary</a>
+          <a href="#">@lang('msg.key41')</a>
           <a href="#"><i class="ri-arrow-right-s-line"></i></a>
         </div>
         <div class="start__links">
-          <a href="{{url('post-job')}}">Post a Job</a>
+          <a href="{{url('post-job')}}">@lang('msg.key42')</a>
           <a href="{{url('post-job')}}"><i class="ri-arrow-right-s-line"></i></a>
         </div>
       </div>
@@ -582,17 +521,17 @@
   </section>
   <!-- =============== GUIDE SECTION =============== -->
   <section id="giude-section">
-    <h1>3 steps to find the job you love!</h1>
+    <h1>@lang('msg.key43')</h1>
     <div id="direction-for-employer">
       <div class="registrition">
         <i class="ri-user-add-line"></i>
         <a href="#">
-          <h3>Register</h3>
+          <h3>@lang('msg.key44')</h3>
         </a>
         <p>
-          Start Your professional career <br />
-          path by registering on AfghanTalent <br />
-          website
+        @lang('msg.key45') <br />
+        @lang('msg.key46') <br />
+        @lang('msg.key47')
         </p>
       </div>
 
@@ -603,12 +542,12 @@
       <div class="registrition">
         <i class="ri-file-upload-line"></i>
         <a href="#">
-          <h3>Create Your CV</h3>
+          <h3>@lang('msg.key48')</h3>
         </a>
         <p>
-          The First step to get hired in your <br />
-          dream job is to create a <br />
-          professional CV
+        @lang('msg.key49') <br />
+        @lang('msg.key50') <br />
+        @lang('msg.key51')
         </p>
       </div>
 
@@ -619,12 +558,12 @@
       <div class="registrition">
         <i class="ri-briefcase-line"></i>
         <a href="#">
-          <h3>Apply for jobs</h3>
+          <h3>@lang('msg.key52')</h3>
         </a>
         <p>
-          Send your CV to employers and <br />
-          let them know you are ready to <br />
-          apply for jobs.
+        @lang('msg.key53')<br />
+        @lang('msg.key54') <br />
+        @lang('msg.key55')
         </p>
       </div>
     </div>
@@ -632,23 +571,17 @@
 
   <!-- ===============FAQ =============== -->
   <section id="FAQ">
-    <h1>FAQ</h1>
+    <h1>@lang('msg.key56')</h1>
     <div class="faq-wrapper">
       <div class="question">
-        <h5>What is AfghanTalent?</h5>
+        <h5>@lang('msg.key57')</h5>
         <button class="btn faq">
           <i class="ri-arrow-down-s-line"></i>
         </button>
       </div>
       <div class="answer">
         <p>
-          AfghanTalent.com is the leading job site and online recruitment
-          service in , Afghanistan a database of over 2,000,000 professionals,
-          specialists and managers across all industries and job categories.
-          The company specializes in matching top candidates with attractive
-          career opportunities through its website. It serves as the primary
-          recruitment channel for many leading Afghani companies and virtually
-          all the international firms operating in Afghanistan.
+        @lang('msg.key58')
         </p>
       </div>
     </div>
@@ -656,29 +589,22 @@
     <div class="faq-wrapper">
       <div class="question">
         <h5>
-          Which companies do you work with and what kind of jobs do you have?
+        @lang('msg.key59')
         </h5>
         <button class="btn faq"><i class="ri-arrow-down-s-line"></i></button>
       </div>
       <div class="answer">
         <p>
-          Our clients are typically international firms operating in
-          Afghanistan and their subsidiaries, or leading Afghans firms. The
-          vacancies advertised on our website come from a wide range of
-          industries and job categories. Whatever your field of expertise is,
-          we encourage you to register and complete your CV, and sooner or
-          later you are likely to find job opportunities matching your
-          interests. The main functions we cover include (but are not limited
-          to):
+        @lang('msg.key60')
         <ul>
-          <li> • Accounting & finance</li>
-          <li> • Sales & marketing </li>
-          <li> • Administration and secretarial</li>
-          <li> • Commercial & procurement </li>
-          <li> • Strategy & business development</li>
-          <li> • General management</li>
-          <li> • IT & systems </li>
-          <li> • Engineering & manufacturing</li>
+          <li> @lang('msg.key61')</li>
+          <li> @lang('msg.key62') </li>
+          <li> @lang('msg.key63')</li>
+          <li> @lang('msg.key64') </li>
+          <li> @lang('msg.key65')</li>
+          <li> @lang('msg.key66')</li>
+          <li> @lang('msg.key67') </li>
+          <li> @lang('msg.key68')</li>
         </ul>
         </p>
       </div>
@@ -686,41 +612,36 @@
 
     <div class="faq-wrapper">
       <div class="question">
-        <h5>How secure is the personal data I submit to AfghanTalent?</h5>
+        <h5>@lang('msg.key69')</h5>
         <button class="btn faq"><i class="ri-arrow-down-s-line"></i></button>
       </div>
       <div class="answer">
         <p>
-          We do not disclose your personal data to any third parties except
-          for the purpose of introducing you to an employer.
+        @lang('msg.key70')
         </p>
       </div>
     </div>
 
     <div class="faq-wrapper">
       <div class="question">
-        <h5>Do I need to pay AfghanTalent for this service?</h5>
+        <h5>@lang('msg.key71')</h5>
         <button class="btn faq"><i class="ri-arrow-down-s-line"></i></button>
       </div>
       <div class="answer">
         <p>
-          No! Whether candidates find a job or not, they would not be charged
-          for this service.
+        @lang('msg.key72')
         </p>
       </div>
     </div>
 
     <div class="faq-wrapper">
       <div class="question">
-        <h5>How can I send my feedbacks to AfghanTalent?</h5>
+        <h5>@lang('msg.key73')</h5>
         <button class="btn faq"><i class="ri-arrow-down-s-line"></i></button>
       </div>
       <div class="answer">
         <p>
-          Candidates are able to send their feedbacks through following
-          routes: * Click on 'Home' and send the feedback from 'contact us'
-          section at the bottom of website feedbacks and suggestions will be
-          reviewed in our steering committee meetings.
+        @lang('msg.key74')
         </p>
       </div>
     </div>

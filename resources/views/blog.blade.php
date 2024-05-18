@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog</title>
+    <title>@lang('msg.blog48')</title>
     <link rel="stylesheet" href="./assets/css/blog.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- icon links -->
@@ -63,7 +63,7 @@
     <!-- 6 cards -->
     <section class="first-C-section">
       <div class="top-bor">
-        <a href="#">The latest content <i class="fa-solid fa-clock"></i></a>
+        <a href="#">@lang('msg.blog1') <i class="fa-solid fa-clock"></i></a>
         <hr />
       </div>
       <div class="card-Warpper">
@@ -74,16 +74,15 @@
               alt=""
             />
             <h3>
-              Relationship Between Stress Management And MBTI Personality
+            @lang('msg.blog2')
             </h3></a
           >
 
           <p>
-            Coping with stress using MBTI personality types Millions of ways to
-            manage stress
+          @lang('msg.blog3')
           </p>
 
-          <a id="link-btn" href="#">READ THE ARTICLE </a>
+          <a id="link-btn" href="#">@lang('msg.blog4') </a>
         </div>
 
         <div class="sex-cards">
@@ -92,14 +91,13 @@
               src="./assets/images/pexels-lex-photography-1109543.jpg"
               alt=""
             />
-            <h3>A Guide To Writing A Scientific Representative's Resume</h3></a
+            <h3>@lang('msg.blog5')</h3></a
           >
           <p>
-            A comprehensive and practical guide to writing a resume of a
-            scientific representative.
+          @lang('msg.blog6')
           </p>
 
-          <a id="link-btn" href="#">READ THE ARTICLE </a>
+          <a id="link-btn" href="#">@lang('msg.blog4')</a>
         </div>
 
         <div class="sex-cards">
@@ -108,13 +106,12 @@
               src="./assets/images/pexels-roxanne-minnish-4486796.jpg"
               alt=""
             />
-            <h3>Find A Digital Marketing Job In 6 Steps</h3></a
+            <h3>@lang('msg.blog7')</h3></a
           >
           <p>
-            if 6 golden tips for getting hired in a digital marketing job.you
-            are new to the online marketing job.
+          @lang('msg.blog8')
           </p>
-          <a id="link-btn" href="#">READ THE ARTICLE </a>
+          <a id="link-btn" href="#">@lang('msg.blog4') </a>
         </div>
 
         <div class="sex-cards">
@@ -123,13 +120,12 @@
               src="./assets/images/pexels-august-de-richelieu-4427431.jpg"
               alt=""
             />
-            <h3>Why Can A Great Salesperson Be A Bad Sales Manager?</h3></a
+            <h3>@lang('msg.blog9')</h3></a
           >
           <p>
-            One of the reasons for the lack of success of many who are hired as
-            a sales manager is that
+          @lang('msg.blog10')
           </p>
-          <a id="link-btn" href="#">READ THE ARTICLE </a>
+          <a id="link-btn" href="#">@lang('msg.blog4') </a>
         </div>
 
         <div class="sex-cards">
@@ -139,43 +135,98 @@
               alt=""
             />
             <h3>
-              Job Interview Semiotics Of Personality Types According To The
-              Amount Of
+            @lang('msg.blog11')
             </h3></a
           >
           <p>
-            Which personality types (MBTI) are more successful in job
-            interviews? Do you know
+          @lang('msg.blog12')
           </p>
 
-          <a id="link-btn" href="#">READ THE ARTICLE </a>
+          <a id="link-btn" href="#">@lang('msg.blog4')</a>
         </div>
 
         <div class="sex-cards">
           <a href="#"
             ><img src="./assets/images/pexels-pixabay-267350.jpg" alt="" />
-            <h3>How To Become An Instagram Admin?</h3></a
+            <h3>@lang('msg.blog13')</h3></a
           >
           <p>
-            How to become an Instagram admin? One of the new jobs that has
-            gained many audiences in recent years is admin...
+          @lang('msg.blog14')
           </p>
 
-          <a id="link-btn" href="#">READ THE ARTICLE </a>
+          <a id="link-btn" href="#">@lang('msg.blog4') </a>
         </div>
       </div>
-      <div id="bouttom-btn">
+      <!-- <div id="bouttom-btn">
         <a href="#"
           ><i class="ri-arrow-down-s-line dropdown__arrow"></i> Show More
           content</a
         >
-      </div>
+      </div> -->
     </section>
+
+        <!-- new code -->
+        <section class="showCard">
+      <div class="cards-wrapper">
+        <div class="A See_more">
+         <a href="#"
+            ><img src="./assets/images/pexels-august-de-richelieu-4427431.jpg" alt="" />
+            <h3>@lang('msg.blog53')</h3></a>
+
+          <p>
+          @lang('msg.blog54')
+          </p>
+          <a id="link-btn" href="#">@lang('msg.blog4') </a>
+        </div>
+
+
+        <div class="A See_more">
+          <!--  -->
+          <a href="#"
+            ><img src="./assets/images/pexels-tima-miroshnichenko-6693655.jpg" alt="" />
+            <h3>@lang('msg.blog55')</h3></a
+          >
+          <p>
+            
+          @lang('msg.blog56')…
+          </p>
+          <a id="link-btn" href="#">@lang('msg.blog4') </a>
+        </div>
+
+
+        <div class="A See_more">
+          <a href="#"
+          ><img src="./assets/images/pexels-moose-photos-1586973.jpg" alt="" />
+          <h3>@lang('msg.blog57')</h3></a>
+        <p>
+          
+        @lang('msg.blog58')…
+        </p>
+        <a id="link-btn" href="#">@lang('msg.blog4') </a>
+
+        </div>
+      </div>
+      <div class="LastA">
+      <button class="job__btn"><i class="ri-arrow-down-s-line dropdown__arrow"></i>@lang('msg.blog15')</button>
+    </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- 3 cards -->
     <section class="first-C-section">
       <div class="top-bor">
-        <a href="#">Most Popular</a>
+        <a href="#">@lang('msg.blog16')</a>
         <hr />
       </div>
       <div class="card-Warpper">
@@ -185,12 +236,12 @@
               src="./assets/images/pexels-photomix-company-106341.jpg"
               alt=""
             />
-            <h3 id="phagraph-id">RESUME WRITING</h3></a
+            <h3 id="phagraph-id">@lang('msg.blog17')</h3></a
           >
           <p id="phagraph-id">
-            how is the process of hiring and reviwing resume at google?
+          @lang('msg.blog18')
           </p>
-          <a id="link-btn" href="#">RESUME WRITING</a>
+          <a id="link-btn" href="#">@lang('msg.blog17')</a>
         </div>
 
         <div class="sex-cards">
@@ -199,12 +250,12 @@
               src="./assets/images/pexels-vlad-bagacian-1228396.jpg"
               alt=""
             />
-            <h3 id="phagraph-id">..IDUAL DEVELOPMENT</h3>
+            <h3 id="phagraph-id">@lang('msg.blog19')</h3>
           </a>
           <p id="phagraph-id">
-            what is emotional intelligence and How it is importent in workplace?
+          @lang('msg.blog20')
           </p>
-          <a id="link-btn" href="#">..IDUAL DEVELOPMENT</a>
+          <a id="link-btn" href="#">@lang('msg.blog19')</a>
         </div>
 
         <div class="sex-cards">
@@ -213,12 +264,12 @@
               src="./assets/images/pexels-lex-photography-1109543.jpg"
               alt=""
             />
-            <h3 id="phagraph-id">RESUME WRITING</h3>
+            <h3 id="phagraph-id">@lang('msg.blog17')</h3>
           </a>
           <p id="phagraph-id">
-            what is resume and how to write a propessional resume?
+          @lang('msg.blog21')
           </p>
-          <a id="link-btn" href="#">RESUME WRITING </a>
+          <a id="link-btn" href="#">@lang('msg.blog17') </a>
         </div>
       </div>
     </section>
@@ -226,7 +277,7 @@
     <!-- second 3 cards -->
     <section class="first-C-section">
       <div class="top-bor">
-        <a href="#">Employees</a>
+        <a href="#">@lang('msg.blog22')</a>
         <hr />
       </div>
 
@@ -237,14 +288,13 @@
               src="./assets/images/pexels-francesco-ungaro-998641.jpg"
               alt=""
             />
-            <h3>What Exactly Does Gen Z Expect From Their Workplace?</h3></a
+            <h3>@lang('msg.blog23')</h3></a
           >
 
           <p>
-            If you are a manager, you need to know how Gen Z, as the first
-            generation of digital natives, is about
+          @lang('msg.blog24')
           </p>
-          <a id="link-btn" href="#">READ THE ARTICLE </a>
+          <a id="link-btn" href="#">@lang('msg.blog25') </a>
         </div>
 
         <div class="sex-cards">
@@ -253,32 +303,29 @@
               src="./assets/images/pexels-andrea-piacquadio-3779409.jpg"
               alt=""
             />
-            <h3>Why Do Employees Want To Work For A Small Business?</h3></a
+            <h3>@lang('msg.blog26')</h3></a
           >
 
           <p>
-            Join us in this article to take a look at some of the best small and
-            medium businesses on the list of the best
+          @lang('msg.blog27')
           </p>
 
-          <a id="link-btn" href="#">READ THE ARTICLE </a>
+          <a id="link-btn" href="#">@lang('msg.blog25') </a>
         </div>
 
         <div class="sex-cards">
           <a href="#"
             ><img src="./assets/images/pexels-fauxels-3184418.jpg" alt="" />
             <h3>
-              Reasons For The Effectiveness Of The Work Team In The Growth Of 6
-              Businesses
+            @lang('msg.blog28')
             </h3></a
           >
 
           <p>
-            Having an effective work team will play an important role in
-            business..
+          @lang('msg.blog29')
           </p>
 
-          <a id="link-btn" href="#">READ THE ARTICLE </a>
+          <a id="link-btn" href="#">@lang('msg.blog25') </a>
         </div>
       </div>
     </section>
@@ -286,11 +333,11 @@
     <section class="last-C-section">
       <div class="last-bor">
         <hr />
-        <a href="#">Job Interview</a>
+        <a href="#">@lang('msg.blog30')</a>
         <hr />
-        <a href="#">Resume Writing</a>
+        <a href="#">@lang('msg.blog31')</a>
         <hr />
-        <a href="#">Individual Development </a>
+        <a href="#">@lang('msg.blog32')</a>
       </div>
 
       <div class="last-card-Warpper">
@@ -300,11 +347,10 @@
               src="./assets/images/pexels-tima-miroshnichenko-5336958.jpg"
               alt=""
             />
-            <h3>Sales Manager Job Interview Cheat Sheet!</h3></a
+            <h3>@lang('msg.blog33')</h3></a
           >
           <p>
-            Before entering the sales manager job interview, it is better to
-            familiarize yourself a little with the questions they will ask you.
+          @lang('msg.blog34')
           </p>
           <hr />
 
@@ -313,15 +359,13 @@
               ><img
                 src="./assets/images/pexels-tima-miroshnichenko-5336958.jpg"
                 alt="small-images"
-              />25 questions that are asked in the job interview of a scientific
-              representative</a
+              />@lang('msg.blog35')</a
             >
           </div>
 
           <div class="small-images">
             <a href="#"
-              ><img src="./assets/images/pi1.png" alt="small-images" />The first
-              five minutes of a job interview are very important</a
+              ><img src="./assets/images/pi1.png" alt="small-images" />@lang('msg.blog36')</a
             >
           </div>
 
@@ -330,7 +374,7 @@
               ><img
                 src="./assets/images/pexels-andrea-piacquadio-3779409.jpg"
                 alt="small-images"
-              />10 questions you should ask in an internship interview
+              />@lang('msg.blog37')
             </a>
           </div>
 
@@ -339,8 +383,7 @@
               ><img
                 src="./assets/images/pexels-tima-miroshnichenko-6693655.jpg"
                 alt="small-images"
-              />How to answer the question "How much is your desired salary?"
-              answer?
+              />@lang('msg.blog38')
             </a>
           </div>
         </div>
@@ -351,11 +394,10 @@
               src="./assets/images/pexels-moose-photos-1586973.jpg"
               alt=""
             />
-            <h3>A Guide To Writing A Scientific Representative's Resume</h3></a
+            <h3>@lang('msg.blog39')</h3></a
           >
           <p>
-            A comprehensive and practical guide to writing a resume of a
-            scientific representative. Having a resume of a scientific .
+          @lang('msg.blog41')
           </p>
           <hr />
 
@@ -364,7 +406,7 @@
               ><img
                 src="./assets/images/pexels-lex-photography-1109543.jpg"
                 alt="small-images"
-              />How to write a professional resume for the job of sales manager?
+              />@lang('msg.blog42')
             </a>
           </div>
 
@@ -373,8 +415,7 @@
               ><img
                 src="./assets/images/pexels-photomix-company-106341.jpg"
                 alt="small-images"
-              />Signs that the resume was created with the help of artificial
-              intelligence
+              />@lang('msg.blog43')
             </a>
           </div>
 
@@ -383,7 +424,7 @@
               ><img
                 src="./assets/images/pexels-pixabay-267350.jpg"
                 alt="small-images"
-              />How to put an internship on a resume
+              />@lang('msg.blog44')
             </a>
           </div>
 
@@ -392,8 +433,7 @@
               ><img
                 src="./assets/images/pexels-christina-morillo-1181534.jpg"
                 alt="small-images"
-              />5 ways to use information to increase the effectiveness of your
-              resume
+              />@lang('msg.blog45')
             </a>
           </div>
         </div>
@@ -401,11 +441,10 @@
         <div class="three-cards">
           <a href="#"
             ><img src="./assets/images/pexels-pixabay-267350.jpg" alt="" />
-            <h3>Introducing 22 Instagram Admin Skills here</h3></a
+            <h3>@lang('msg.blog46')</h3></a
           >
           <p>
-            Introduction of 22 Instagram admin skills If you are looking for
-            Instagram admin recruitment advertisa, it is better to know...
+          @lang('msg.blog47')
           </p>
           <hr />
 
@@ -414,7 +453,7 @@
               ><img
                 src="./assets/images/pexels-roxanne-minnish-4486796.jpg"
                 alt="small-images"
-              />Find a digital marketing job in 6 steps
+              />@lang('msg.blog49')
             </a>
           </div>
 
@@ -423,8 +462,7 @@
               ><img
                 src="./assets/images/pexels-andrea-piacquadio-840996.jpg"
                 alt="small-images"
-              />Relationship between stress management and MBTI personality
-              types
+              />@lang('msg.blog50')
             </a>
           </div>
 
@@ -433,8 +471,7 @@
               ><img
                 src="./assets/images/pexels-tima-miroshnichenko-5336958.jpg"
                 alt="small-images"
-              />Job interview semiotics of personality types according to the
-              amount of stress
+              />@lang('msg.blog51')
             </a>
           </div>
 
@@ -443,7 +480,7 @@
               ><img
                 src="./assets/images/pexels-vlad-bagacian-1228396.jpg"
                 alt="small-images"
-              />Why can a great salesperson be a bad sales manager?
+              />@lang('msg.blog52')
             </a>
           </div>
         </div>
@@ -454,5 +491,6 @@
    @include('layouts.footer')
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
+    <script defer type="module" src="./assets/js/module/blog.js"></script>
   </body>
 </html>

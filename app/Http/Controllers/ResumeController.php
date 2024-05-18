@@ -32,8 +32,8 @@ class ResumeController extends Controller
          $education=Education::all();
          $Experience=experience::all();
          $skill=Skill::all();
-        //   $pdf =\PDF::loadView('resumePDF',compact('users', 'user','education','Experience','skill'));
-        //   return $pdf->download('resume.pdf');
+         $pdf =\PDF::loadView('resumePDF',compact('users', 'user','education','Experience','skill'));
+        return $pdf->download('resume.pdf');
     }
 
    

@@ -1,415 +1,494 @@
 :root {
-  --white: #fff;
-  --blue: rgb(102, 102, 231);
-  --color1: #50c4ed;
-  --color2: #4d76be;
-  --color3: #b7c9f2;
-  --gray: #777;
+    --white: #fff;
+    --blue: rgb(102, 102, 231);
+    --color1: #50c4ed;
+    --color2: #4d76be;
+    --color3: #b7c9f2;
+    --gray: #777;
 }
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 body {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 /* First section */
 .image-section {
-  width: 100%;
-  background-color: var(--first-color--lighten);
-  margin-top: 5em;
+    width: 100%;
+    background-color: var(--first-color--lighten);
+    margin-top: 5em;
 }
 .image-section .image-wrapper {
-  width: 90%;
-  margin: auto;
-  height: 82vh;
-  padding-top: 2em;
-  display: flex;
-  justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    height: 82vh;
+    padding-top: 2em;
+    display: flex;
+    justify-content: space-between;
 }
 .image-section .image-wrapper .left-Site a img {
-  width: 44vw;
-  height: 42vh;
-  border-radius: 0.5em;
-  transition: all 0.5s;
+    width: 44vw;
+    height: 42vh;
+    border-radius: 0.5em;
+    transition: all 0.5s;
 }
 .image-section .image-wrapper .left-Site a img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 .image-section .image-wrapper .left-Site .child-warpper {
-  width: 44vw;
-  height: 31vh;
-  display: flex;
-  justify-content: space-between;
+    width: 44vw;
+    height: 31vh;
+    display: flex;
+    justify-content: space-between;
 }
 .image-section .image-wrapper .left-Site .child-warpper .R a img {
-  width: 100%;
-  height: 31vh;
-  border-radius: 0.5em;
-  padding-right: 0.3em;
-  transition: all 0.5s;
+    width: 100%;
+    height: 31vh;
+    border-radius: 0.5em;
+    padding-right: 0.3em;
+    transition: all 0.5s;
 }
 
 .image-section .image-wrapper .left-Site .child-warpper .R a img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 .image-section .image-wrapper .left-Site .child-warpper .R a img:nth-child(2) {
-  width: 100%;
-  height: 30vh;
-  border-radius: 0.5em;
-  padding-right: 2em;
+    width: 100%;
+    height: 30vh;
+    border-radius: 0.5em;
+    padding-right: 2em;
 }
 .image-section .image-wrapper .right-img a img {
-  width: 44vw;
-  height: 75vh;
-  border-radius: 0.5em;
-  transition: all 0.5s;
+    width: 44vw;
+    height: 75vh;
+    border-radius: 0.5em;
+    transition: all 0.5s;
 }
 .image-section .image-wrapper .right-img a img:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .image-section .image-wrapper {
-    flex-direction: column;
-    height: auto;
-  }
+    .image-section .image-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
 
-  .image-section .image-wrapper .left-Site a img,
-  .image-section .image-wrapper .left-Site .child-warpper .R a img:nth-child(2),
-  .image-section .image-wrapper .right-img a img {
-    width: 100%;
-    height: auto;
-  }
+    .image-section .image-wrapper .left-Site a img,
+    .image-section
+        .image-wrapper
+        .left-Site
+        .child-warpper
+        .R
+        a
+        img:nth-child(2),
+    .image-section .image-wrapper .right-img a img {
+        width: 100%;
+        height: auto;
+    }
 
-  .image-section .image-wrapper .left-Site .child-warpper {
-    flex-direction: row;
-    width: 100%;
-    height: auto;
-  }
+    .image-section .image-wrapper .left-Site .child-warpper {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+    }
 }
 
 /* first card section is strted here */
 .first-C-section {
-  width: 90%;
-  margin: auto;
-  height: auto;
-  background-color: var(--first-color--lighten);
+    width: 90%;
+    margin: auto;
+    height: auto;
+    background-color: var(--first-color--lighten);
 }
 .first-C-section .top-bor {
-  padding: 1.5em 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    padding: 1.5em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .first-C-section .top-bor a {
-  text-decoration: none;
-  font-size: 1.2em;
-  font-weight: bold;
-  width: 20%;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 20%;
 }
 .first-C-section .top-bor hr {
-  width: 90%;
-  height: 0.1em;
+    width: 90%;
+    height: 0.1em;
 }
 .first-C-section .card-Warpper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  gap: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    gap: 2em;
 }
 
 .first-C-section .card-Warpper .sex-cards {
-  width: 31%;
-  height: 60vh;
-  /* height: auto; */
-  border-radius: 0.5em;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-  padding: 0.2em;
-  transition: all 0.5s;
-  background-color: var(--white);
+    width: 31%;
+    height: 60vh;
+    /* height: auto; */
+    border-radius: 0.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    padding: 0.2em;
+    transition: all 0.5s;
+    background-color: var(--white);
 }
 .first-C-section .card-Warpper .sex-cards:hover {
-  transform: scale(1.03);
+    transform: scale(1.03);
 }
 .first-C-section .card-Warpper .sex-cards a {
-  text-decoration: none;
+    text-decoration: none;
 }
 .first-C-section .card-Warpper .sex-cards a h3 {
-  font-size: 1em;
-  padding-left: 1em;
+    font-size: 1em;
+    padding-left: 1em;
 }
 .first-C-section .card-Warpper .sex-cards a img {
-  width: 27.1vw;
-  height: 30vh;
-  border-radius: 0.5em;
+    width: 27.1vw;
+    height: 30vh;
+    border-radius: 0.5em;
 }
 .first-C-section .card-Warpper .sex-cards p {
-  padding: 0.5em 1em;
+    padding: 0.5em 1em;
 }
 .first-C-section .card-Warpper .sex-cards #phagraph-id {
-  padding: 0.8em 0;
+    padding: 0.8em 0;
 }
 .first-C-section .card-Warpper .sex-cards #link-btn {
-  font-size: 1em;
-  font-weight: bold;
-  background-color: var(--blue);
-  padding: 0.5em 0.5em;
-  border-radius: 0.5em;
-  display: inline-block;
-  cursor: pointer;
-  margin-left: 1em;
-  color: var(--first-color--lighten);
-  /* padding-left: 4em; */
+    font-size: 1em;
+    font-weight: bold;
+    background-color: var(--blue);
+    padding: 0.5em 0.5em;
+    border-radius: 0.5em;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 1em;
+    color: var(--first-color--lighten);
+    /* padding-left: 4em; */
 }
 
 .first-C-section .card-Warpper .sex-cards #link-btn:hover {
-  /* color: var(--white); */
-  color: rgb(252, 20, 20);
-  background-color: wheat;
+    /* color: var(--white); */
+    color: rgb(252, 20, 20);
+    background-color: wheat;
 }
 .first-C-section #bouttom-btn {
-  width: 20%;
-  margin: auto;
-  margin-top: 2em;
+    width: 20%;
+    margin: auto;
+    margin-top: 2em;
 }
 .first-C-section #bouttom-btn a {
-  text-decoration: none;
-  font-size: 1em;
-  background-color: var(--color1);
-  text-transform: uppercase;
-  padding: 0.5em 0.5em;
-  border-radius: 0.3em;
+    text-decoration: none;
+    font-size: 1em;
+    background-color: var(--color1);
+    text-transform: uppercase;
+    padding: 0.5em 0.5em;
+    border-radius: 0.3em;
 }
 .first-C-section #bouttom-btn a:hover {
-  color: rgb(252, 20, 20);
-  background-color: wheat;
+    color: rgb(252, 20, 20);
+    background-color: wheat;
 }
 
 /* Media Queries */
 
 @media (max-width: 768px) {
-  .first-C-section .top-bor a {
-    width: 100%;
-  }
+    .first-C-section .top-bor a {
+        width: 100%;
+    }
 
-  .first-C-section .card-Warpper .sex-cards {
-    width: 100%;
-  }
+    .first-C-section .card-Warpper .sex-cards {
+        width: 100%;
+    }
 
-  .first-C-section #bouttom-btn a {
-    width: 100%;
-  }
-  .first-C-section .card-Warpper .sex-cards a img {
-    width: 100%;
-    /* height: 30vh; */
-    border-radius: 0.5em;
-  }
-  .first-C-section #bouttom-btn {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    margin-top: 0.5em;
-  }
+    .first-C-section #bouttom-btn a {
+        width: 100%;
+    }
+    .first-C-section .card-Warpper .sex-cards a img {
+        width: 100%;
+        /* height: 30vh; */
+        border-radius: 0.5em;
+    }
+    .first-C-section #bouttom-btn {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        margin-top: 0.5em;
+    }
 }
 
 @media (max-width: 576px) {
-  .first-C-section .top-bor hr {
-    width: 60%;
-    height: 0.1em;
-  }
+    .first-C-section .top-bor hr {
+        width: 60%;
+        height: 0.1em;
+    }
 
-  .first-C-section .card-Warpper {
-    justify-content: center;
-  }
-  .first-C-section .card-Warpper .sex-cards a img {
-    width: 100%;
-    border-radius: 0.5em;
-  }
+    .first-C-section .card-Warpper {
+        justify-content: center;
+    }
+    .first-C-section .card-Warpper .sex-cards a img {
+        width: 100%;
+        border-radius: 0.5em;
+    }
 
-  .first-C-section .card-Warpper .sex-cards {
-    width: 100%;
-    height: auto;
-    margin-bottom: 2em;
-  }
+    .first-C-section .card-Warpper .sex-cards {
+        width: 100%;
+        height: auto;
+        margin-bottom: 2em;
+    }
 
-  .first-C-section #bouttom-btn {
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    margin-top: 0.5em;
-  }
+    .first-C-section #bouttom-btn {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        margin-top: 0.5em;
+    }
 }
 
 /* last section is started here */
 .last-C-section {
-  width: 90%;
-  height: auto;
-  margin: auto;
-  background-color: var(--first-color--lighten);
-  border-radius: 0.5em;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    background-color: var(--first-color--lighten);
+    border-radius: 0.5em;
 }
 
 .last-C-section .last-bor {
-  width: 90%;
-  margin: auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1.5em 0;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5em 0;
 }
 .last-C-section .last-bor a {
-  text-decoration: none;
-  font-size: 1em;
-  font-weight: bold;
-  width: 60%;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    width: 60%;
 }
 .last-C-section .last-bor hr {
-  width: 30%;
-  height: 0.1em;
+    width: 30%;
+    height: 0.1em;
 }
 .last-C-section .last-card-Warpper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  gap: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    gap: 2em;
 }
 .last-C-section .last-card-Warpper .three-cards {
-  width: 31%;
-  height: auto;
-  border-radius: 0.5em;
-  padding: 0.2em;
-  background-color: rgb(253, 252, 252);
+    width: 31%;
+    height: auto;
+    border-radius: 0.5em;
+    padding: 0.2em;
+    background-color: rgb(253, 252, 252);
 }
 .last-C-section .last-card-Warpper a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .last-C-section .last-card-Warpper a h3 {
-  font-size: 1em;
-  padding-left: 1em;
+    font-size: 1em;
+    padding-left: 1em;
 }
 .last-C-section .last-card-Warpper a img {
-  width: 26.5vw;
-  height: 30vh;
-  border-radius: 0.5em;
+    width: 26.5vw;
+    height: 30vh;
+    border-radius: 0.5em;
 }
 .last-C-section .last-card-Warpper p {
-  padding: 0.5em 1em;
+    padding: 0.5em 1em;
 }
 .last-C-section .last-card-Warpper #phagraph-id {
-  padding: 0.8em 0;
+    padding: 0.8em 0;
 }
 .last-C-section .last-card-Warpper .three-cards .small-images {
-  width: 100%; 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
 }
 .last-C-section .last-card-Warpper .three-cards .small-images a {
-  color: var(--gray);
+    color: var(--gray);
 }
 .last-C-section .last-card-Warpper .three-cards .small-images a:hover {
-  color: rgb(40, 40, 247);
+    color: rgb(40, 40, 247);
 }
 .last-C-section .last-card-Warpper .three-cards .small-images a img {
-  display: block;
-  width: 20%;
-  height: auto;
+    display: block;
+    width: 20%;
+    height: auto;
 }
 
 /* Media Queries */
 
 @media screen and (max-width: 768px) {
-  .last-C-section .last-card-Warpper .three-cards {
-    width: 100%;
-  }
-  .last-C-section .last-card-Warpper a img {
-   
-    width: 100%;
-    height: 30vh;
-    border-radius: 0.5em;
-  }
+    .last-C-section .last-card-Warpper .three-cards {
+        width: 100%;
+    }
+    .last-C-section .last-card-Warpper a img {
+        width: 100%;
+        height: 30vh;
+        border-radius: 0.5em;
+    }
 }
 
 @media screen and (max-width: 480px) {
-  .last-C-section .last-bor {
-    display: none;
-  }
+    .last-C-section .last-bor {
+        display: none;
+    }
 
-  .last-C-section .last-bor a {
-    /* width: 100%; */
-    display: none;
-  }
+    .last-C-section .last-bor a {
+        /* width: 100%; */
+        display: none;
+    }
 
-  .last-C-section .last-card-Warpper {
-    padding: 10px 0;
-  }
+    .last-C-section .last-card-Warpper {
+        padding: 10px 0;
+    }
 
-  .last-C-section .last-card-Warpper .three-cards {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+    .last-C-section .last-card-Warpper .three-cards {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 /* ent-section is stated  here */
 .ent-section {
-  width: 100%;
-  height: 10vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  background-color: var(--gray);
-  border-top-left-radius: 1.5em;
-  padding: 0 1em;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: var(--gray);
+    border-top-left-radius: 1.5em;
+    padding: 0 1em;
 }
 .ent-section p a {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 .ent-section p a:hover {
-  text-decoration: underline;
-  font-size: 1.2em;
-  color: blue;
+    text-decoration: underline;
+    font-size: 1.2em;
+    color: blue;
 }
 
 /* Media Queries */
 
 @media screen and (min-width: 768px) {
-  .ent-section {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-  }
+    .ent-section {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
 
-  .ent-section p {
-    margin: 0;
-  }
+    .ent-section p {
+        margin: 0;
+    }
 
-  .ent-section p:first-child {
-    margin-right: auto;
-  }
+    .ent-section p:first-child {
+        margin-right: auto;
+    }
 }
 @media screen and (min-width: 330px) {
-  .ent-section {
+    .ent-section {
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* new code */
+.showCard {
     width: 100%;
-    height: 15vh;
+}
+
+.showCard .cards-wrapper {
+    width: 90%;
+    margin: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+}
+/* Add media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+    .showCard .cards-wrapper .A {
+        width: 100%; /* Cards take full width on smaller screens */
+    }
+    .showCard .LastA {
+        display: none;
+    }
+}
+
+.showCard .cards-wrapper .A {
+    display: none; /* Hide the cards by default */
+    width: 31%;
+    height: 60vh;
+    border-radius: 0.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    padding: 0.2em;
+    background-color: var(--white);
+}
+
+.See_more {
+    display: none;
+}
+.showCard .cards-wrapper .A img {
+    width: 27.1vw;
+    height: 30vh;
+    border-radius: 0.5em;
+}
+.showCard .cards-wrapper .A #link-btn {
+    font-size: 1em;
+    font-weight: bold;
+    background-color: var(--blue);
+    padding: 0.5em 0.5em;
+    border-radius: 0.5em;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 1em;
+    color: var(--first-color--lighten);
+}
+.showCard .cards-wrapper .A #link-btn:hover {
+    color: rgb(252, 20, 20);
+    background-color: wheat;
+}
+.showCard .LastA {
     text-align: center;
-  }
+    /* color: red; */
+    margin-top: 1em;
+}
+.showCard .LastA .job__btn {
+    border: none;
+    outline: none;
+    font-size: 1em;
+    background-color: var(--color1);
+    text-transform: uppercase;
+    padding: 0.5em 0.5em;
+    border-radius: 0.3em;
+}
+.showCard .LastA .job__btn:hover {
+    color: rgb(252, 20, 20);
+    background-color: wheat;
 }
