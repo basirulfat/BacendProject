@@ -84,85 +84,149 @@
   </section>
   <!-- =============== SLAIDER SECTION =============== -->
   <section id="slider">
-    <div class="slider__container">
-      <button class="btn slider__btn1">
-        <i class="ri-arrow-left-s-line"></i>
-      </button>
-      <div class="slider__wrapper">
-       
-           
-            
-            <div class="company__info">
-              <div class="company__logo">
-                <h3></h3>
-                <span>N</span>
-                <h4>job oppertunities</h4>
+   <section>
+            <h3 style="font-style:initial;font-variant:small-caps;font-weight:bold;text-align:center">
+              Featured Companies
+            </h3>
+
+
+            <script src="assets/js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
+            <script type="text/javascript">
+              jssor_1_slider_init = function() {
+
+                var jssor_1_options = {
+                  $AutoPlay: 1,
+                  $Idle: 0,
+                  $SlideDuration: 1000,
+                  $SlideEasing: $Jease$.$Linear,
+                  $PauseOnHover: 4,
+                  $SlideWidth: 140,
+                  $Align: 0
+                };
+
+                var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+                /*#region responsive code begin*/
+
+                var MAX_WIDTH = 1110;
+
+                function ScaleSlider() {
+                  var containerElement = jssor_1_slider.$Elmt.parentNode;
+                  var containerWidth = containerElement.clientWidth;
+
+                  if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                  } else {
+                    window.setTimeout(ScaleSlider, 30);
+                  }
+                }
+
+                ScaleSlider();
+
+                $Jssor$.$AddEvent(window, "load", ScaleSlider);
+                $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+                $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+                /*#endregion responsive code end*/
+              };
+            </script>
+            <style>
+              /*jssor slider loading skin spin css*/
+              .jssorl-009-spin img {
+                animation-name: jssorl-009-spin;
+                animation-duration: 1.6s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+              }
+
+              @keyframes jssorl-009-spin {
+                from {
+                  transform: rotate(0deg);
+                }
+
+                to {
+                  transform: rotate(360deg);
+                }
+              }
+            </style>
+            <div id="jssor_1" style="position:relative;
+            margin:0 auto;top:0px;
+            left:0px;width:1140px;
+            height:130px;
+            overflow:hidden;
+            visibility:hidden;">
+              <!-- Loading Screen -->
+              <div data-u="loading" class="jssorl-009-spin"
+               style="position:absolute;top:0px;
+               left:0px;width:100%;
+               height:100%;
+               text-align:center;
+               background-color:rgba(0,0,0,0.7);">
+                <img style="margin-top:-19px;
+                position:relative;
+                top:50%;
+                width:38px;
+                height:50px;"
+                 src="assets/images/company logo/brishna.png" />
               </div>
+              <div data-u="slides" style="cursor:default;
+              position:relative;
+              top:0px;left:0px;
+              width:1140px;
+              height:130px;
+              overflow:hidden;">
+              
+               <div>
+                  <a href="http://www.ashakirana.in/">
+                    <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  </a>
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+              </div>
+
             </div>
-            
-        <div class="company__info">
-          <div class="company__logo">
-            <img src="./assets/images/company logo/khan.jpg" alt="" />
-            <h3>Khan Steel</h3>
-            <span>N</span>
-            <h4>job oppertunities</h4>
-          </div>
-        </div>
-        <div class="company__info">
-          <div class="company__logo">
-            <img src="./assets/images/company logo/cola.png" alt="" />
-            <h3>Supper Cola</h3>
-            <span>N</span>
-            <h4>job oppertunities</h4>
-          </div>
-        </div>
-        <div class="company__info">
-          <div class="company__logo">
-            <img src="./assets/images/company logo/meli.jpg" alt="" />
-            <h3>Meli Steel</h3>
-            <span>N</span>
-            <h4>job oppertunities</h4>
-          </div>
-        </div>
-        <div class="company__info">
-          <div class="company__logo">
-            <img src="./assets/images/company logo/brishna.png" alt="" />
-            <h3>Brishna</h3>
-            <span>N</span>
-            <h4>job oppertunities</h4>
-          </div>
-        </div>
-
-
-        <div class="company__info">
-          <div class="company__logo">
-            <img src="./assets/images/company logo/brishna.png" alt="" />
-            <h3>Brishna</h3>
-            <span>N</span>
-            <h4>job oppertunities</h4>
-          </div>
-        </div>
-
-
-
-
-        <div class="company__info">
-          <div class="company__logo">
-            <img src="./assets/images/company logo/brishna.png" alt="" />
-            <h3>Brishna</h3>
-            <span>N</span>
-            <h4>job oppertunities</h4>
-          </div>
-        </div>
-
-
-      </div>
-      <!-- <div class="highlighted-area"></div> -->
-
-      <button class="btn slider__btn2">
-        <i class="ri-arrow-right-s-line"></i>
-      </button>
-    </div>
+            <script type="text/javascript">
+              jssor_1_slider_init();
+            </script>
+          </section>
+          <!-- </section> -->
   </section>
   <!-- =============== job filter =============== -->
   <section id="jobs">
@@ -482,8 +546,68 @@
      <!--============================== new========================================== -->
 
     <div class="jobcart__wrapper">
-           
-     
+      @foreach( $jobs as $job)
+
+      <div class="index-job-card ">
+        <div class="job-card-header">
+        <img src="{{ asset(str_replace('public/', 'storage/', $job->logo)) }}" alt="Company Logo">
+          <div class="job-card-title">{{$job->jobTitle}}
+          <p>{{$job->company->company_name}}</p>
+         </div>
+          <div class="menu-dot"></div>
+        </div>
+        <div class="job-card-subtitle">
+           <!-- jobDescription show less -->
+        <?php
+                $description = $job->jobDescription;
+                $truncated = substr($description, 0, 150);
+                $remaining = strlen($description) > 150;
+
+                echo nl2br($truncated);
+                if ($remaining) {
+                    echo '...';
+                }
+                ?>
+           <!-- jobDescription show less -->
+        </div>
+        <div class="job-detail-buttons">
+        <button class="search-buttons detail-button btn">
+            {{$job->jobType}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$job->experience}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$job->seniority}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$job->category}}
+          </button>
+        </div>
+        <div class="job-detail-buttons">
+        <button class="search-buttons detail-button btn">
+            {{$job->salary}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$job->location}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$job->created_at}}
+          </button>
+        </div>
+        <div class="job-card-buttons">
+          <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
+          <button class="search-buttons card-buttons-msg  btn">
+            Messages
+          </button>
+        </div>
+      </div>
+      @endforeach
+    </div>
+    <!-------------------------------pagenation ------------------------------------>
+    <!-- <div class="pagination-container">
+      {{ $jobs->links() }}
+    </div> -->
      <!-------------------------------pagenation ------------------------------------>
     <div class="job__btn">
       <a href="{{url('showJobs')}}">@lang('msg.key36')<i class="ri-arrow-down-s-line"></i></a>

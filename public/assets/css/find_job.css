@@ -394,7 +394,7 @@ p {
 }
 #cards-guides .cards-design {
     width: 20%;
-    height: 65vh;
+    height: 55vh;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 4px;
     background-color: var(--low-gray);

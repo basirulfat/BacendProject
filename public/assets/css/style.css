@@ -1008,7 +1008,7 @@ a {
   padding: 1rem 0;
 }
 /* =======================ne cartw================================ */
-.job-card {
+.index-job-card {
   width: 30%;
   padding: 20px 16px;
   background-color: var(--light);
@@ -1018,11 +1018,11 @@ a {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin-top: 2rem;
 }
-.job-card img{
+.index-job-card  img{
   width: 75px;
   height: 75px;
 }
-.job-card:hover {
+.index-job-card :hover {
   transform: scale(1.02);
 }
 .job-card-title {
@@ -1123,11 +1123,18 @@ a {
   color: var(--light);
   cursor: pointer;
 } 
-
+/* -------------------------pagination design ---------------------------------- */
 .pagination-container{
   width: 100%;
   height: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding: 0rem 8rem;
+  margin: 1rem auto;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
 
 }
 @media only screen and (max-width: 1000px){
@@ -1164,7 +1171,7 @@ a {
     flex-wrap: wrap;
   }
 
-  #last-job .jobcart__wrapper .job-card{
+  #last-job .jobcart__wrapper .index-job-card {
     width: 45%;
     margin-bottom: 1rem;
     height: auto;
@@ -1549,7 +1556,7 @@ input[type="mail"] {
   border-radius: 50%;
   align-items: center;
   font-size: 1.1rem;
-  margin: 2%;
+  /* margin: 2%; */
 }
 
 .social-icon {

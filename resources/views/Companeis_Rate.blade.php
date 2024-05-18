@@ -20,6 +20,11 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <title>Companies Rate</title>
   </head>
   <body>
@@ -84,7 +89,7 @@
       <div id="companies-cards-wrapper">
         <div class="companies-cards">
 
-        @foreach($company as $company)
+        @foreach($companies as $company)
           <div class="cards-wrap">
             <h3>{{$company->company_name}}</h3>
             <div id="logo-wrapper">
@@ -118,9 +123,9 @@
 
       </div>
           <!-------------------------------pagenation ------------------------------------>
-        `    <div class="pagination-container">
-              {{ $company->links() }}
-            </div>`
+          <div class="pagination-container">
+              {{ $companies->links() }}
+          </div>
           <!-------------------------------pagenation ------------------------------------>
 
       <!-- Rate your employer -->

@@ -332,43 +332,148 @@
         </div>
       </div>
       <div class="client__slider">
-        <a href="#">
-          <div class="slider_cart">
-            <img src="./assets/images/company logo/alokozay (2).jpg" alt="" />
-            <h4>alokozay</h4>
-          </div>
-        </a>
-        <a href="#">
-          <div class="slider_cart">
-            <img src="./assets/images/company logo/brishna.png" alt="" />
-            <h4>Brishna</h4>
-          </div>
-        </a>
+              <section>
+            <h3 style="font-style:initial;font-variant:small-caps;font-weight:bold;text-align:center">
+              Featured Companies
+            </h3>
 
-        <a href="#">
-          <div class="slider_cart">
-            <img src="./assets/images/company logo/cola.png" alt="" />
-            <h4>Supper Cola</h4>
-          </div>
-        </a>
-        <a href="#">
-          <div class="slider_cart">
-            <img src="./assets/images/company logo/meli.jpg" alt="" />
-            <h4>Meli Steel</h4>
-          </div>
-        </a>
-        <a href="#">
-          <div class="slider_cart">
-            <img src="./assets/images/company logo/unicif.png" alt="" />
-            <h4>Unicif</h4>
-          </div>
-        </a>
-        <a href="#">
-          <div class="slider_cart">
-            <img src="./assets/images/company logo/khan.jpg" alt="" />
-            <h4>khan steel</h4>
-          </div>
-        </a>
+
+            <script src="assets/js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
+            <script type="text/javascript">
+              jssor_1_slider_init = function() {
+
+                var jssor_1_options = {
+                  $AutoPlay: 1,
+                  $Idle: 0,
+                  $SlideDuration: 1000,
+                  $SlideEasing: $Jease$.$Linear,
+                  $PauseOnHover: 4,
+                  $SlideWidth: 140,
+                  $Align: 0
+                };
+
+                var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+                /*#region responsive code begin*/
+
+                var MAX_WIDTH = 1110;
+
+                function ScaleSlider() {
+                  var containerElement = jssor_1_slider.$Elmt.parentNode;
+                  var containerWidth = containerElement.clientWidth;
+
+                  if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                  } else {
+                    window.setTimeout(ScaleSlider, 30);
+                  }
+                }
+
+                ScaleSlider();
+
+                $Jssor$.$AddEvent(window, "load", ScaleSlider);
+                $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+                $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+                /*#endregion responsive code end*/
+              };
+            </script>
+            <style>
+              /*jssor slider loading skin spin css*/
+              .jssorl-009-spin img {
+                animation-name: jssorl-009-spin;
+                animation-duration: 1.6s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+              }
+
+              @keyframes jssorl-009-spin {
+                from {
+                  transform: rotate(0deg);
+                }
+
+                to {
+                  transform: rotate(360deg);
+                }
+              }
+            </style>
+            <div id="jssor_1" style="position:relative;
+            margin:0 auto;top:0px;
+            left:0px;width:1140px;
+            height:130px;
+            overflow:hidden;
+            visibility:hidden;">
+              <!-- Loading Screen -->
+              <div data-u="loading" class="jssorl-009-spin"
+               style="position:absolute;top:0px;
+               left:0px;width:100%;
+               height:100%;
+               text-align:center;
+               background-color:rgba(0,0,0,0.7);">
+                <img style="margin-top:-19px;
+                position:relative;
+                top:50%;
+                width:38px;
+                height:50px;"
+                 src="assets/images/company logo/brishna.png" />
+              </div>
+              <div data-u="slides" style="cursor:default;
+              position:relative;
+              top:0px;left:0px;
+              width:1140px;
+              height:130px;
+              overflow:hidden;">
+               <div>
+                  <a href="http://www.ashakirana.in/">
+                    <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  </a>
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+                <div>
+                <img data-u="image" src="assets/images/company logo/brishna.png" />
+                </div>
+              </div>
+
+            </div>
+            <script type="text/javascript">
+              jssor_1_slider_init();
+            </script>
+          </section>
+          <!-- </section> -->
       </div>
       <button class="btn client-join-btn">join us</button>
     </section>
