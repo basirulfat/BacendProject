@@ -268,7 +268,7 @@
             <th>Title</th>
             <th>Location</th>
             <th>Category</th>
-            <th>expaireTime</th>
+            <th>Created-at</th>
             <th>Action</th>
       @forelse($post as $post)
             <tr>
@@ -277,7 +277,7 @@
               <td>{{$post->jobTitle}}</td>
               <td>{{$post->location}}</td>
               <td>{{$post->category}}</td>
-              <td>{{$post->expairTime}}</td>
+              <td>{{$post->created_at->diffForHumans()}}</td>
               <td>
               <form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="POST" onsubmit="return confirm('Are you sure delete this user?')">
                       @csrf

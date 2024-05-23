@@ -12,20 +12,25 @@ use App\Models\PostJob;
 class CompanyController extends Controller
 {
 /*--===============  show cmpany in the Dashboard company  page  =============*/
-
-    public function index()
-    {
-        $company = Company::all(); // Retrieve all companies from the database
-        return view('admin.company', compact('company'));
-    }
+ public function index()
+{
+     $company = Company::all(); // Retrieve all companies from the database
+    return view('admin.company', compact('company'));
+}
 
 
 /*--===============  show cmpany in the company Rate page  =============*/
-
 public function CompanyRate()
 {
-    $companies = Company::paginate(9); // Retrieve all companies from the database
+    $companies = Company::paginate(9); 
     return view('Companeis_Rate', compact('companies'));
+}
+
+/*--===============  show cmpany in the companydetails page  =============*/
+public function company_detail($id){
+
+    $company = Company::find($id);
+    return view('companydetails', compact('company'));
 }
 
     /**

@@ -107,7 +107,7 @@
                 </div>
                 <div class="card-lin">
                   <a href="#">12 Jobs</a>
-                  <a href="#" class="a-border">See Reviews</a>
+                  <a href="{{url('companydetails',$company->id)}}" class="a-border">See Company</a>
                 </div>
               </div>
             </div>

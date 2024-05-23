@@ -54,19 +54,10 @@
 
 
   <!-- Personal information section started -->
-  
   <form action="/personalInformation" enctype="multipart/form-data" method="POST">
    @csrf
    @if(session()->has('success'))
        <p>{{ session('success') }}</p>
-   @endif
-
-   @if($errors->any())
-           <ul>
-               @foreach ($errors->all() as $error)
-                     <li style="color:red;">{{ $error }}</li>
-               @endforeach
-           </ul>
    @endif
    <section id="personal-information-section">
     <h5><i class="fa-solid fa-user"></i>@lang('msg.creat6')</h5>
@@ -79,16 +70,22 @@
               <div class="form-control-2">
                 <label for="username">@lang('msg.creat8')</label>
                 <input type="text" id="username" name="full_name" placeholder="Enter FullName" />
-                @error('full_name')
-                 <small class="text-danger" style="color:red;">{{ $message }}</small>
-                @enderror
+                 <span style="color: red;font-size:12px">
+                  @error('full_name')
+                  {{$message}}
+                  @enderror
+                 </span>
                 <!-- <small>Error message</small> -->
               </div>
 
               <div class="form-control-2">
                 <label for="username">@lang('msg.creat9')</label>
                 <input type="text" id="secondname" name="second_name" placeholder="Enter Second Name" />
-                <small>Error message</small>
+                <span style="color: red;font-size:12px">
+                  @error('second_name')
+                  {{$message}}
+                  @enderror
+                 </span>
               </div>
             </div>
             <div class="divid-child">
@@ -96,19 +93,31 @@
               <div class="form-control-2">
                 <label for="email">@lang('msg.creat10')</label>
                 <input type="text" id="email" name="email" placeholder="Enter email" />
-                <small>Error message</small>
+                <span style="color: red;font-size:12px">
+                  @error('email')
+                  {{$message}}
+                  @enderror
+                 </span>
               </div>
 
               <div class="form-control-2">
                 <label for="number">@lang('msg.creat11')</label>
                 <input type="number" id="number" name="phone" placeholder="Enter Phone" />
-                <small>Error message</small>
+                <span style="color: red; font-size:12px">
+                  @error('phone')
+                  {{$message}}
+                  @enderror
+                 </span>
               </div>
 
               <div class="form-control-2">
                 <label for="Address">@lang('msg.creat12')</label>
                 <input type="text" id="address" name="address" placeholder="Enter Address" />
-                <small>Error message</small>
+                <span style="color: red; font-size:12px">
+                  @error('address')
+                  {{$message}}
+                  @enderror
+                 </span>
               </div>
             </div>
           </div>
@@ -141,7 +150,11 @@
         <div>
           <label for="Date">@lang('msg.creat20')</label>
           <input type="date" id="date" name="date_of_birth" />
-          <small>Error message</small>
+          <span style="color: red; font-size:12px">
+                  @error('date_of_birth')
+                  {{$message}}
+                  @enderror
+                 </span>
         </div>
 
         <div>
@@ -152,7 +165,6 @@
             <option value="Analyzing">Analyzing</option>
             <option value="Management">Management</option>
           </select>
-          <small>Error message</small>
         </div>
       </div>
 
@@ -160,13 +172,21 @@
         <div>
           <label for="country">@lang('msg.creat22')</label>
           <input type="text" id="country" name="country" placeholder="enter yur country"/>
-          <small>Error message</small>
+          <span style="color: red; font-size:12px">
+                  @error('country')
+                  {{$message}}
+                  @enderror
+                 </span>
         </div>
 
         <div>
           <label for="City">@lang('msg.creat23')</label>
           <input type="text" id="text" name="city" placeholder="enter your city"/>
-          <small>Error message</small>
+          <span style="color: red; font-size:12px">
+                  @error('city')
+                  {{$message}}
+                  @enderror
+                 </span>
         </div>
 
         <div>
@@ -193,7 +213,11 @@
               <div class="form-control">
                 <label for="school_name">@lang('msg.creat27')</label>
                 <input type="text" id="username" name="school_name" placeholder="Enter School Name" />
-                <small>Error message</small>
+                <span style="color: red; font-size:12px">
+                  @error('school_name')
+                  {{$message}}
+                  @enderror
+                 </span>
               </div>
 
               <div class="form-control">
@@ -220,10 +244,19 @@
               <div class="form-control-2">
                 <label for="s-year">@lang('msg.creat30')</label>
                 <input type="date" id="start-year" name="start_year" />
-                <small>Error message</small>
+                <span style="color: red; font-size:12px">
+                  @error('start_year')
+                  {{$message}}
+                  @enderror
+                 </span>
+                 <br>
                 <label for="year">@lang('msg.creat31')</label>
                 <input type="date" id="end-year" name="end_year"/>
-                <small>Error message</small>
+                <span style="color: red; font-size:12px">
+                  @error('end_year')
+                  {{$message}}
+                  @enderror
+                 </span>
               </div>
             </div>
 
@@ -232,7 +265,11 @@
               <div class="form-control">
                 <label for="university_name">@lang('msg.creat32')</label>
                 <input type="text" id="username" name="university_name" placeholder="Enter university" />
-                <small>Error message</small>
+                <span style="color: red; font-size:12px">
+                  @error('university_name')
+                  {{$message}}
+                  @enderror
+                 </span>
               </div>
 
               <div class="form-control">
@@ -248,16 +285,30 @@
               <div class="form-control-2">
                 <label for="country">@lang('msg.creat34')</label>
                 <input type="text" id="country" name="country"/>
-                <small>Error message</small>
+                <span style="color: red; font-size:12px">
+                  @error('country')
+                  {{$message}}
+                  @enderror
+                 </span>
+                 <br>
                 <label for="City">@lang('msg.creat35')</label>
                 <input type="text" id="text" name="city"/>
-                <small>Error message</small>
+                <span style="color: red; font-size:12px">
+                  @error('city')
+                  {{$message}}
+                  @enderror
+                 </span>
 
               </div>
 
               <div class="form-control-2">
                 <label for="description">@lang('msg.creat36')</label>
                 <textarea id="textarea-section" id="description" cols="30" rows="10" name="description"></textarea>
+                <span style="color: red; font-size:12px">
+                  @error('description')
+                  {{$message}}
+                  @enderror
+                 </span>
               </div>
 
               <div id="buttion-1">
@@ -287,16 +338,30 @@
         <p class="form-control">@lang('msg.creat42')</p>
         <div class="form-1">
           <input type="text" id="username" placeholder="Job Title" name="job_title" />
-          <small></small>
+          <span style="color: red; font-size:12px">
+                  @error('job_title')
+                  {{$message}}
+                  @enderror
+                 </span>
         </div>
 
         <div class="form-control">
         <label for="optionsInput">@lang('msg.creat43')</label>
           <input type="text" name="seniority" id="optionsInput" class="options-input" placeholder="Seniority">
+          <span style="color: red; font-size:12px">
+                  @error('seniority')
+                  {{$message}}
+                  @enderror
+                 </span>
         </div>
         <div class="form-control">
           <label for="optionsInput">@lang('msg.creat44')</label>
           <input type="text" id="optionsInput" name="location" placeholder="Location" class="options-input">
+          <span style="color: red; font-size:12px">
+                  @error('location')
+                  {{$message}}
+                  @enderror
+                 </span>
         </div>
     
 
@@ -321,6 +386,11 @@
     <div class="form-control">
       <label for="username">@lang('msg.creat49')</label>
       <input type="text" id="username" placeholder="Enter Skill" name="skill"/>
+      <span style="color: red; font-size:12px">
+                  @error('skill')
+                  {{$message}}
+                  @enderror
+                 </span>
     </div>
 
     <div class="form-control">

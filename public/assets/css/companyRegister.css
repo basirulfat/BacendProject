@@ -636,27 +636,28 @@ body {
 }
 #clients .client__slider {
     width: 100%;
-    height: 40vh;
+    height: 45vh;
     border: 1px solid var(--gray);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-top: 1rem;
+    padding: 2rem 0;
 }
 
-#clients .client__slider a {
+/* #clients .client__slider a {
     width: 12%;
     height: 20vh;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
-}
-#clients .client__slider a .slider_cart img {
+} */
+/* #clients .client__slider a .slider_cart img {
     width: 100%;
     height: 15vh;
-}
+} */
 #clients .client-join-btn {
     margin: 3rem auto;
     display: inline-block;

@@ -431,40 +431,40 @@
                   </a>
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/alo.jpg" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/Brothers.jpg" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/unicif.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/cola.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/care.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/mtn.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/roshan.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/wfp.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/khan.jpg" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/meli.jpg" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/afc.jpg" />
                 </div>
                 <div>
-                <img data-u="image" src="assets/images/company logo/brishna.png" />
+                <img data-u="image" src="assets/images/company logo/kis.png" />
                 </div>
               </div>
 

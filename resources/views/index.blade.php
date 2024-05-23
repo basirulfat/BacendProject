@@ -184,40 +184,40 @@
                   </a>
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/alo.jpg" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/Brothers.jpg" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/unicif.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/cola.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/care.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/mtn.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/roshan.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/wfp.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/khan.jpg" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/meli.jpg" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/afc.jpg" />
                 </div>
                 <div>
-                <img data-u="image" src="assets/images/company logo/brishna.png" />
+                <img data-u="image" src="assets/images/company logo/kis.png" />
                 </div>
               </div>
 
@@ -592,7 +592,7 @@
           {{$job->location}}
           </button>
           <button class="search-buttons detail-button btn">
-          {{$job->created_at}}
+          {{$job->created_at->diffForHumans()}}
           </button>
         </div>
         <div class="job-card-buttons">
@@ -605,9 +605,7 @@
       @endforeach
     </div>
     <!-------------------------------pagenation ------------------------------------>
-    <!-- <div class="pagination-container">
-      {{ $jobs->links() }}
-    </div> -->
+
      <!-------------------------------pagenation ------------------------------------>
     <div class="job__btn">
       <a href="{{url('showJobs')}}">@lang('msg.key36')<i class="ri-arrow-down-s-line"></i></a>

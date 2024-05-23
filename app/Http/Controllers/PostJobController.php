@@ -10,19 +10,15 @@ use Illuminate\Support\Facades\DB;
 use App\Jobs\DeletePostJob;
 use Carbon\Carbon;
 
+
 class PostJobController extends Controller
 {
-     /*-============show data in slider in index page page ==========*/
-    //  public function slider()
-    //  {
-    //      $jobs = PostJob::all();
-    //      return view('index',compact('jobs'));
-    //  }
+  
 /* ============show data in index page ============ */
     public function index()
     {
         $jobs = PostJob::with('company')->paginate(9);
-        $company = Company::all(); // Retrieve all companies from the database
+        $company = Company::all(); 
         $posts = new PostJob();
         $results = $posts->getProductsByCategory();
         $r=collect($results)->zip('posts');
@@ -37,13 +33,21 @@ class PostJobController extends Controller
 /*-============show data in showjob page ==========*/
      public function showjobs()
      {   $initialMarkers = [];
-         $post = PostJob::all();
-         return view('showJobs',compact('post','initialMarkers'));
+         $post = PostJob::paginate(9);
+         $posts = PostJob::count();
+         return view('showJobs',compact('post','initialMarkers','posts'));
      }
 /*-============ post job from dashboard ==========*/
      public function adminPost(){
         $post = PostJob::all();
         return view('admin.posts',compact('post'));
+     }
+
+/*-============ Apply for job in job detail page ==========*/
+     public function job_detail($id){
+        $posts=PostJob::find($id);
+        $initialMarkers = [];
+        return view('jobdetail',compact('posts','initialMarkers'));
      }
 
     /**
