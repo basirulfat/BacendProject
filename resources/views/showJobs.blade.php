@@ -674,6 +674,7 @@
             }
         </script>
   </section>
+  <div class="message_container"><a href="{{ url('/chat') }}"><i class="ri-message-2-fill  message"></i></a></div>
 
       <!--=============== FOOTER ===============-->
      @include('layouts.footer')

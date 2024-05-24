@@ -330,9 +330,9 @@
     outline: none;
     cursor: pointer;
 }
-#textarea-section {
+.textarea-section {
     width: 100%;
-    height: 80px;
+    height: 20vh;
 }
 @media (max-width: 768px) {
     /* Adjust the styles for screens smaller than 768px */

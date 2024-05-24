@@ -31,7 +31,7 @@
     <!--=============== HEADER ===============-->
    @include('layouts.header')
     <!--=============== your cv ===============-->
-
+    @foreach($users as $user)
     <div id="General-container">
       <div class="resume__container">
         <div class="left_Side">
@@ -41,8 +41,8 @@
             </div>
             <br />
            
-              <h2>{{ $user->full_name }} <br />{{$user->second_name}} <br> <span>{{$user->military_service_status}}</span></h2>
-              <h2><span>Birth Day::{{$user->date_of_birth}}</span></h2>
+              <h2>{{$user->full_name}} <br />{{$user->second_name}} <br> <span>{{$user->military_service_status}}</span></h2>
+              <h2><span>Birth Day:{{$user->date_of_birth}}</span></h2>
            
           </div>
 
@@ -77,13 +77,14 @@
                 <span class="icon"
                   ><i class="fa fa-map-marker" aria-hidden="true"></i
                 ></span>
-                <span class="text">{{$user->country}};</span>
-                <span class="text"> {{$user->city}};</span>
-                <span class="text">{{$user->address}};</span>
+                <span class="text">{{$user->country}}</span>
+                <span class="text"> {{$user->city}}</span>
+                <span class="text">{{$user->address}}</span>
               </li>
                
             </ul>
           </div>
+          @endforeach
          
           @foreach($education as $e)
           <div class="contactInfo education">
@@ -199,9 +200,9 @@
             </ul>
           </div>
         </div>
-
-       
       </div>
+
+      
       <a class="btn btn-sm btn-primary" href="{{ route('personalInformation.index') }}" role="button" style="background-color:blue; color:white;position: relative; left: 250px; width:200px;">Edit Your CV</a>
       <a class="btn btn-sm btn-primary" href="{{route('resume.download')}}" role="button" style="background-color:blue; color:white;position: relative; left: 250px; width:200px;">Download CV</a>
       <!--=============== FOOTER ===============-->

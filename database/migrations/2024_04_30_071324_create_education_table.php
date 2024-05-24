@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('university_type')->nullable();
             $table->string('country')->nullable();
             $table->string('city')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

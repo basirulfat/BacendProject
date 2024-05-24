@@ -7,6 +7,7 @@
 
   <!--=============== REMIXICONS ===============-->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!--=============== CSS ===============-->
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -546,68 +547,10 @@
      <!--============================== new========================================== -->
 
     <div class="jobcart__wrapper">
-      @foreach( $jobs as $job)
-
-      <div class="index-job-card ">
-        <div class="job-card-header">
-        <img src="{{ asset(str_replace('public/', 'storage/', $job->logo)) }}" alt="Company Logo">
-          <div class="job-card-title">{{$job->jobTitle}}
-          <p>{{$job->company->company_name}}</p>
-         </div>
-          <div class="menu-dot"></div>
-        </div>
-        <div class="job-card-subtitle">
-           <!-- jobDescription show less -->
-        <?php
-                $description = $job->jobDescription;
-                $truncated = substr($description, 0, 150);
-                $remaining = strlen($description) > 150;
-
-                echo nl2br($truncated);
-                if ($remaining) {
-                    echo '...';
-                }
-                ?>
-           <!-- jobDescription show less -->
-        </div>
-        <div class="job-detail-buttons">
-        <button class="search-buttons detail-button btn">
-            {{$job->jobType}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$job->experience}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$job->seniority}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$job->category}}
-          </button>
-        </div>
-        <div class="job-detail-buttons">
-        <button class="search-buttons detail-button btn">
-            {{$job->salary}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$job->location}}
-          </button>
-          <button class="search-buttons detail-button btn">
-          {{$job->created_at}}
-          </button>
-        </div>
-        <div class="job-card-buttons">
-          <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
-          <button class="search-buttons card-buttons-msg  btn">
-            Messages
-          </button>
-        </div>
-      </div>
-      @endforeach
+    
     </div>
     <!-------------------------------pagenation ------------------------------------>
-    <!-- <div class="pagination-container">
-      {{ $jobs->links() }}
-    </div> -->
+   
      <!-------------------------------pagenation ------------------------------------>
     <div class="job__btn">
       <a href="{{url('showJobs')}}">@lang('msg.key36')<i class="ri-arrow-down-s-line"></i></a>
@@ -770,6 +713,9 @@
       </div>
     </div>
   </section>
+  <!-- <img src="assets/images/message.jpg" alt="" class="message"> -->
+
+  <div class="message_container"><a href="{{ url('/chat') }}"><i class="ri-message-2-fill  message"></i></a></div>
 
   <!--=============== FOOTER ===============-->
   @include('layouts.footer')

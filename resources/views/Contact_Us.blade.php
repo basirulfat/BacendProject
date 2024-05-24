@@ -129,6 +129,7 @@
         <a href="{{url('About')}}" class="about-btn">@lang('msg.cotact23')</a>
       </section>
     </section>
+    <div class="message_container"><a href="{{ url('/chat') }}"><i class="ri-message-2-fill  message"></i></a></div>
 
     <!--=============== FOOTER ===============-->
    @include('layouts.footer')
