@@ -1,6 +1,7 @@
 /*=================== Top Search ======================  */
 
 function filterJobTop() {
+    event.stopPropagation();
     const searchInput = document.querySelector('input[type="search"]');
     if (searchInput) {
         const jobCards = Array.from(document.querySelectorAll(".job-card"));
@@ -22,6 +23,7 @@ function filterJobTop() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    event.stopPropagation();
     const searchButton = document.querySelector('button[type="submit"]');
     if (searchButton) {
         searchButton.addEventListener("click", filterJobTop);
@@ -32,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*===================Search By Category======================  */
 function filterJobs() {
+    event.stopPropagation();
     const searchInput = document.getElementById("search-input");
     if (searchInput) {
         const jobSections = Array.from(document.querySelectorAll(".A"));
@@ -52,6 +55,7 @@ function filterJobs() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    event.stopPropagation();
     const searchButton = document.getElementById("searching");
     if (searchButton) {
         searchButton.addEventListener("click", filterJobs);

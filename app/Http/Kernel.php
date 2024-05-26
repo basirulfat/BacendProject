@@ -75,6 +75,9 @@ class Kernel extends HttpKernel
         $schedule->call(function () {
             PostJob::prunable()->delete();
         })->everyMinute();
+
+
+        $sendMail->command('users:sendMail')->everyFiveMinutes();
     }
      
 }

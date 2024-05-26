@@ -9,11 +9,13 @@ const Clientbtn = document.querySelector(".client-join-btn");
 const workWithUsbtn = document.querySelector(".workwithusbtm");
 
 const openModel = function () {
+    event.stopPropagation();
     hideform.classList.remove("hidden");
     overlay.classList.remove("hidden");
 };
 
 const closeModel = function () {
+    event.stopPropagation();
     hideform.classList.add("hidden");
     overlay.classList.add("hidden");
 };
@@ -27,6 +29,7 @@ overlay.addEventListener("click", closeModel);
 
 /*================== form submit  button when data submit  =============*/
 function removeSuccessMessage() {
+    event.stopPropagation();
     var successMessage = document.getElementById("success-message");
     if (successMessage) {
         successMessage.style.display = "none";

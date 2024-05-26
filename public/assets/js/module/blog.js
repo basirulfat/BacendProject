@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let cardsVisible = false;
 
         myjobs.addEventListener("click", function () {
+            event.stopPropagation();
             cardsVisible = !cardsVisible; // Toggle the cards visibility
 
             more.forEach((See_more) => {

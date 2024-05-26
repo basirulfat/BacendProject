@@ -1,5 +1,6 @@
 //submotion of form and change color to green
 function changeColor() {
+    event.stopPropagation();
     var liElements = document.querySelectorAll("ol li");
     liElements.forEach(function (li) {
         li.style.color = "";
@@ -10,7 +11,9 @@ function changeColor() {
 }
 
 function changeColor2() {
+    event.stopPropagation();
     var liElements = document.querySelectorAll("ol li");
+
     liElements.forEach(function (li) {
         li.style.color = "";
         li.style.backgroundColor = "";
@@ -22,6 +25,7 @@ function changeColor2() {
 }
 
 function changeColor3() {
+    event.stopPropagation();
     var liElements = document.querySelectorAll("ol li");
     liElements.forEach(function (li) {
         li.style.color = "";
@@ -36,6 +40,7 @@ function changeColor3() {
 }
 
 function changeColor4() {
+    event.stopPropagation();
     var liElements = document.querySelectorAll("ol li");
     liElements.forEach(function (li) {
         li.style.color = "";
