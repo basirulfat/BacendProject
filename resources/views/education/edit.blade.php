@@ -129,17 +129,11 @@
               </div>
 
               <div class="form-control-2">
-                <label for="description">Desciption (Optional)</label>
-                <textarea id="textarea-section" id="description" cols="30" rows="10" name="description"></textarea>
-              </div>
+              <label for="description">Description (Optional)</label>
+              <textarea id="description" cols="30" rows="10" name="description" class="textarea-section">{{$education->description}}</textarea>
+            </div>
 
               <div id="buttion-1">
-                
-       
-                  
-           
-              
-             
                 <a class="btn-bt" style="width:200px" href="{{route('education.create')}}">Add Another Education</a>
                 <div>
                   <input class="btn-bt" type="submit" value="Submit">

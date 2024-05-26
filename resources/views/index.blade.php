@@ -7,6 +7,7 @@
 
   <!--=============== REMIXICONS ===============-->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!--=============== CSS ===============-->
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -592,7 +593,7 @@
           {{$job->location}}
           </button>
           <button class="search-buttons detail-button btn">
-          {{$job->created_at->diffForHumans()}}
+          {{$job->created_at}}
           </button>
         </div>
         <div class="job-card-buttons">
@@ -605,7 +606,9 @@
       @endforeach
     </div>
     <!-------------------------------pagenation ------------------------------------>
-
+    <!-- <div class="pagination-container">
+      {{ $jobs->links() }}
+    </div> -->
      <!-------------------------------pagenation ------------------------------------>
     <div class="job__btn">
       <a href="{{url('showJobs')}}">@lang('msg.key36')<i class="ri-arrow-down-s-line"></i></a>
@@ -768,6 +771,9 @@
       </div>
     </div>
   </section>
+  <!-- <img src="assets/images/message.jpg" alt="" class="message"> -->
+
+  <div class="message_container"><a href="{{ url('/chat') }}"><i class="ri-message-2-fill  message"></i></a></div>
 
   <!--=============== FOOTER ===============-->
   @include('layouts.footer')

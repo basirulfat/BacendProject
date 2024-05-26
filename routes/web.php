@@ -13,7 +13,7 @@ use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ResumeController;
-
+use OpenAI\Laravel\Facades\OpenAI;
 
 
 /*=================== Redirect To home page =======================*/
@@ -179,9 +179,32 @@ Route::resource('/contact', ContactFormController::class);
 Route::get('/cotact', [ContactFormController::class, 'search'])->name('contact.search');
 
 
+// Route::view('/chat', 'vendor.chatify.pages.app')->name('chat');
+
+Route::get('/chat', function () {
+    $id = auth()->user()->id;
+    $messengerColor = '#2180f3';
+    $dark_mode = 'dark';
+
+    return view('vendor.Chatify.pages.app', compact('id', 'messengerColor', 'dark_mode'));
+});
+
+
 
 /*========= Contact form  =============*/
 
-Route::get("/Contact_Us",function(){
-    return view('Contact_Us');
+
+
+Route::get('/openai',function(){
+    $prompt= request()->input('prompt');
+$result = OpenAI::chat()->create([
+        'model' => 'gpt-3.5-turbo',
+        'messages' => [
+            ['role' => 'user', 'content' => $prompt],
+        ],
+    ]);
+
+    return $result['choices'][0]['message']['content'];
 });
+
+

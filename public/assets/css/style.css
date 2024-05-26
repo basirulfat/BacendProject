@@ -1412,6 +1412,27 @@ p {
     height: auto;
   }
 }
+
+.message_container{
+  width: 7%;
+  height: 14vh;
+  text-align: center;
+  background-color: var(--success);
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 2;
+  
+}
+.message{
+  font-size:3rem;
+  line-height: 14vh;
+  color: var(--light);
+  
+
+}
 /*=============== FOO0TER ===============*/
 footer {
   color: var(--light);

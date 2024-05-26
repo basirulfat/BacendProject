@@ -303,18 +303,13 @@
 
               <div class="form-control-2">
                 <label for="description">@lang('msg.creat36')</label>
-                <textarea id="textarea-section" id="description" cols="30" rows="10" name="description"></textarea>
-                <span style="color: red; font-size:12px">
-                  @error('description')
-                  {{$message}}
-                  @enderror
-                 </span>
+                <textarea id="prompt" cols="30" rows="10" name="description" class="textarea-section" onkeyup="generateText()"></textarea>
               </div>
 
               <div id="buttion-1">
                 <a class="btn-bt" style="width:200px" href="{{route('education.create')}}">Add Another Education</a>
                 <div>
-                  <!-- <button class="btn-1" type="submit" name="Save" onclick="validateForm()">Save</button> -->
+                  <button class="btn-1" type="submit" name="Save" onclick="validateForm()">Save</button>
                   <input class="btn-bt" type="submit" value="Submit">
                   <button class="btn-1" type="button" name="Next" onclick="changeColor2()">@lang('msg.creat39')</button>
                 </div>
@@ -404,6 +399,8 @@
 
     </div>
     <div>
+
+    <div class="message_container"><a href="{{ url('/chat') }}"><i class="ri-message-2-fill  message"></i></a></div>
       <!-- <button id="btn-of-skill" class="btn-1" type="submit" name="Save" onclick="changeColor4() ">Add</button> -->
       <!-- <a class="btn-bt" style="width:200px" href="#">Add</a> -->
 
@@ -414,6 +411,43 @@
     </div>
   </section>
  </form>
+
+ <!-- <script>
+  function generateText(){
+    var prompt= document.getElementById('prompt').value;
+    fetch('/openai?prompt='+prompt)
+    .then(response=>response.text())
+    .then(data=>{
+      console.log(data);
+      document.getElementById('prompt').value=data;
+    })
+    .catch(error=>console.error(error));
+  }
+ </script> -->
+
+ <script>
+  let typingTimer;
+  const doneTypingInterval = 1000; // 1 second
+
+  function generateText() {
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(sendToOpenAI, doneTypingInterval);
+  }
+
+  async function sendToOpenAI() {
+    const prompt = document.getElementById('prompt').value.trim();
+    if (prompt) {
+      try {
+        const response = await fetch('/openai?prompt=' + encodeURIComponent(prompt));
+        const data = await response.text();
+        document.getElementById('prompt').value = data;
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('prompt').value = 'Error occurred while fetching response.';
+      }
+    }
+  }
+</script>
 
   <!--=============== FOOTER ===============-->
  @include('layouts.footer')
