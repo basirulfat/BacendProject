@@ -185,40 +185,40 @@
                   </a>
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/alo.jpg" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/Brothers.jpg" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/unicif.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/cola.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/care.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/mtn.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/roshan.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/wfp.png" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/khan.jpg" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/meli.jpg" />
                 </div>
                 <div>
-                  <img data-u="image" src="assets/images/company logo/brishna.png" />
+                  <img data-u="image" src="assets/images/company logo/afc.jpg" />
                 </div>
                 <div>
-                <img data-u="image" src="assets/images/company logo/brishna.png" />
+                <img data-u="image" src="assets/images/company logo/kis.png" />
                 </div>
               </div>
 
@@ -547,10 +547,68 @@
      <!--============================== new========================================== -->
 
     <div class="jobcart__wrapper">
-    
+      @foreach( $jobs as $job)
+
+      <div class="index-job-card ">
+        <div class="job-card-header">
+        <img src="{{ asset(str_replace('public/', 'storage/', $job->logo)) }}" alt="Company Logo">
+          <div class="job-card-title">{{$job->jobTitle}}
+          <p>{{$job->company->company_name}}</p>
+         </div>
+          <div class="menu-dot"></div>
+        </div>
+        <div class="job-card-subtitle">
+           <!-- jobDescription show less -->
+        <?php
+                $description = $job->jobDescription;
+                $truncated = substr($description, 0, 150);
+                $remaining = strlen($description) > 150;
+
+                echo nl2br($truncated);
+                if ($remaining) {
+                    echo '...';
+                }
+                ?>
+           <!-- jobDescription show less -->
+        </div>
+        <div class="job-detail-buttons">
+        <button class="search-buttons detail-button btn">
+            {{$job->jobType}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$job->experience}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$job->seniority}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$job->category}}
+          </button>
+        </div>
+        <div class="job-detail-buttons">
+        <button class="search-buttons detail-button btn">
+            {{$job->salary}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$job->location}}
+          </button>
+          <button class="search-buttons detail-button btn">
+          {{$job->created_at}}
+          </button>
+        </div>
+        <div class="job-card-buttons">
+          <a href="{{url('showJobs')}}" class="search-buttons card-buttons btn">Apply Now</a>
+          <button class="search-buttons card-buttons-msg  btn">
+            Messages
+          </button>
+        </div>
+      </div>
+      @endforeach
     </div>
     <!-------------------------------pagenation ------------------------------------>
-   
+    <!-- <div class="pagination-container">
+      {{ $jobs->links() }}
+    </div> -->
      <!-------------------------------pagenation ------------------------------------>
     <div class="job__btn">
       <a href="{{url('showJobs')}}">@lang('msg.key36')<i class="ri-arrow-down-s-line"></i></a>

@@ -31,6 +31,14 @@ class ExperienceController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+            'job_title' => 'required|regex:/^[A-Za-z\s]{5,50}$/',
+            'seniority' => 'required|regex:/^[A-Za-z\s]{5,50}$/',
+
+            'location' => 'required',
+            ]
+               );
         $Experience = new experience();
         $Experience->user_id=auth()->id();
         $Experience->job_title=$request->input('job_title');

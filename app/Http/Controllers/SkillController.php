@@ -29,6 +29,12 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(
+            [
+            'skill' => 'required|alpha|min:5|max:50',
+
+            ]
+               );
         $skill = new Skill();
         $skill->user_id=auth()->id();
         $skill->skill=$request->input('skill');

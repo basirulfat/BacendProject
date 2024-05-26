@@ -482,6 +482,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: 0.2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .job-card:hover {
     transform: scale(1.02);
@@ -506,6 +507,12 @@ body {
 .job-card-header {
     display: flex;
     align-items: flex-start;
+}
+.Applybutton {
+    background-color: var(--blue);
+    color: var(--light);
+    padding: 5px 50px;
+    border-radius: 5px;
 }
 
 .overview-card:hover {

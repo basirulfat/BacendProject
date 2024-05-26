@@ -21,7 +21,9 @@ use OpenAI\Laravel\Facades\OpenAI;
 use App\Http\Controllers\GoogelAuthController;
 use App\Http\Controllers\mapController;
 use App\Http\Controllers\showjobmapController;
-
+use App\Models\company;
+use App\Models\PostJob;
+use Laravel\Jetstream\Rules\Role;
 
 Auth::routes();
 /*=========================for Authentication =============================*/
@@ -69,8 +71,6 @@ Route::middleware([
 
 /*=================== Resume part =======================*/
 
-/*=================== Resume part =======================*/
-
 
 
 
@@ -88,6 +88,7 @@ Route::get('/mydashboard', [AdminController::class, 'countData'])->name('home.co
  Route::resource('/company', CompanyController::class);
  Route::get('/company', [CompanyController::class, 'search'])->name('company.search');
  Route::get('/Companeis_Rate', [CompanyController::class, 'CompanyRate'])->name('Companeis_Rate.CompanyRate');
+ Route::get('/companydetails/{id}',[CompanyController::class,'company_detail']);
  
  
               /*--- posts---*/
@@ -113,7 +114,7 @@ Route::get('/find-job', [PostJobController::class, 'findJob']);
 Route::get('/showJobs', [PostJobController::class, 'showjobs']);
 // Route::get('/index', [PostJobController::class, 'postSearch']);
 Route::get('/search', [PostJobController::class, 'postSearch'])->name('postSearch');
-
+Route::get('/jobdetail/{id}',[PostJobController::class,'job_detail']);
  Route::get('/companyRegister', function () {
     return view('companyRegister');
 });
@@ -139,6 +140,10 @@ Route::get("/About",function(){
 });
 Route::get("/blog",function(){
     return view('blog');
+});
+
+Route::get("/companydetails",function(){
+    return view('companydetails');
 });
 
 
@@ -188,6 +193,8 @@ Route::get('/chat', function () {
 
 /*========= Contact form  =============*/
 
+
+
 Route::get('/openai',function(){
     $prompt= request()->input('prompt');
 $result = OpenAI::chat()->create([
@@ -199,4 +206,5 @@ $result = OpenAI::chat()->create([
 
     return $result['choices'][0]['message']['content'];
 });
+
 

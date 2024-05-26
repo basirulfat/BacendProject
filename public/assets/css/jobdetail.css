@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #ffff !important;
+}
+#job-detail {
+    width: 80%;
+    background-color: var(--light);
+    position: relative;
+    margin: 10rem auto;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    box-shadow: inset 5px 5px 5px rgb(163, 177, 198, 0.6),
+        inset -5px -5px 5px rgba(255, 255, 255, 0.5);
+}
+
+#job-bg {
+    border-radius: 8px 8px 0 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    transition: 0.3s;
+    position: relative;
+}
+#job-logos {
+    height: 150px;
+    width: 100px;
+    position: absolute;
+    top: 150px;
+    left: 40px;
+}
+
+.map {
+    display: flex;
+    justify-content: flex-end;
+}
+.map-container {
+    width: 50%;
+    height: 50vh;
+    border: 1px solid gray;
+}
+@media screen and (max-width: 768px) {
+    .map-container {
+        width: 100%;
+        height: 50vh;
+        margin-top: 20px;
+    }
+}

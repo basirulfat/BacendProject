@@ -35,7 +35,7 @@
 
     <div class="job">
       <div class="wrapper">
-        <div class="search-menu"  style="border: 1px solid red;">
+        <div class="search-menu">
           <div class="search-bar">
             <input type="text" class="search-box" autofocus />
             <div class="search item">
@@ -133,9 +133,9 @@
 
         <!-- ==============================  main container is started here ===================== -->
 
-        <div class="main-container"  style="border: 2px solid green;">
+        <div class="main-container">
         
-          <div class="search-type" style="border: 2px solid blue;">
+          <div class="search-type">
             <div class="alert">
               <div class="alert-title">Create Job Alert</div>
               <div class="alert-subtitle">
@@ -258,9 +258,9 @@
 
    <!-- =============== job cart container part is started here ===============--->
 
-          <div class="searched-jobs" style="border: 2px solid pink;">
+          <div class="searched-jobs">
             <div class="searched-bar">
-              <div class="searched-show">Showing 46 Jobs</div>
+              <div class="searched-show">Showing {{ $posts }} Jobs</div>
               <!-- -------------dark mode---------------------- -->
               <div class="dark-light">
                     <svg
@@ -280,7 +280,7 @@
               </div>
             </div>
             <!---------------- cart wordwrap -------------------->
-            <div class="job-cards" style="border: 2px solid red;">
+            <div class="job-cards">
             @foreach( $post as $posts)
               <div class="job-card">
                 <div class="job-card-header">
@@ -328,266 +328,25 @@
                   {{$posts->experience}}
                   </button>
                   <button class="search-buttons detail-button">
-                  {{$posts->created_at}}
+                  {{$posts->created_at->diffForHumans()}}
                   </button>
                 </div>
                 <div class="job-card-buttons">
-                  <button class="search-buttons card-buttons">Apply Now</button>
-                  <button class="search-buttons card-buttons-msg">
+                  <a href="{{url('jobdetail',$posts->id)}}" class="Applybutton">apply</a>
+                <!-- <button class="search-buttons card-buttons"></button> -->
+                  <!-- <button class="search-buttons card-buttons-msg">
                     Messages
-                  </button>
+                  </button> -->
                 </div>
               </div>
               @endforeach              
             </div>
 
-      <!-- ------------------sidbar carts is started here ------------------------------->
-
-            <div class="job-overview"     style="border: 2px solid black;">
-         
-              <div class="job-overview-cards"   style="border: 2px solid black;">
-              @foreach( $post as $posts)
-                <div class="job-overview-card"   style="border: 2px solid red;">
-                  <div class="job-card overview-card">
-                    <div class="overview-wrapper" >
-                    <svg
-                        viewBox="0 -13 512 512"
-                      >
-                      <div class="job_logo sidbar-logo">
-                        <img src="{{ asset(str_replace('public/', 'storage/', $posts->logo)) }}" alt="Company Logo"> 
-                        </div>
-                      </svg>
-                      <div class="overview-detail">
-                        <div class="job-card-title">{{$posts->jobTitle}}</div>
-                        <div class="job-card-subtitle">
-                          2972 Westheimer Rd. Santa Ana.
-                        </div>
-                      </div>
-                      <svg
-                        class="heart"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-heart"
-                      >
-                        <path
-                          d="M20.8 4.6a5.5 5.5 0 00-7.7 0l-1.1 1-1-1a5.5 5.5 0 00-7.8 7.8l1 1 7.8 7.8 7.8-7.7 1-1.1a5.5 5.5 0 000-7.8z"
-                        />
-                      </svg>
-                    </div>
-                    <div class="job-overview-buttons">
-                      <div class="search-buttons time-button">{{$posts->jobType}}</div>
-                      <div class="search-buttons level-button">
-                      {{$posts->seniority}}
-                      </div>
-                      <div class="job-stat">New</div>
-                      <div class="job-day">4d</div>
-                    </div>
-                  </div>
-                </div>
-                @endforeach
-
-                <div class="job-overview-card">
-                  <div class="job-card overview-card">
-                    <div class="overview-wrapper">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 32 32"
-                        style="background-color: #f76754"
-                      >
-                        <path
-                          xmlns="http://www.w3.org/2000/svg"
-                          d="M0 .5h4.2v23H0z"
-                          fill="#042b48"
-                          data-original="#212121"
-                        />
-                        <path
-                          xmlns="http://www.w3.org/2000/svg"
-                          d="M15.4.5a8.6 8.6 0 100 17.2 8.6 8.6 0 000-17.2z"
-                          fill="#fefefe"
-                          data-original="#f4511e"
-                        />
-                      </svg>
-                      <div class="overview-detail">
-                        <div class="job-card-title">Sr. Product Designer</div>
-                        <div class="job-card-subtitle">
-                          1901 Thornridge Cir.Shiloh, Hawaii.
-                        </div>
-                      </div>
-                      <svg
-                        class="heart"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-heart"
-                      >
-                        <path
-                          d="M20.8 4.6a5.5 5.5 0 00-7.7 0l-1.1 1-1-1a5.5 5.5 0 00-7.8 7.8l1 1 7.8 7.8 7.8-7.7 1-1.1a5.5 5.5 0 000-7.8z"
-                        />
-                      </svg>
-                    </div>
-                    <div class="job-overview-buttons">
-                      <div class="search-buttons time-button">Full Time</div>
-                      <div class="search-buttons level-button">
-                        Senior Level
-                      </div>
-                      <div class="job-stat">New</div>
-                      <div class="job-day">4d</div>
-                    </div>
-                  </div>
-                </div>
-
-               
-    
-              </div>
-
-
 <!-- ===========================job details page is started here================================ -->
-
-
-              <div class="job-explain"   style="border: 2px solid red;">
-                <img class="job-bg" alt="" />
-                <div class="job-logos">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 32 32"
-                    style="background-color: #f76754"
-                  >
-                    <path
-                      xmlns="http://www.w3.org/2000/svg"
-                      d="M0 .5h4.2v23H0z"
-                      fill="#042b48"
-                      data-original="#212121"
-                    ></path>
-                    <path
-                      xmlns="http://www.w3.org/2000/svg"
-                      d="M15.4.5a8.6 8.6 0 100 17.2 8.6 8.6 0 000-17.2z"
-                      fill="#fefefe"
-                      data-original="#f4511e"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="job-explain-content">
-                  <div class="job-title-wrapper">
-                    <div class="job-card-title">UI /UX Designer</div>
-                    <div class="job-action">
-                      <svg
-                        class="heart"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-heart"
-                      >
-                        <path
-                          d="M20.8 4.6a5.5 5.5 0 00-7.7 0l-1.1 1-1-1a5.5 5.5 0 00-7.8 7.8l1 1 7.8 7.8 7.8-7.7 1-1.1a5.5 5.5 0 000-7.8z"
-                        />
-                      </svg>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="feather feather-share-2"
-                      >
-                        <circle cx="18" cy="5" r="3" />
-                        <circle cx="6" cy="12" r="3" />
-                        <circle cx="18" cy="19" r="3" />
-                        <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="job-subtitle-wrapper">
-                    <div class="company-name">
-                      Patreon
-                      <span class="comp-location">Londontowne, MD.</span>
-                    </div>
-                    <div class="posted">
-                      Posted 8 days ago<span class="app-number"
-                        >98 Application</span
-                      >
-                    </div>
-                  </div>
-                  <div class="explain-bar">
-                    <div class="explain-contents">
-                      <div class="explain-title">Experience</div>
-                      <div class="explain-subtitle">Minimum 1 Year</div>
-                    </div>
-                    <div class="explain-contents">
-                      <div class="explain-title">Work Level</div>
-                      <div class="explain-subtitle">Senior level</div>
-                    </div>
-                    <div class="explain-contents">
-                      <div class="explain-title">Employee Type</div>
-                      <div class="explain-subtitle">Full Time Jobs</div>
-                    </div>
-                    <div class="explain-contents">
-                      <div class="explain-title">Offer Salary</div>
-                      <div class="explain-subtitle">$2150.0 / Month</div>
-                    </div>
-                  </div>
-                  <div class="overview-text">
-                    <div class="overview-text-header">Overview</div>
-                    <div class="overview-text-subheader">
-                      We believe that design (and you) will be critical to the
-                      company's success. You will work with our founders and our
-                      early customers to help define and build our product
-                      functionality, while maintaining the quality bar that
-                      customers have come to expect from modern SaaS
-                      applications. You have a strong background in product
-                      design with a quantitavely anf qualitatively analytical
-                      mindset. You will also have the opportunity to craft our
-                      overall product and visual identity and should be
-                      comfortable to flex into working.
-                    </div>
-                  </div>
-                  <div class="overview-text">
-                    <div class="overview-text-header">Job Description</div>
-                    <div class="overview-text-item">
-                      3+ years working as a product designer.
-                    </div>
-                    <div class="overview-text-item">
-                      A portfolio that highlights your approach to problem
-                      solving, as well as you skills in UI.
-                    </div>
-                    <div class="overview-text-item">
-                      Experience conducting research and building out smooth
-                      flows.
-                    </div>
-                    <div class="overview-text-item">
-                      Excellent communication skills with a well-defined design
-                      process.
-                    </div>
-                    <div class="overview-text-item">
-                      Familiarity with design tools like Sketch and Figma
-                    </div>
-                    <div class="overview-text-item">
-                      Up-level our overall design and bring consistency to
-                      end-user facing properties
-                    </div>
-                  </div>
-                </div>
-              </div>
-          <!-- ====================job details page is started here====================== -->
-
-
-
-            </div>
           </div>
+          <!-------------------------------pagenation ------------------------------------>
+
+          <!-------------------------------pagenation ------------------------------------>
         </div>
       </div>
     </div>

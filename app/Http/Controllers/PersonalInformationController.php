@@ -28,25 +28,23 @@ class PersonalInformationController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {       $request->validate([
-        'full_name' => 'required',
-        'second_name' => 'required',
-        'email' => 'required',
-        'phone' => 'required',
+    {   
+          $request->validate(
+        [
+        'full_name' => 'required|alpha|min:5|max:50',
+        'second_name' => 'required|min:5|max:50',
+        'email' => 'required|email|unique:users,email|max:255',
+        'phone' => 'required|regex:/^07[0-9]{8}$/',
         'address' => 'required',
-        'image' => 'required',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust image validation rules as needed
         'gender' => 'required',
-        // 'date_of_brith' => 'required,
+        'date_of_birth' => 'date', 
         'military_service_status' => 'required',
         'country' => 'required',
         'city' => 'required',
+        ]
+           );
 
-        
-
-
-
-        // Add more validation rules for other fields if needed
-         ]);
           if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $imagePath = $image->store('images', 'public');

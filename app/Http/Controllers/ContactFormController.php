@@ -31,9 +31,9 @@ class ContactFormController extends Controller
     public function store(Request $request)
     {
         $request->validate( [
-            "name"=> "required",
+            "name"=> 'required|alpha|min:5|max:50',
             "email"=> "required|email",
-            "telephone"=>"required|10",
+            "telephone"=>'required|regex:/^07[0-9]{8}$/',
             "type"=> "",
             "subject"=> "required",
             "description"=> "required",

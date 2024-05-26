@@ -1,5 +1,6 @@
 import { setupFAQ } from "./module/home.js";
 import { SeeJobs } from "./module/home.js";
+
 setupFAQ();
 SeeJobs();
 

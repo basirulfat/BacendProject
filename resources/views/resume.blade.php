@@ -37,7 +37,7 @@
         <div class="left_Side">
           <div class="profileText">
             <div class="imgBx">
-              <img class="photo" src="./assets/images/greeting.jpg" />
+              <img class="photo" src="{{$user->image}}" />
             </div>
             <br />
            
@@ -53,7 +53,7 @@
                 <span class="icon"
                   ><i class="fa fa-phone" aria-hidden="true"></i
                 ></span>
-                <span class="text">+93 731682669</span>
+                <span class="text">{{$user->phone}}</span>
               </li>
               <li>
                 <span class="icon"

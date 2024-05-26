@@ -30,6 +30,17 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {   
+        $request->validate(
+            [
+            'school_name' => 'required|alpha|min:5|max:50',
+            'university_name' => 'required|alpha|min:5|max:50',
+            'description' => 'required',
+            'start_year' => 'date', 
+            'end_year' => 'date', 
+            'country' => 'required',
+            'city' => 'required',
+            ]
+               );
         
         $education = new Education();
         $education->user_id=auth()->id();

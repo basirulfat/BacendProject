@@ -16,6 +16,7 @@ export function SeeJobs() {
         });
     });
 }
+
 /*=========================== FAQ ==================================*/
 export function setupFAQ() {
     /*--Get all the question elements--*/
