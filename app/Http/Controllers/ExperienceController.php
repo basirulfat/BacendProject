@@ -45,7 +45,9 @@ class ExperienceController extends Controller
         $Experience->seniority=$request->input('seniority');
         $Experience->location=$request->input('location');
         $Experience->save();
-        return redirect()->route('experience.index');   
+        // return redirect()->route('experience.index');   
+        
+        return redirect()->back()->with('success', 'Data has been stored successfully!');   
 
     }
 

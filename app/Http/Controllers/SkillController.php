@@ -40,6 +40,8 @@ class SkillController extends Controller
         $skill->skill=$request->input('skill');
         $skill->Skill_level=$request->input('Skill_level');
         $skill->save();
+        // return redirect()->back()->with('success', 'Data has been stored successfully!');   
+        
         return redirect()->back()->with('success', 'Data has been stored successfully!');   
     }
 

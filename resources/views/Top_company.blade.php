@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>50% Top Company</title>
+    <title>@lang('msg.TopC0')</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,18 +31,18 @@
     <!-- Active company -->
     <section id="small-navebar">
       <ul>
-        <li><a href="{{url('Companeis_Rate')}}">Search Company Name</a></li>
-        <li><a href="{{url('Top_company')}}">50 Top Actives Companies</a></li>
+        <li><a href="{{url('Companeis_Rate')}}">@lang('msg.TopC1')</a></li>
+        <li><a href="{{url('Top_company')}}">@lang('msg.TopC2')</a></li>
       </ul>
     </section>
     <section id="active-company">
       <div id="top-class">
-        <h2>50% Active Top Companies To Work In</h2>
+        <h2>@lang('msg.TopC3')</h2>
         <div class="two-button">
           <button class="50%-show-btn">
-            <i class="ri-message-2-line"></i>Rate Companies
+            <i class="ri-message-2-line"></i>@lang('msg.TopC4')
           </button>
-          <a href="{{url('Companeis_Rate')}}">All Companies</a>
+          <a href="{{url('Companeis_Rate')}}">@lang('msg.TopC5')</a>
         </div>
       </div>
       <div>
@@ -68,8 +68,8 @@
             <i class="ri-star-line mul-i"></i>
           </div>
           <div>
-            <button>See Review</button>
-            <button>20 Jobs</button>
+            <button>@lang('msg.TopC6')</button>
+            <button>@lang('msg.TopC7')</button>
           </div>
         </div>
         <p>
@@ -1141,7 +1141,7 @@
           src="./assets/images/company logo/friends-logo-template_23-2149505594.avif"
           alt=""
         />
-        <h5>Rate Your Employers</h5>
+        <h5>@lang('msg.TopC8')</h5>
         <i class="ri-star-line"></i>
         <i class="ri-star-line"></i>
         <i class="ri-star-line"></i>

@@ -76,7 +76,7 @@
         <div>
           <!-- <button class="btn-1" type="button" name="Save">Save</button> -->
           <input class="btn-bt" type="submit" value="Submit">
-          <button class="btn-1" type="button" name="Next" onclick="changeColor3()">Next</button>
+          
         </div>
       </div>
   </section>

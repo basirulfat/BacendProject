@@ -65,7 +65,16 @@ Route::middleware([
 });
 
 
-
+// Route for CV Component
+Route::get('/experienceSection',function(){
+    return view('experienceSection');
+});
+Route::get('/skillSection',function(){
+    return view('skillSection');
+});
+Route::get('/educationSection',function(){
+    return view('educationSection');
+});
 /*=================== Redirect To home page =======================*/
 
 

@@ -25,7 +25,7 @@
 
 <!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <title>Companies Rate</title>
+    <title>@lang('msg.Rate0')</title>
   </head>
   <body>
     <!--=============== HEADER ===============-->
@@ -34,21 +34,21 @@
 
     <section id="small-navebar">
       <ul>
-        <li><a href="{{url('Companeis_Rate.CompanyRate')}}">Search Company Name</a></li>
-        <li><a href="{{url('Top_company')}}">50 Top Actives Companies</a></li>
+        <li><a href="{{url('Companeis_Rate.CompanyRate')}}">@lang('msg.Rate1')</a></li>
+        <li><a href="{{url('Top_company')}}">@lang('msg.Rate2')</a></li>
       </ul>
     </section>
     <section class="companies-details">
       <div class="rate-details">
-        <h2>Make the path more clear for others</h2>
-        <p>Your experience helps others to make wise decisions</p>
+        <h2>@lang('msg.Rate3')</h2>
+        <p>@lang('msg.Rate4')</p>
         <div class="small-companies">
           <button class="btn comp-btn">
-            <i class="ri-message-2-line"></i>Rate Companies
+            <i class="ri-message-2-line"></i>@lang('msg.Rate5')
           </button>
-          <a href="{{url('Top_company')}}">50 Top Actives Companies</a>
+          <a href="{{url('Top_company')}}">@lang('msg.Rate6')</a>
         </div>
-        <h5>Your rating will be register anonymously</h5>
+        <h5>@lang('msg.Rate7')</h5>
       </div>
       <div class="companies-img img"></div>
     </section>
@@ -79,10 +79,10 @@
       </div>
       <div class="sort-by">
         <ul>
-          <p><i class="ri-bar-chart-2-fill"></i>Sorted by:</p>
-          <li><a href="#" class="a">Most Number of jobs</a></li>
-          <li><a href="#" class="a">Top Rated</a></li>
-          <li>More<i class="ri-arrow-down-s-line dropdown__arrow"></i></li>
+          <p><i class="ri-bar-chart-2-fill"></i>@lang('msg.Rate8')</p>
+          <li><a href="#" class="a">@lang('msg.Rate9')</a></li>
+          <li><a href="#" class="a">@lang('msg.Rate10')</a></li>
+          <li>@lang('msg.Rate11')<i class="ri-arrow-down-s-line dropdown__arrow"></i></li>
         </ul>
       </div>
    <!-- ===============carts part is started here =========================-->
@@ -107,13 +107,13 @@
                 </div>
                 <div class="card-lin">
                   <a href="#">12 Jobs</a>
-                  <a href="{{url('companydetails',$company->id)}}" class="a-border">See Company</a>
+                  <a href="{{url('companydetails',$company->id)}}" class="a-border">@lang('msg.Rate12')</a>
                 </div>
               </div>
             </div>
             <div class="card-icon">
              
-              <p><i class="fa-solid fa-bag-shopping"></i> New Jobs</p>
+              <p><i class="fa-solid fa-bag-shopping"></i> @lang('msg.Rate13')</p>
               <p><i class="fa-solid fa-user-group"></i>{{$company->company_size}}</p>
             </div>
           </div>

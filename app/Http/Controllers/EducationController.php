@@ -55,7 +55,9 @@ class EducationController extends Controller
         $education->city=$request->input('city');
         $education->description=$request->input('description');
         $education->save();
-        return redirect()->route('education.index');
+        // return redirect()->route('education.index');
+        
+        return redirect()->back()->with('success', 'Data has been stored successfully!');   
 
 
     }

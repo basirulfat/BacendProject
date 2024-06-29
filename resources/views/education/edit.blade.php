@@ -71,22 +71,22 @@
 
               <div class="form-control">
                 <label for="">Field of Study</label>
-                <select id="status_prfile" name="field_of_study">
-                  <option value="{{$education->engeenring}}">engeenring</option>
-                  <option value="{{$education->Develpment}}">Develpment</option>
-                  <option value="{{$education->Anaylisig}}">Anaylisig</option>
-                  <option value="{{$education->Managment}}">Managment</option>
+                <select id="status_prfile" name="field_of_study" value="{{$education->field_of_study}}">
+                  <option value="engeenring">engeenring</option>
+                  <option value="Develpment">Develpment</option>
+                  <option value="Anaylisig">Anaylisig</option>
+                  <option value="Managment">Managment</option>
                 </select>
                 <small>Error message</small>
               </div>
 
               <div class="form-control">
                 <label for="">Degree Level</label>
-                <select id="status_prfile" name="degree_level">
-                  <option value="{{$education->jonier}}">jonier</option>
-                  <option value="{{$education->Senior}}">Senior</option>
-                  <option value="{{$education->expert}}">expert</option>
-                  <option value="{{$education->advance}}">Advance</option>
+                <select id="status_prfile" name="degree_level" value="{{$education->degree_level}}">
+                  <option value="jonier">jonier</option>
+                  <option value="Senior">Senior</option>
+                  <option value="expert">expert</option>
+                  <option value="advance">Advance</option>
                 </select>
                 <small>Error message</small>
               </div>
@@ -110,10 +110,10 @@
 
               <div class="form-control">
                 <label for="university_type">University Type</label>
-                <select id="status_prfile" name="university_type">
-                  <option value="{{$education->public}}">Public</option>
-                  <option value="{{$education->privite}}">Privite</option>
-                  <option value="{{$education->gevernomental}}">none-gevernomental</option>
+                <select id="status_prfile" name="university_type" value="{{$education->university_type}}">
+                  <option value="public">Public</option>
+                  <option value="privite">Privite</option>
+                  <option value="none-gevernomental">none-gevernomental</option>
                 </select>
                 <small>Error message</small>
               </div>
@@ -134,7 +134,7 @@
             </div>
 
               <div id="buttion-1">
-                <a class="btn-bt" style="width:200px" href="{{route('education.create')}}">Add Another Education</a>
+                
                 <div>
                   <input class="btn-bt" type="submit" value="Submit">
                 </div>
